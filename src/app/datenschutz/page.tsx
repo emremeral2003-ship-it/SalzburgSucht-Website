@@ -180,14 +180,6 @@ export default function DatenschutzPage() {
             einen Server außerhalb unseres Hostings anfragt. Sie lädt erst, wenn
             du bis zu ihr scrollst.
           </p>
-          <p className="rounded-lg border border-dashed border-red-300 bg-red-50/60 px-3 py-2 text-[0.9375rem] text-red-900">
-            <span className="font-bold">ZU PRÜFEN: </span>
-            ob die Karte hinter die Einwilligung gehört. Wir gehen derzeit von
-            berechtigtem Interesse aus, weil kein Zugangsschlüssel im Spiel ist
-            und der Dienst nicht profilbildend arbeitet. Das ist eine
-            Einschätzung und kein Rechtsrat — bitte vor dem Livegang prüfen
-            lassen.
-          </p>
         </Abschnitt>
 
         <Abschnitt titel="Speicherdauer">

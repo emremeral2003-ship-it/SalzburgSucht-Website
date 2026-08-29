@@ -84,7 +84,9 @@ const liste: Eintrag[] = [
   /* ==========================================================================
      QUELLE: Salzburgsucht_Kunden_CRM.xlsx, Blatt "Kunden CRM", Stand 28.08.2026
      ==========================================================================
-     Uebernommen sind ALLE 37 Zeilen mit Status "Bestandskunde". Interessenten
+     Uebernommen sind ALLE 37 Zeilen mit Status "Bestandskunde". Dazu kommen
+     zwei Betriebe, die nicht in der Liste stehen, aber von Emre bestaetigt
+     sind: Naya und Rookies at Work. Interessenten
      und abgelehnte Anfragen stehen bewusst nicht hier — die Partnerreihe ist
      ein Beleg fuer bestehende Zusammenarbeit, keine Verkaufspipeline.
 
@@ -157,6 +159,15 @@ const liste: Eintrag[] = [
   // Die Excel fuehrt "Mai kai fitness" unter Fitness. Falls das zwei
   // verschiedene Betriebe sind, gehoert der Standort hier weg.
   { name: "Mai Kai Fitness", branche: "Fitness", standort: ort(47.83454, 13.02803, "punkt", "Oberndorfer Straße") },
+  // Nachgetragen am 29.08.2026 auf Emres Hinweis. Steht nicht in der
+  // CRM-Liste. Die Koordinate ist die geokodierte Hausnummer aus der
+  // eigenen Website (Wilhelmsederstraße 13, Schallmoos) — nicht geraten.
+  {
+    name: "Rookies at Work",
+    branche: "Medien",
+    standort: ort(47.81021, 13.05674, "punkt", "Wilhelmsederstraße"),
+    website: "https://www.rookiesatwork.at/",
+  },
   // Nicht in der CRM-Liste, aber von Emre am 28.08.2026 als Partner
   // bestaetigt.
   // ZU PRUEFEN bleibt der Standort: Der Marker sitzt auf der NAYA kitchen &

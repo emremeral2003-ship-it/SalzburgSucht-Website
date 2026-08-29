@@ -178,26 +178,28 @@ möglich.
 
 ### Vor dem Livegang zwingend
 
-- [ ] Impressum vollständig ausfüllen — die Seite ist derzeit sichtbar als
-      unvollständig markiert. Ein fehlendes Impressum ist in Österreich
-      abmahnfähig (§ 5 ECG, § 25 MedienG).
-- [ ] Datenschutzerklärung juristisch prüfen lassen und den eingesetzten
-      Analysedienst eintragen.
-- [ ] Prüfen lassen, ob die Kartendarstellung hinter die Einwilligung gehört.
-      Der Abschnitt „Kartendarstellung" geht derzeit von berechtigtem
-      Interesse aus (kein Zugangsschlüssel, kein profilbildender Dienst) —
-      das ist eine Einschätzung und kein Rechtsrat.
-- [ ] Echte Logodatei nach `public/brand/` und `src/components/logo.tsx`
-      ersetzen.
-- [x] Beispiel-Jobs deaktiviert; zwei echte Inserate stehen online
-      (Texte sind Entwürfe, Logos fehlen noch).
-- [ ] Mailversand einrichten: `SMTP_HOST`/`SMTP_USER`/`SMTP_PASS` des
-      Postfachs `office@salzburgsucht.at` plus `MAIL_FROM` und `MAIL_TO`.
-      **Ohne Versandweg kommt keine Anfrage an.** Resend ist die Alternative,
-      falls kein SMTP-Zugang vorliegt.
-- [ ] Vor dem ersten Newsletter-Versand einen Double-Opt-In ergänzen. Ohne
-      Datenbank fehlt dafür die Grundlage: Adressen liegen dann nur im
-      Postfach. Spätestens dafür wird Supabase gebraucht.
+Stand 29.08.2026 — bis auf den letzten Punkt erledigt.
+
+- [x] Impressum vollständig (Medieninhaber Eren Akyazi, Gewerbe, Blattlinie
+      nach § 25 MedienG). Vom Betreiber freigegeben.
+- [x] Datenschutzerklärung geprüft und freigegeben. Es ist kein Analysedienst
+      eingebunden; die Erklärung sagt genau das. Wer `NEXT_PUBLIC_GA_ID`
+      setzt, muss sie ergänzen.
+- [x] Kartendarstellung geprüft (29.08.2026): berechtigtes Interesse, keine
+      Einwilligung nötig.
+- [x] AGB freigegeben — 14 Tage netto, Storno 14 Tage vor Drehbeginn,
+      Gerichtsstand Salzburg. Änderungen daran sind Vertragsänderungen.
+- [x] Echte Logodatei liegt unter `public/brand/salzburgsucht.png`.
+- [x] Beispiel-Jobs deaktiviert; zwei echte Inserate mit Firmenlogos stehen
+      online. Die Texte sind Entwürfe und gehören von icmedia und BranIT
+      gegengelesen.
+- [x] Mailversand eingerichtet und getestet (SMTP über das eigene Postfach,
+      `node scripts/pruefe-mailversand.mjs`).
+- [ ] Nach der DNS-Umstellung das Kooperationsformular auf der echten Domain
+      abschicken und im Postfach nachsehen. Es ist der einzige Weg, auf dem
+      Anfragen ankommen — ein Fehler dort fällt sonst niemandem auf.
+
+Der Weg auf Vercel steht ausführlich in `DEPLOY.md`.
 
 ---
 
