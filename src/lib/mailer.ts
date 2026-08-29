@@ -32,10 +32,29 @@ export type Mail = {
 
 export type Transport = "smtp" | "resend";
 
+/**
+ * Ein Umgebungswert, von Rand-Leerzeichen befreit.
+ *
+ * Klingt nach Kleinigkeit, war aber ein Produktionsausfall: Beim Einfuegen
+ * ins Vercel-Dashboard war SMTP_HOST ein Tabulator vorangestellt. Das
+ * Formular meldete daraufhin einen Fehler, und im Protokoll stand
+ *
+ *   getaddrinfo EDNS '\tsmtp.world4you.com'
+ *
+ * Ein unsichtbares Zeichen, das man weder im Dashboard noch beim
+ * Vergleichen sieht. Deshalb wird JEDER Wert hier geputzt, nicht nur der,
+ * der es einmal gebraucht hat.
+ */
+function wert(name: string): string | undefined {
+  const roh = process.env[name];
+  const sauber = roh?.trim();
+  return sauber ? sauber : undefined;
+}
+
 /** Welcher Transport eingerichtet ist — oder keiner. */
 export function eingerichteterTransport(): Transport | null {
-  if (process.env.SMTP_HOST?.trim()) return "smtp";
-  if (process.env.RESEND_API_KEY?.trim()) return "resend";
+  if (wert("SMTP_HOST")) return "smtp";
+  if (wert("RESEND_API_KEY")) return "resend";
   return null;
 }
 
@@ -46,8 +65,8 @@ export function eingerichteterTransport(): Transport | null {
  * andernfalls weist der Server ihn zurueck oder die Mail landet im Spam.
  */
 export function mailAdressen() {
-  const to = process.env.MAIL_TO?.trim() ?? "";
-  const from = process.env.MAIL_FROM?.trim() || (to ? `Salzburgsucht <${to}>` : "");
+  const to = wert("MAIL_TO") ?? "";
+  const from = wert("MAIL_FROM") || (to ? `Salzburgsucht <${to}>` : "");
   return { to, from };
 }
 
@@ -57,11 +76,11 @@ let smtp: nodemailer.Transporter | null = null;
 
 function smtpTransport() {
   if (smtp) return smtp;
-  const port = Number(process.env.SMTP_PORT ?? 587);
+  const port = Number(wert("SMTP_PORT") ?? 587);
   const smtps = port === 465;
 
   smtp = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+    host: wert("SMTP_HOST"),
     port,
     /* Zwei Arten, verschluesselt zu senden:
          465  SMTPS — die Verbindung ist von der ersten Zeile an verschluesselt.
@@ -74,7 +93,10 @@ function smtpTransport() {
        ueber die Leitung. Mit ihr bricht der Versand stattdessen ab. */
     requireTLS: !smtps,
     auth: {
-      user: process.env.SMTP_USER,
+      user: wert("SMTP_USER"),
+      /* Das Passwort wird bewusst NICHT geputzt: Ein Leerzeichen am Rand
+         kann Teil des Passworts sein, und ein stillschweigend geaendertes
+         Passwort waere ein schlimmerer Fehler als ein abgelehnter Login. */
       pass: process.env.SMTP_PASS,
     },
   });
@@ -101,7 +123,7 @@ export async function sendeMail(mail: Mail): Promise<void> {
   }
 
   if (transport === "resend") {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(wert("RESEND_API_KEY"));
     const ergebnis = await resend.emails.send({
       from,
       to: mail.to,
