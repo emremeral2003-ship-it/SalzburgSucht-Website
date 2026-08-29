@@ -1,0 +1,755 @@
+{
+  "verstecke": [
+    {
+      "nr": 1,
+      "name": "Lehen",
+      "suche": "Lehen, Salzburg",
+      "art": "viertel",
+      "breite": 47.81348,
+      "laenge": 13.02751,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Lehen, Salzburg, Österreich"
+      },
+      "weitere": [
+        "Lehen, Anthering, Bezirk Salzburg-Umgebung, Salzburg, 5102, Österreich"
+      ]
+    },
+    {
+      "nr": 2,
+      "name": "Mirabellplatz",
+      "suche": "Mirabellplatz, Salzburg",
+      "art": "punkt",
+      "breite": 47.80518,
+      "laenge": 13.04321,
+      "quelle": {
+        "typ": "square",
+        "klasse": "place",
+        "name": "Mirabellplatz, Altstadt, Salzburg, Österreich"
+      },
+      "weitere": [
+        "Mirabellplatz, Altstadt, Salzburg, 5020, Österreich",
+        "Mirabellplatz, Altstadt, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 3,
+      "name": "Alpenstraße",
+      "suche": "Alpenstraße, Salzburg",
+      "art": "strasse",
+      "zusatz": "Nähe Universität",
+      "breite": 47.75808,
+      "laenge": 13.0731,
+      "quelle": {
+        "typ": "primary",
+        "klasse": "highway",
+        "name": "Alpenstraße, Hellbrunn, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Alpenstraße, Salzburg-Süd, Salzburg Süd, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 4,
+      "name": "Café am Kai",
+      "suche": "Café am Kai, Salzburg",
+      "art": "punkt",
+      "zusatz": "Altstadt",
+      "breite": 47.80513,
+      "laenge": 13.03678,
+      "quelle": {
+        "typ": "cafe",
+        "klasse": "amenity",
+        "name": "Café am Kai, 4, Müllner Hauptstraße, Mülln, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 5,
+      "name": "Überfuhrsteg",
+      "suche": "Überfuhrsteg, Salzburg",
+      "art": "punkt",
+      "breite": 47.78995,
+      "laenge": 13.069,
+      "quelle": {
+        "typ": "cycleway",
+        "klasse": "highway",
+        "name": "Überfuhrsteg, Salzburg-Süd, Salzburg Süd, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Überfuhrsteg, Salzburg-Süd, Salzburg Süd, Salzburg, 5020, Österreich",
+        "Überfuhrsteg, Glas, Aigen, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 6,
+      "name": "Techno-Z",
+      "suche": "Techno-Z, Salzburg",
+      "art": "punkt",
+      "zusatz": "Studentenheim, Itzling",
+      "breite": 47.82321,
+      "laenge": 13.04033,
+      "quelle": {
+        "typ": "commercial",
+        "klasse": "landuse",
+        "name": "Techno-Z, Itzling, Salzburg, Österreich"
+      },
+      "weitere": [
+        "Techno-Z, 30, Schillerstraße, Itzling, Salzburg, 5020, Österreich",
+        "Techno-Z, Jakob-Haringer-Straße, Techno-Z, Itzling, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 7,
+      "name": "Altstadt",
+      "suche": "Altstadt, Salzburg",
+      "art": "viertel",
+      "mehrfach": true,
+      "breite": 47.79976,
+      "laenge": 13.04682,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Altstadt, Salzburg, Österreich"
+      },
+      "weitere": [
+        "Altstadt, Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich"
+      ]
+    },
+    {
+      "nr": 8,
+      "name": "HLT Salzburg",
+      "suche": "Tourismusschulen Salzburg, Kleßheim",
+      "art": "punkt",
+      "breite": 47.81848,
+      "laenge": 12.99038,
+      "quelle": {
+        "typ": "school",
+        "klasse": "amenity",
+        "name": "Tourismusschulen Kleßheim, Kleßheimerstraße, Kleßheim, Siezenheim, Wals-Siezenheim, Bezirk Salzburg-Umgebung, Salzburg, 5071, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 9,
+      "name": "Kiesel",
+      "suche": "Kieselstraße, Salzburg",
+      "art": "strasse",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "nr": 10,
+      "name": "Bergheim",
+      "suche": "Bergheim, Salzburg-Umgebung",
+      "art": "viertel",
+      "breite": 47.84085,
+      "laenge": 13.02216,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Bergheim, Bezirk Salzburg-Umgebung, Salzburg, 5101, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 11,
+      "name": "ZIB Salzburg",
+      "suche": "Zentrum im Berg, Salzburg",
+      "art": "punkt",
+      "breite": 47.80842,
+      "laenge": 13.06454,
+      "quelle": {
+        "typ": "mall",
+        "klasse": "shop",
+        "name": "Zentrum im Berg, 18, Fürbergstraße, Schallmoos, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 12,
+      "name": "Viehhausen",
+      "suche": "Viehhausen, Wals-Siezenheim",
+      "art": "viertel",
+      "breite": 47.78334,
+      "laenge": 12.98755,
+      "quelle": {
+        "typ": "village",
+        "klasse": "place",
+        "name": "Viehhausen, Wals-Siezenheim, Bezirk Salzburg-Umgebung, Salzburg, 5071, Österreich"
+      },
+      "weitere": [
+        "Viehhausen, Wals-Siezenheim, Bezirk Salzburg-Umgebung, Salzburg, 5071, Österreich"
+      ]
+    },
+    {
+      "nr": 13,
+      "name": "Puch",
+      "suche": "Puch bei Hallein",
+      "art": "viertel",
+      "breite": 47.71685,
+      "laenge": 13.09045,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Puch bei Hallein, Bezirk Hallein, Salzburg, 5412, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 14,
+      "name": "Hallein",
+      "suche": "Hallein",
+      "art": "viertel",
+      "breite": 47.68215,
+      "laenge": 13.09563,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Hallein, Bezirk Hallein, Salzburg, Österreich"
+      },
+      "weitere": [
+        "Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich"
+      ]
+    },
+    {
+      "nr": 15,
+      "name": "Oberalm",
+      "suche": "Oberalm",
+      "art": "viertel",
+      "breite": 47.70023,
+      "laenge": 13.09889,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Oberalm, Bezirk Hallein, Salzburg, 5411, Österreich"
+      },
+      "weitere": [
+        "Almbach, Adnet, Bezirk Hallein, Salzburg, Österreich",
+        "Almbach, Seefeldmühle, Vorderwiestal, Oberalm, Bezirk Hallein, Salzburg, 5411, Österreich"
+      ]
+    },
+    {
+      "nr": 16,
+      "name": "Linzergasse",
+      "suche": "Linzer Gasse, Salzburg",
+      "art": "strasse",
+      "breite": 47.80318,
+      "laenge": 13.04667,
+      "quelle": {
+        "typ": "pedestrian",
+        "klasse": "highway",
+        "name": "Linzer Gasse, Altstadt, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Linzer Gasse, Neustadt, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 17,
+      "name": "Blindergasse",
+      "suche": "Blindengasse, Salzburg",
+      "art": "strasse",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "nr": 18,
+      "name": "Maxglan",
+      "suche": "Maxglan, Salzburg",
+      "art": "viertel",
+      "mehrfach": true,
+      "breite": 47.80419,
+      "laenge": 13.01874,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Maxglan, Salzburg, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 19,
+      "name": "Bergbräuhofstraße",
+      "suche": "Bergbräuhofstraße, Salzburg",
+      "art": "strasse",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "nr": 20,
+      "name": "Hauptbahnhof",
+      "suche": "Salzburg Hauptbahnhof",
+      "art": "punkt",
+      "zusatz": "Engelbert-Weiß-Weg",
+      "mehrfach": true,
+      "breite": 47.81306,
+      "laenge": 13.04585,
+      "quelle": {
+        "typ": "station",
+        "klasse": "railway",
+        "name": "Salzburg Hauptbahnhof, 1, Südtiroler Platz, Elisabeth-Vorstadt, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Salzburg Hauptbahnhof, Rainerstraße, Elisabeth-Vorstadt, Salzburg, 5020, Österreich",
+        "Salzburg Hauptbahnhof, Engelbert-Weiß-Weg, Elisabeth-Vorstadt, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 21,
+      "name": "Arbeiterkammer",
+      "suche": "Arbeiterkammer Salzburg, Markus-Sittikus-Straße",
+      "art": "punkt",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "nr": 22,
+      "name": "Gnigl",
+      "suche": "Gnigl, Salzburg",
+      "art": "viertel",
+      "breite": 47.81202,
+      "laenge": 13.07372,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Gnigl, Salzburg, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 23,
+      "name": "JumpDome",
+      "suche": "JumpDome, Salzburg",
+      "art": "punkt",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "nr": 24,
+      "name": "Nonntal",
+      "suche": "Nonntal, Salzburg",
+      "art": "viertel",
+      "breite": 47.79139,
+      "laenge": 13.05035,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Nonntal, Salzburg, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 25,
+      "name": "LKH Salzburg",
+      "suche": "Uniklinikum Salzburg, Landeskrankenhaus",
+      "art": "punkt",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "nr": 26,
+      "name": "Taxham",
+      "suche": "Taxham, Salzburg",
+      "art": "viertel",
+      "breite": 47.81137,
+      "laenge": 13.00584,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Taxham, Salzburg, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 27,
+      "name": "Messezentrum",
+      "suche": "Messezentrum Salzburg",
+      "art": "punkt",
+      "breite": 47.82359,
+      "laenge": 13.02968,
+      "quelle": {
+        "typ": "exhibition_centre",
+        "klasse": "amenity",
+        "name": "Messezentrum Salzburg, Am Messezentrum, Liefering, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 28,
+      "name": "Schlossbrücke",
+      "suche": "Staatsbrücke, Salzburg",
+      "art": "punkt",
+      "zusatz": "Altstadt",
+      "breite": 47.80093,
+      "laenge": 13.04461,
+      "quelle": {
+        "typ": "secondary",
+        "klasse": "highway",
+        "name": "Staatsbrücke, Altstadt, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Staatsbrücke, Giselakai, Altstadt, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 29,
+      "name": "Salzburg AG",
+      "suche": "Salzburg AG, Bayerhamerstraße",
+      "art": "punkt",
+      "breite": 47.81152,
+      "laenge": 13.05124,
+      "quelle": {
+        "typ": "office",
+        "klasse": "building",
+        "name": "Salzburg AG, 16, Bayerhamerstraße, Schallmoos, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 30,
+      "name": "Musisches Gymnasium",
+      "suche": "Musisches Gymnasium Salzburg, Haunspergstraße",
+      "art": "punkt",
+      "zusatz": "Itzling",
+      "breite": 47.81963,
+      "laenge": 13.03741,
+      "quelle": {
+        "typ": "school",
+        "klasse": "amenity",
+        "name": "Musisches Gymnasium Salzburg, 77, Haunspergstraße, Itzling, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 31,
+      "name": "HTL Salzburg",
+      "suche": "HTL Salzburg, Itzling",
+      "art": "punkt",
+      "breite": 47.82196,
+      "laenge": 13.04707,
+      "quelle": {
+        "typ": "sports_centre",
+        "klasse": "leisure",
+        "name": "HTL Salzburg - Turnhalle, Ischlerbahnstraße, Itzling, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Kirchenstraße/HTL, Itzlinger Hauptstraße, Itzling, Salzburg, 5020, Österreich",
+        "Kirchenstraße/HTL, Itzlinger Hauptstraße, Itzling, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 32,
+      "name": "Stadtbibliothek",
+      "suche": "Stadtbibliothek Salzburg, Schumacherstraße",
+      "art": "punkt",
+      "breite": 47.81293,
+      "laenge": 13.02697,
+      "quelle": {
+        "typ": "parking",
+        "klasse": "amenity",
+        "name": "Tiefgarage Stadtbibliothek, Schumacherstraße, Lehen, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 33,
+      "name": "Europark",
+      "suche": "Europark, Salzburg",
+      "art": "punkt",
+      "breite": 47.81561,
+      "laenge": 13.00708,
+      "quelle": {
+        "typ": "mall",
+        "klasse": "shop",
+        "name": "Europark, 1, Europastraße, Taxham, Rott, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Europark, Peter-Pfenninger-Straße, Taxham, Rott, Salzburg, 5020, Österreich",
+        "Europark, Europastraße, Taxham, Rott, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 34,
+      "name": "Aigen",
+      "suche": "Aigen, Salzburg",
+      "art": "viertel",
+      "breite": 47.79163,
+      "laenge": 13.08386,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Aigen, Salzburg, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 35,
+      "name": "Plainstraße",
+      "suche": "Plainstraße, Salzburg",
+      "art": "strasse",
+      "breite": 47.82073,
+      "laenge": 13.03932,
+      "quelle": {
+        "typ": "residential",
+        "klasse": "highway",
+        "name": "Plainstraße, Itzling, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Plainstraße, Elisabeth-Vorstadt, Salzburg, 5020, Österreich",
+        "Plainstraße, Elisabeth-Vorstadt, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "nr": 36,
+      "name": "Itzling West",
+      "suche": "Itzling, Salzburg",
+      "art": "viertel",
+      "breite": 47.8242,
+      "laenge": 13.04805,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Itzling, Salzburg, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "nr": 37,
+      "name": "Sterneckstraße",
+      "suche": "Sterneckstraße, Salzburg",
+      "art": "strasse",
+      "breite": 47.80862,
+      "laenge": 13.05193,
+      "quelle": {
+        "typ": "primary",
+        "klasse": "highway",
+        "name": "Sterneckstraße, Schallmoos, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Sterneckstraße, Schallmoos, Salzburg, 5020, Österreich"
+      ]
+    }
+  ],
+  "partner": [
+    {
+      "name": "Arbeiterkammer",
+      "suche": "Arbeiterkammer Salzburg, Markus-Sittikus-Straße",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "WIFI",
+      "suche": "WIFI Salzburg, Julius-Raab-Platz",
+      "breite": 47.80907,
+      "laenge": 13.04503,
+      "quelle": {
+        "typ": "school",
+        "klasse": "amenity",
+        "name": "WIFI Salzburg, 2, Julius-Raab-Platz, Neustadt, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "name": "Raiffeisenbank",
+      "suche": "Raiffeisenverband Salzburg, Schwarzstraße",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Branit",
+      "suche": "Branit, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Porsche",
+      "suche": "Porsche Salzburg, Vogelweiderstraße",
+      "breite": 47.81617,
+      "laenge": 13.05278,
+      "quelle": {
+        "typ": "car",
+        "klasse": "shop",
+        "name": "Porsche Salzburg, 69, Vogelweiderstraße, Schallmoos, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "name": "ICmedia",
+      "suche": "ICmedia, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Maikai",
+      "suche": "Maikai, Salzburg",
+      "breite": 47.83454,
+      "laenge": 13.02803,
+      "quelle": {
+        "typ": "fitness_centre",
+        "klasse": "leisure",
+        "name": "Maikai, 35, Oberndorfer Straße, Itzling Nord, Hagenau, Salzburg, Bezirk Salzburg-Umgebung, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "name": "Ninjas",
+      "suche": "Ninjas, Salzburg",
+      "breite": 47.81282,
+      "laenge": 13.05614,
+      "quelle": {
+        "typ": "supermarket",
+        "klasse": "shop",
+        "name": "Ninjas.Jetzt, 43, Röcklbrunnstraße, Schallmoos, Salzburg, 5020, Österreich"
+      },
+      "weitere": [
+        "Ninjas.jetzt base, Imbergstraße, Altstadt, Salzburg, 5020, Österreich"
+      ]
+    },
+    {
+      "name": "Altstadt Salzburg",
+      "suche": "Altstadt, Salzburg",
+      "breite": 47.79976,
+      "laenge": 13.04682,
+      "quelle": {
+        "typ": "administrative",
+        "klasse": "boundary",
+        "name": "Altstadt, Salzburg, Österreich"
+      },
+      "weitere": [
+        "Altstadt, Hallein, Bad Dürrnberg, Hallein, Bezirk Hallein, Salzburg, 5400, Österreich"
+      ]
+    },
+    {
+      "name": "Chef Döner",
+      "suche": "Chef Döner, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Fifty4Burgers",
+      "suche": "Fifty4Burgers, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Naya",
+      "suche": "Naya, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Sahil Barbershop",
+      "suche": "Sahil Barbershop, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Mi & More",
+      "suche": "Mi and More, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Producito",
+      "suche": "Producito, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Salz & Zucker Bäckerei",
+      "suche": "Salz und Zucker, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "VoglBike",
+      "suche": "Vogl Bike, Salzburg",
+      "breite": 47.81842,
+      "laenge": 13.04436,
+      "quelle": {
+        "typ": "bicycle",
+        "klasse": "shop",
+        "name": "Vogl Bike, 63, Elisabethstraße, Itzling, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "name": "Café Eis Möwen",
+      "suche": "Eis Möwen, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Café Mozart",
+      "suche": "Café Mozart, Salzburg",
+      "breite": 47.80008,
+      "laenge": 13.04263,
+      "quelle": {
+        "typ": "cafe",
+        "klasse": "amenity",
+        "name": "Café Mozart, 22, Getreidegasse, Altstadt, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "name": "Yazzon",
+      "suche": "Yazzon, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "KOI",
+      "suche": "KOI, Salzburg",
+      "breite": 47.81194,
+      "laenge": 13.04427,
+      "quelle": {
+        "typ": "restaurant",
+        "klasse": "amenity",
+        "name": "Koi, 30, Rainerstraße, Elisabeth-Vorstadt, Salzburg, 5020, Österreich"
+      },
+      "weitere": []
+    },
+    {
+      "name": "JumpDome",
+      "suche": "JumpDome, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Wagendoktor",
+      "suche": "Wagendoktor, Salzburg",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    },
+    {
+      "name": "Elixhausner Wirt",
+      "suche": "Elixhausner Wirt, Elixhausen",
+      "breite": null,
+      "laenge": null,
+      "quelle": null
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "Raiffeisenbank": [
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank",
+      "art": "bank",
+      "strasse": null,
+      "ort": null,
+      "breite": 47.79901,
+      "laenge": 13.04549
+    },
+    {
+      "quelle": "overpass",
+      "name": "Volksbank-Raiffeisenbank",
+      "art": "bank",
+      "strasse": null,
+      "ort": null,
+      "breite": 47.81359,
+      "laenge": 12.95457
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank",
+      "art": "bank",
+      "strasse": "Messingstraße 11",
+      "ort": "Ebenau",
+      "breite": 47.79288,
+      "laenge": 13.17497
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank",
+      "art": "bank",
+      "strasse": "Bäckergasse 1",
+      "ort": "Anif",
+      "breite": 47.72812,
+      "laenge": 13.06047
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank Salzburger Seenland eGen Bankstelle Seekirchen",
+      "art": "bank",
+      "strasse": "Hauptstraße 52",
+      "ort": "Seekirchen am Wallersee",
+      "breite": 47.89619,
+      "laenge": 13.12377
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank",
+      "art": "bank",
+      "strasse": "Am Lindenplatz 2",
+      "ort": "Faistenau",
+      "breite": 47.77815,
+      "laenge": 13.2335
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank Salzburg Liefering-Maxglan-Siezenheim, SB-Bankstelle Maxglan",
+      "art": "bank",
+      "strasse": "Innsbrucker Bundesstraße 34",
+      "ort": "Salzburg",
+      "breite": 47.80533,
+      "laenge": 13.0209
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank",
+      "art": "bank",
+      "strasse": null,
+      "ort": null,
+      "breite": 47.69666,
+      "laenge": 13.13014
+    },
+    {
+      "quelle": "overpass",
+      "name": "Volksbank Raiffeisenbank",
+      "art": "bank",
+      "strasse": "Hauptstraße 15",
+      "ort": "Freilassing",
+      "breite": 47.83919,
+      "laenge": 12.98201
+    },
+    {
+      "quelle": "overpass",
+      "name": "Volksbank Raiffeisenbank Oberbayern Südost",
+      "art": "bank",
+      "strasse": null,
+      "ort": null,
+      "breite": 47.75961,
+      "laenge": 12.90908
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank Salzburger Seenland eGen Bankstelle Obertrum",
+      "art": "bank",
+      "strasse": null,
+      "ort": null,
+      "breite": 47.93743,
+      "laenge": 13.07588
+    },
+    {
+      "quelle": "overpass",
+      "name": "Raiffeisenbank Henndorf",
+      "art": "bank",
+      "strasse": null,
+      "ort": null,
+      "breite": 47.90038,
+      "laenge": 13.18911
+    }
+  ],
+  "Branit": [],
+  "ICmedia": [],
+  "Chef Döner": [],
+  "Naya": [],
+  "Mi & More": [],
+  "Producito": [],
+  "Café Eis Möwen": [],
+  "Yazzon": [],
+  "Wagendoktor": []
+}
