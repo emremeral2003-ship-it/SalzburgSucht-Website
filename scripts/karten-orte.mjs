@@ -69,7 +69,7 @@ const VERSTECKE = [
   { nr: 16, name: "Linzergasse", suche: "Linzer Gasse, Salzburg", art: "strasse" },
   { nr: 17, name: "Blindergasse", suche: "Blindengasse, Salzburg", art: "strasse" },
   { nr: 18, name: "Maxglan", suche: "Maxglan, Salzburg", art: "viertel", mehrfach: true },
-  { nr: 19, name: "Bergbräuhofstraße", suche: "Bergbräuhofstraße, Salzburg", art: "strasse" },
+  { nr: 19, name: "Bergerbräuhofstraße", suche: "Bergerbräuhofstraße, Salzburg", art: "strasse", zusatz: "Schallmoos" },
   { nr: 20, name: "Hauptbahnhof", suche: "Salzburg Hauptbahnhof", art: "punkt", zusatz: "Engelbert-Weiß-Weg", mehrfach: true },
   { nr: 21, name: "Arbeiterkammer", suche: "Arbeiterkammer Salzburg, Markus-Sittikus-Straße", art: "punkt" },
   { nr: 22, name: "Gnigl", suche: "Gnigl, Salzburg", art: "viertel" },

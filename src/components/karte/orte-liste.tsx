@@ -19,15 +19,16 @@ import type { KartenPunkt } from "@/types";
  * ---------------------------------------------------------------------------
  * WARUM ORTE OHNE KOORDINATE TROTZDEM DRINSTEHEN
  * ---------------------------------------------------------------------------
- * Fuenf Partnerbetriebe und ein Versteck haben keinen hinterlegten Standort.
- * Sie stehen am Ende der Liste, abgesetzt, mit dem Vermerk "ohne hinterlegten
- * Standort", und sie sind nicht anklickbar — es gibt nichts anzufliegen.
+ * Zurzeit hat jedes Versteck eine Koordinate, der Fall tritt also nicht ein.
+ * Die Behandlung bleibt trotzdem stehen, weil der naechste nachgetragene Ort
+ * sie wieder braucht: Wer keinen Standort hat, steht am Ende der Liste,
+ * abgesetzt, mit dem Vermerk "ohne hinterlegten Standort", und ist nicht
+ * anklickbar — es gibt nichts anzufliegen.
  *
  * Der bequeme Weg waere, sie wegzulassen: Dann stimmte die Liste mit der
- * Karte ueberein und niemand faende die Luecke. Genau das ist der Grund,
- * warum sie drinbleiben. Wer "Producito" sucht, soll lesen, dass es den
- * Partner gibt und nur die Adresse fehlt, statt zu glauben, es gebe ihn
- * nicht.
+ * Karte ueberein und niemand faende die Luecke. Wer einen Ort sucht, soll
+ * lesen, dass es ihn gibt und nur die Adresse fehlt, statt zu glauben, es
+ * gebe ihn nicht.
  *
  * ---------------------------------------------------------------------------
  * TASTATUR

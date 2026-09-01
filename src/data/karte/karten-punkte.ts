@@ -12,7 +12,7 @@ import type { KartenPunkt } from "@/types";
  *
  * Die Quellen bleiben getrennt und bleiben die Wahrheit:
  *
- *   src/data/karte/verstecke.ts      37 Orte, davon 36 mit Koordinate
+ *   src/data/karte/verstecke.ts      37 Orte, alle mit Koordinate
  *   src/data/karte/partner-orte.ts   24 Betriebe, davon 14 mit Koordinate
  *
  * Hier wird nichts ergaenzt und nichts geraten. Wer einen Standort nachtraegt,

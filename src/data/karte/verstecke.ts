@@ -22,15 +22,19 @@ import type { Versteck } from "@/types";
  * gar keinen Marker.
  *
  * ----------------------------------------------------------------------------
- * ZWEI ABWEICHUNGEN VON DER URSPRUNGSLISTE, BEIDE ABSICHTLICH
+ * DREI NAMEN, DIE VON DER URSPRUNGSLISTE ABWEICHEN
  * ----------------------------------------------------------------------------
- *   - "Blindergasse" gibt es in Salzburg nicht. Gemeint ist mit hoher
- *     Wahrscheinlichkeit die Bindergasse in Maxglan; sie steht hier unter
- *     ihrem richtigen Namen. Falls doch etwas anderes gemeint war: hier
- *     korrigieren.
- *   - "Bergbräuhofstraße" findet sich unter diesem Namen in keinem
- *     Datenbestand. Der Eintrag bleibt in der Liste, aber ohne Marker, bis
- *     der genaue Name feststeht.
+ * Sie sind hier still korrigiert, weil ein Ortsname auf einer Karte den Ort
+ * benennen soll und nicht die Geschichte seiner Schreibweise:
+ *
+ *   #17  "Blindergasse"      -> Bindergasse in Maxglan
+ *   #19  "Bergbräuhofstraße" -> Bergerbräuhofstraße in Schallmoos,
+ *                               noerdlich hinter Porsche Salzburg
+ *   #28  "Schlossbrücke"     -> Staatsbrücke
+ *
+ * Alle drei ueber Nominatim geprueft; unter den Namen der Ursprungsliste
+ * findet sich in Salzburg nichts. Falls doch etwas anderes gemeint war: hier
+ * korrigieren, nicht in einem Zusatz danebenschreiben.
  *
  * ----------------------------------------------------------------------------
  * EINEN ORT NACHTRAGEN
@@ -63,9 +67,9 @@ export const verstecke: Versteck[] = [
   { id: "hallein", nr: 14, name: "Hallein", zusatz: null, breite: 47.68215, laenge: 13.09563, genauigkeit: "ort", mehrfach: false, gebiet: "umland" },
   { id: "oberalm", nr: 15, name: "Oberalm", zusatz: null, breite: 47.70023, laenge: 13.09889, genauigkeit: "ort", mehrfach: false, gebiet: "umland" },
   { id: "linzergasse", nr: 16, name: "Linzergasse", zusatz: null, breite: 47.80318, laenge: 13.04667, genauigkeit: "strasse", mehrfach: false, gebiet: "stadt" },
-  { id: "bindergasse", nr: 17, name: "Bindergasse", zusatz: "in der Liste als „Blindergasse“", breite: 47.80421, laenge: 13.02032, genauigkeit: "strasse", mehrfach: false, gebiet: "stadt" },
+  { id: "bindergasse", nr: 17, name: "Bindergasse", zusatz: null, breite: 47.80421, laenge: 13.02032, genauigkeit: "strasse", mehrfach: false, gebiet: "stadt" },
   { id: "maxglan", nr: 18, name: "Maxglan", zusatz: null, breite: 47.80419, laenge: 13.01874, genauigkeit: "viertel", mehrfach: true, gebiet: "stadt" },
-  { id: "bergbraeuhofstrasse", nr: 19, name: "Bergbräuhofstraße", zusatz: "Name noch zu klären", breite: null, laenge: null, genauigkeit: "offen", mehrfach: false, gebiet: "stadt" },
+  { id: "bergbraeuhofstrasse", nr: 19, name: "Bergerbräuhofstraße", zusatz: "Schallmoos", breite: 47.82009, laenge: 13.05459, genauigkeit: "strasse", mehrfach: false, gebiet: "stadt" },
   { id: "hauptbahnhof", nr: 20, name: "Hauptbahnhof", zusatz: "Engelbert-Weiß-Weg", breite: 47.81306, laenge: 13.04585, genauigkeit: "punkt", mehrfach: true, gebiet: "stadt" },
   { id: "arbeiterkammer", nr: 21, name: "Arbeiterkammer", zusatz: "Markus-Sittikus-Straße", breite: 47.80832, laenge: 13.04233, genauigkeit: "strasse", mehrfach: false, gebiet: "stadt" },
   { id: "gnigl", nr: 22, name: "Gnigl", zusatz: null, breite: 47.81202, laenge: 13.07372, genauigkeit: "viertel", mehrfach: false, gebiet: "stadt" },
@@ -77,7 +81,7 @@ export const verstecke: Versteck[] = [
   // Die Ursprungsliste sagt "Schlossbrücke". Eine Bruecke dieses Namens gibt
   // es in der Salzburger Altstadt nicht — der Treffer ist die Staatsbruecke,
   // die einzige Bruecke, die den beschriebenen Ort trifft.
-  { id: "staatsbruecke", nr: 28, name: "Staatsbrücke", zusatz: "in der Liste als „Schlossbrücke“", breite: 47.80093, laenge: 13.04461, genauigkeit: "punkt", mehrfach: false, gebiet: "stadt" },
+  { id: "staatsbruecke", nr: 28, name: "Staatsbrücke", zusatz: null, breite: 47.80093, laenge: 13.04461, genauigkeit: "punkt", mehrfach: false, gebiet: "stadt" },
   { id: "salzburg-ag", nr: 29, name: "Salzburg AG", zusatz: "Bayerhamerstraße", breite: 47.81152, laenge: 13.05124, genauigkeit: "punkt", mehrfach: false, gebiet: "stadt" },
   { id: "musisches-gym", nr: 30, name: "Musisches Gymnasium", zusatz: "Haunspergstraße", breite: 47.81963, laenge: 13.03741, genauigkeit: "punkt", mehrfach: false, gebiet: "stadt" },
   { id: "htl", nr: 31, name: "HTL Salzburg", zusatz: "Itzling", breite: 47.82196, laenge: 13.04707, genauigkeit: "punkt", mehrfach: false, gebiet: "stadt" },
