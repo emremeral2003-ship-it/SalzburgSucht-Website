@@ -1,7 +1,7 @@
 /**
  * Blogbeitraege der Website.
  *
- * Bewusst als Datei statt CMS: Drei Beitraege brauchen keine Datenbank, und
+ * Bewusst als Datei statt CMS: Eine Handvoll Beitraege braucht keine Datenbank, und
  * jeder neue Beitrag ist ein Eintrag hier plus automatisch eine Seite unter
  * /blog/[slug]. Wenn der Blog waechst, ist der Wechsel auf Supabase dieselbe
  * Bewegung wie bei den Jobs (Repository-Schicht, Seiten bleiben unveraendert).
@@ -23,7 +23,7 @@ export type BlogPost = {
   titel: string;
   /** Max. 155 Zeichen — geht in die Meta-Description. */
   beschreibung: string;
-  kategorie: "Community" | "Gastro" | "Hinter den Kulissen";
+  kategorie: "Community" | "Gastro" | "Jobs" | "Hinter den Kulissen";
   publishedAt: string;
   /** Anreisser fuer die Uebersichtsseite. */
   auszug: string;
@@ -32,6 +32,85 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "stellen-aus-salzburg",
+    titel: "Warum bei uns nur eine Handvoll Stellen steht",
+    beschreibung:
+      "Salzburgsucht zeigt ausgewählte Stellen von Betrieben aus der Region statt einer endlosen Liste. Was gerade offen ist und wie die Bewerbung läuft.",
+    kategorie: "Jobs",
+    publishedAt: "2026-09-04",
+    auszug:
+      "Zwei Stellen stehen gerade auf der Seite. Warum es nicht zweihundert sind — und was passiert, wenn du dich bewirbst.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Auf Salzburgsucht gibt es einen Job-Bereich, und wer ihn aufmacht, findet dort gerade zwei Stellen. Das ist kein Anfangszustand, den wir möglichst schnell hinter uns bringen wollen — es ist der Plan.",
+        ],
+      },
+      {
+        titel: "Was gerade offen ist",
+        absaetze: [
+          "icmedia sucht einen Foto- und Videografen (m/w/d) in Vollzeit für Salzburg. Shootings bei Kunden vor Ort, Reels und TikToks drehen und schneiden, Bildbearbeitung und Farbkorrektur. Wer schon einmal versucht hat, ein Reel so zu bauen, dass es nicht nach Werbung aussieht, weiß, worum es bei der Stelle geht.",
+          "BranIT sucht einen IT-Consultant (m/w/d) in Vollzeit, remote und vor Ort. Bestehende IT-Umgebungen analysieren, daraus Roadmaps entwickeln, Migrationen begleiten — Microsoft 365, Azure, Hybrid Cloud. Gefragt ist jemand, der Technik so erklären kann, dass sie beim Kunden ankommt.",
+          "Beide Ausschreibungen stehen vollständig im Job-Bereich: Aufgaben, Anforderungen und das, was der Betrieb dafür bietet.",
+        ],
+      },
+      {
+        titel: "Warum es nicht mehr sind",
+        absaetze: [
+          "Eine Jobbörse, die alles aufnimmt, ist schnell voll und damit nutzlos. Man scrollt an hundert Inseraten vorbei, von denen die Hälfte seit Monaten unverändert dasteht, und weiß am Ende weniger als vorher.",
+          "Wir zeigen Stellen von Betrieben, mit denen wir tatsächlich zu tun haben. Das begrenzt die Zahl ganz von selbst — und sorgt dafür, dass es eine Stelle auch wirklich gibt, wenn sie hier steht.",
+        ],
+      },
+      {
+        titel: "Wie die Bewerbung läuft",
+        absaetze: [
+          "Beide Stellen laufen im Moment über uns. Der Bewerbungsknopf öffnet eine E-Mail an office@salzburgsucht.at; von dort geht deine Bewerbung an den Betrieb weiter. Kein Konto, kein Formular mit vierzehn Pflichtfeldern.",
+          "Wenn du eine Stelle offen hast und sie hier sehen willst, schreib uns einfach — ob sie zu dem passt, was wir zeigen, klären wir dann gemeinsam.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "partnernetz-salzburg",
+    titel: "39 Betriebe: mit wem wir in Salzburg zusammenarbeiten",
+    beschreibung:
+      "Von der Bäckerei bis zum Messezentrum — ein Überblick über die Betriebe im Partnernetz von Salzburgsucht und wie so eine Zusammenarbeit aussieht.",
+    kategorie: "Hinter den Kulissen",
+    publishedAt: "2026-09-04",
+    auszug:
+      "16 davon sind Gastro, der Rest reicht von Freizeit über Mobilität bis zu Institutionen. Ein Blick auf die Liste — und darauf, was dahintersteckt.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Wer auf unserer Partnerseite nach unten scrollt, liest 39 Namen. Manche kennt in Salzburg jeder, andere sind kleine Betriebe mit ein paar hundert Followern. Beides steht bei uns nebeneinander, und das ist Absicht.",
+        ],
+      },
+      {
+        titel: "Wer dabei ist",
+        absaetze: [
+          "Der größte Block ist die Gastronomie: 16 Betriebe, von Fifty 4 Burgers in der Linzer Gasse über die Bäckerei Salz & Zucker bis zum Elixhausner Wirt. Dazu kommen fünf aus dem Freizeitbereich, fünf rund um Mobilität, vier Institutionen wie die AK Salzburg und das WIFI, drei Medienbetriebe, zwei aus dem Handel und je einer aus IT, Fitness, Lifestyle und Events.",
+          "Zwanzig davon sind auf der Partnerkarte verortet. Bei den übrigen fehlt uns schlicht die genaue Adresse. Sie stehen trotzdem in der Liste — wer sie sucht, soll lesen, dass es sie gibt, und nicht glauben, wir hätten sie vergessen.",
+        ],
+      },
+      {
+        titel: "Was Zusammenarbeit bei uns heißt",
+        absaetze: [
+          "In den meisten Fällen läuft es über unsere Kanäle: ein Feed-Post, eine Story-Kampagne, ein Reel, das wir selbst drehen und schneiden. Manchmal ist es ein einzelner Beitrag zu einer Neueröffnung, manchmal eine Zusammenarbeit über mehrere Monate.",
+          "Was wir nicht machen, sind Standardpakete mit drei Häkchen und einem Preis darunter. Wir fragen zuerst, was erreicht werden soll, und bauen den Weg danach — deshalb steht auf der Unternehmensseite auch keine Preisliste.",
+        ],
+      },
+      {
+        titel: "Wie man dazukommt",
+        absaetze: [
+          "Es gibt keine Aufnahmeprüfung und keine Warteliste. Der übliche Weg ist eine Nachricht: über das Kooperationsformular hier auf der Website oder direkt auf Instagram.",
+          "Danach reden wir darüber, was für den Betrieb Sinn ergibt. Und wenn nichts davon passt, sagen wir das auch — das ist für beide Seiten billiger als eine Zusammenarbeit, die niemand gebraucht hat.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "geld-verstecken-in-salzburg",
     titel: "Wir verstecken Geld in Salzburg — so funktioniert das",
     beschreibung:
@@ -39,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     kategorie: "Community",
     publishedAt: "2026-08-27",
     auszug:
-      "36 Verstecke stehen inzwischen auf unserer Karte — vom Kai bis nach Gnigl. Was dahintersteckt und wie du beim nächsten dabei bist.",
+      "37 Verstecke stehen inzwischen auf unserer Karte — vom Kai bis nach Gnigl. Was dahintersteckt und wie du beim nächsten dabei bist.",
     abschnitte: [
       {
         titel: null,
@@ -55,9 +134,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        titel: "36 Verstecke und eine Karte",
+        titel: "37 Verstecke und eine Karte",
         absaetze: [
-          "Jedes vergangene Versteck steht auf der Salzburg-Karte auf unserer Startseite — inzwischen 36 Stück, von der Altstadt über Mülln bis nach Gnigl und Aigen. Die Karte zeigt bewusst nur, was schon vorbei ist: Ein aktives Versteck wird dort nie markiert, sonst wäre es keines.",
+          "Jedes vergangene Versteck steht auf der Salzburg-Karte auf unserer Startseite — inzwischen 37 Stück, von der Altstadt über Mülln bis nach Gnigl und Aigen. Die Karte zeigt bewusst nur, was schon vorbei ist: Ein aktives Versteck wird dort nie markiert, sonst wäre es keines.",
           "Wer die Karte durchgeht, sieht auch, dass wir nicht nur die Getreidegasse kennen. Die Verstecke verteilen sich über die ganze Stadt, und genau das ist der Punkt: Salzburg ist mehr als die drei Gassen, die jeder Tourist fotografiert.",
         ],
       },
