@@ -1,15 +1,42 @@
 /**
  * Blogbeitraege der Website.
  *
- * Bewusst als Datei statt CMS: Eine Handvoll Beitraege braucht keine Datenbank, und
- * jeder neue Beitrag ist ein Eintrag hier plus automatisch eine Seite unter
- * /blog/[slug]. Wenn der Blog waechst, ist der Wechsel auf Supabase dieselbe
- * Bewegung wie bei den Jobs (Repository-Schicht, Seiten bleiben unveraendert).
+ * Bewusst als Datei statt CMS: Eine Handvoll Beitraege braucht keine
+ * Datenbank, und jeder neue Beitrag ist ein Eintrag hier plus automatisch
+ * eine Seite unter /blog/[slug]. Wenn der Blog waechst, ist der Wechsel auf
+ * Supabase dieselbe Bewegung wie bei den Jobs (Repository-Schicht, Seiten
+ * bleiben unveraendert).
  *
  * INHALTLICHE REGEL wie ueberall auf der Seite: keine erfundenen Fakten.
  * Jeder Beitrag stuetzt sich auf Belegtes — die Karte, die Kanaele, die
  * Ankuendigungen von Emre. Was nicht feststeht (Datum der Naya-Aktion,
  * Eroeffnungstag Linzergasse), steht auch so im Text.
+ *
+ * scripts/pruefe-blog.mts vergleicht die Zahlen in den Texten mit den
+ * Datendateien. Wer eine Zahl aendert, aendert die Behauptung dort mit.
+ *
+ * ----------------------------------------------------------------------------
+ * VORRAT: BEITRAEGE MIT DATUM IN DER ZUKUNFT
+ * ----------------------------------------------------------------------------
+ * `publishedAt` ist kein Vermerk, sondern ein Schalter. Ein Beitrag, dessen
+ * Datum noch nicht erreicht ist, existiert fuer die Website nicht: Er fehlt
+ * in der Uebersicht, in "Weiterlesen", in der Sitemap, und seine eigene
+ * Adresse liefert 404. Am Stichtag erscheint er von selbst.
+ *
+ * Damit das ohne neuen Deploy funktioniert, stehen die Blogseiten auf
+ * `revalidate` (siehe src/app/blog/page.tsx). Sie bauen sich stuendlich neu;
+ * spaetestens eine Stunde nach Mitternacht ist ein faelliger Beitrag da.
+ *
+ * WARUM UEBERHAUPT: Sonst muesste jemand am Erscheinungstag am Rechner
+ * sitzen und pushen. Beitraege im Vorrat lassen sich stattdessen in Ruhe
+ * schreiben, gemeinsam durchsehen und dann liegen lassen.
+ *
+ * EIN DATUM VERSCHIEBEN oder einen Beitrag zurueckziehen heisst: hier die
+ * Zeile `publishedAt` aendern und pushen. Mehr ist es nicht.
+ *
+ * VORSICHT: Ein Beitrag im Vorrat ist trotzdem im Quelltext des Repositories
+ * lesbar. Fuer Geplantes, das niemand vorher wissen darf — ein Versteck, ein
+ * Eroeffnungstermin unter Verschluss — ist das hier der falsche Ort.
  */
 
 export type BlogAbschnitt = {
@@ -24,6 +51,12 @@ export type BlogPost = {
   /** Max. 155 Zeichen — geht in die Meta-Description. */
   beschreibung: string;
   kategorie: "Community" | "Gastro" | "Jobs" | "Hinter den Kulissen";
+  /**
+   * Erscheinungstag als `JJJJ-MM-TT`.
+   *
+   * Liegt er in der Zukunft, ist der Beitrag noch nicht veroeffentlicht —
+   * siehe den Kopf dieser Datei.
+   */
   publishedAt: string;
   /** Anreisser fuer die Uebersichtsseite. */
   auszug: string;
@@ -31,6 +64,172 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  /* ==========================================================================
+   * VORRAT — Datum in der Zukunft, deshalb noch nicht auf der Website.
+   * Siehe Kopf dieser Datei. Reihenfolge = Erscheinungsfolge.
+   * ========================================================================== */
+  {
+    slug: "keine-messung-auf-dieser-seite",
+    titel: "Diese Website misst dich nicht",
+    beschreibung:
+      "Kein Analysedienst, keine Werbe-Cookies, keine Datenbank. Was Salzburgsucht auf der Website über dich erfährt — und was nicht.",
+    kategorie: "Hinter den Kulissen",
+    publishedAt: "2026-09-11",
+    auszug:
+      "Kein Google Analytics, kein Pixel, keine Datenbank. Was hier tatsächlich passiert, wenn du die Seite aufmachst.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Auf den meisten Websites lädt beim Öffnen ein halbes Dutzend Dienste mit, die niemand bestellt hat. Bei uns ist das anders, und weil das inzwischen erklärungsbedürftig ist, hier einmal in Ruhe: Was passiert, wenn du salzburgsucht.at aufmachst?",
+        ],
+      },
+      {
+        titel: "Kein Analysedienst",
+        absaetze: [
+          "Es ist kein Google Analytics eingebunden, kein Meta-Pixel, kein TikTok-Pixel. Auch nicht abgeschaltet oder auf Zustimmung wartend — es ist schlicht keines da. In unserer Datenschutzerklärung steht deshalb der Satz, dass aktuell nichts geladen und nichts gemessen wird, und dass ein Dienst dort namentlich stünde, sobald sich das ändert.",
+          "Das heißt auch: Wir wissen nicht, wie viele Leute diesen Beitrag hier lesen. Ehrlich gesagt fehlt uns das manchmal. Es ist trotzdem die richtige Reihenfolge — erst entscheiden, was man wirklich braucht, dann einbauen.",
+        ],
+      },
+      {
+        titel: "Keine Datenbank",
+        absaetze: [
+          "Hinter der Seite steht keine Datenbank. Die Verstecke, die Partnerbetriebe, die Stellen und diese Beiträge liegen als Dateien im Projekt. Es gibt nichts, worin Besucherdaten landen könnten, weil es gar nichts gibt, worin etwas landet.",
+          "Die einzige Ausnahme ist die Kooperationsanfrage: Wenn du das Formular ausfüllst, wird daraus eine E-Mail an unser Postfach. Sie geht über den Mailserver unseres Hosters — kein Drittanbieter, kein Umweg, keine Kopie irgendwo.",
+        ],
+      },
+      {
+        titel: "Und die Karte?",
+        absaetze: [
+          "Die Salzburg-Karte auf der Startseite lädt ihre Kacheln von OpenFreeMap. Das ist ein fremder Server, und dabei sieht dessen Betreiber deine IP-Adresse — anders kann er die Daten nicht ausliefern. Deshalb steht die Karte in der Datenschutzerklärung mit eigenem Absatz.",
+          "Damit diese Anfrage nicht bei jedem Besuch losgeht, lädt die Karte erst, wenn du weit genug nach unten gescrollt hast. Wer nie so weit kommt, löst sie auch nie aus.",
+        ],
+      },
+      {
+        titel: "Warum wir das erzählen",
+        absaetze: [
+          "Weil eine Datenschutzerklärung etwas ist, das man liest, wenn es schon zu spät ist. Die Entscheidungen dahinter kann man auch einfach hinschreiben.",
+          "Und weil es beim nächsten Mal nachprüfbar sein soll: Wenn hier irgendwann doch gemessen wird, steht es in der Datenschutzerklärung — und dieser Beitrag wäre dann veraltet. Sag uns Bescheid, wenn er es ist.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "wie-die-salzburg-karte-funktioniert",
+    titel: "Wie die Salzburg-Karte funktioniert — und warum sie manchmal ungenau ist",
+    beschreibung:
+      "37 Verstecke auf einer Karte, aber nicht alle metergenau. Warum wir die Ungenauigkeit dazuschreiben, statt sie zu verstecken.",
+    kategorie: "Hinter den Kulissen",
+    publishedAt: "2026-09-18",
+    auszug:
+      "Ein Marker sieht immer metergenau aus. Bei acht von 37 ist er es nicht — und die Karte sagt das dazu.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Auf unserer Startseite steht eine Karte mit 37 Punkten. Jeder Punkt ist ein Ort, an dem bei einer unserer Aktionen schon einmal etwas versteckt war. Was auf den ersten Blick wie eine simple Punktesammlung aussieht, hatte beim Bauen ein Problem, über das wir länger nachgedacht haben als über alles andere daran.",
+        ],
+      },
+      {
+        titel: "Ein Marker lügt von Natur aus",
+        absaetze: [
+          "Ein Punkt auf einer Karte behauptet immer dasselbe: genau hier. Bei siebzehn unserer Verstecke stimmt das auch — da kennen wir die Adresse. Bei sieben kennen wir nur die Straße. Bei acht nur den Stadtteil, und bei fünf nur die Gemeinde.",
+          "Man könnte die Punkte trotzdem alle gleich zeichnen. Niemand würde es merken. Genau deshalb machen wir es nicht: Die Karte zeigt zu jedem Punkt die Genauigkeitsstufe, und wer auf einen Marker im Stadtteil Maxglan klickt, liest dort ausdrücklich, dass es die Mitte des Stadtteils ist und keine Adresse.",
+        ],
+      },
+      {
+        titel: "Woher die Koordinaten kommen",
+        absaetze: [
+          "Nicht aus dem Kopf. Jede Koordinate stammt aus OpenStreetMap und wurde einzeln nachgesehen, bevor sie in die Datei kam. Eine geratene Koordinate sieht auf einer Karte nämlich exakt so aus wie eine richtige — das ist das ganze Problem an geratenen Koordinaten.",
+          "Drei Ortsnamen aus unserer ursprünglichen Liste gab es in Salzburg gar nicht. Aus der „Blindergasse\u201c wurde die Bindergasse in Maxglan, aus der „Schlossbrücke\u201c die Staatsbrücke, und die „Bergbräuhofstraße\u201c heißt in Wirklichkeit Bergerbräuhofstraße und liegt in Schallmoos, ein Stück nördlich hinter dem Porsche-Standort. Der letzte Punkt hat deshalb monatelang ganz ohne Marker in der Liste gestanden, bis der Name geklärt war.",
+        ],
+      },
+      {
+        titel: "Was die Karte bewusst nicht zeigt",
+        absaetze: [
+          "Ein laufendes Versteck steht dort nie. Die Karte ist ein Archiv, kein Hinweisgeber — sonst wäre das Suchen vorbei, bevor es angefangen hat.",
+          "Dreißig der 37 Punkte liegen in der Stadt, sieben im Umland: Hallein, Oberalm, Puch, Bergheim, Viehhausen, Kleßheim und Wals-Siezenheim. An drei Orten war mehr als einmal etwas versteckt — Altstadt, Maxglan und Hauptbahnhof.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "salzburg-ist-groesser-als-die-getreidegasse",
+    titel: "Salzburg ist größer als die Getreidegasse",
+    beschreibung:
+      "Unsere Verstecke verteilen sich über Lehen, Itzling, Gnigl, Taxham und das Umland. Ein Blick auf die Stadt jenseits der Postkartenansicht.",
+    kategorie: "Community",
+    publishedAt: "2026-09-25",
+    auszug:
+      "30 Verstecke in der Stadt, sieben im Umland — und die wenigsten davon dort, wo die Reisebusse halten.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Wenn Salzburg im Fernsehen vorkommt, sieht man drei Dinge: die Festung, den Dom und die Getreidegasse. Das ist nicht falsch, aber es ist ungefähr so vollständig wie eine Beschreibung von Wien, die beim Stephansdom aufhört.",
+        ],
+      },
+      {
+        titel: "Wo wir tatsächlich waren",
+        absaetze: [
+          "Unsere Verstecke sind über die ganze Stadt verteilt: Lehen, Itzling, Maxglan, Taxham, Liefering, Gnigl, Schallmoos, Nonntal, Aigen, die Elisabeth-Vorstadt, Mülln. Dazu Orte, die auf keiner Postkarte vorkommen und trotzdem jeder kennt, der hier wohnt — der Hauptbahnhof, das Europark, das LKH, der Überfuhrsteg.",
+          "Sieben Verstecke lagen außerhalb der Stadt: in Hallein, Oberalm, Puch, Bergheim, Viehhausen, Kleßheim und Wals-Siezenheim. Salzburg hört an der Stadtgrenze nicht auf, und ein guter Teil unserer Community wohnt dort.",
+        ],
+      },
+      {
+        titel: "Warum das kein Zufall ist",
+        absaetze: [
+          "Es wäre einfacher, immer in die Altstadt zu gehen. Dort ist immer jemand, dort findet sich alles schnell, und die Bilder sehen gut aus. Nur bringt das niemanden irgendwohin, wo er nicht ohnehin schon war.",
+          "Ein Versteck in Gnigl heißt, dass jemand in Gnigl aus der Tür geht und um die Ecke schaut. Manchmal steht er dabei zum ersten Mal seit Jahren bewusst an einer Straße, an der er sonst nur vorbeifährt. Das ist der eigentliche Punkt an der Sache — das Geld ist nur der Anlass.",
+        ],
+      },
+      {
+        titel: "Wo als Nächstes?",
+        absaetze: [
+          "Verraten wir nicht. Aber wer sich die Karte auf unserer Startseite ansieht, erkennt schnell, welche Ecken der Stadt bei uns noch fehlen. Vorschläge nehmen wir gerne — am besten als Nachricht auf Instagram.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "so-laeuft-eine-zusammenarbeit",
+    titel: "Was passiert, wenn ihr uns schreibt",
+    beschreibung:
+      "Von der ersten Nachricht bis zum fertigen Beitrag: wie eine Zusammenarbeit mit Salzburgsucht abläuft und was wir dafür brauchen.",
+    kategorie: "Hinter den Kulissen",
+    publishedAt: "2026-10-02",
+    auszug:
+      "Kein Verkaufsgespräch, kein Paket mit drei Häkchen. Was nach der ersten Nachricht tatsächlich passiert.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Wir bekommen regelmäßig Nachrichten von Betrieben, die mit uns arbeiten wollen und nicht wissen, wie so etwas abläuft. Deshalb einmal der ganze Weg, von der ersten Nachricht bis zu dem Moment, in dem etwas online geht.",
+        ],
+      },
+      {
+        titel: "Erst die Frage, dann das Angebot",
+        absaetze: [
+          "Der erste Schritt ist eine Nachricht — über das Kooperationsformular auf der Website oder auf Instagram. Was wir darin brauchen, ist nicht der gewünschte Beitragstyp, sondern das Ziel: Neueröffnung? Eine Stelle, die seit Monaten offen ist? Ein Mittagsgeschäft, das nicht anläuft? Danach richtet sich alles Weitere.",
+          "Preise stehen bewusst nicht auf der Website. Sie hängen an Umfang, Format und Zeitraum, und eine Zahl ohne diese drei Angaben wäre geraten. Nach dem ersten Gespräch bekommt ihr eine konkrete.",
+        ],
+      },
+      {
+        titel: "Was wir anbieten",
+        absaetze: [
+          "Drei Dinge machen wir dauerhaft: Social-Media-Promotion mit Posts und Story-Kampagnen auf unseren Kanälen, Reels und Videos, die wir selbst drehen und schneiden, und individuelle Kampagnen, wenn nichts davon passt.",
+          "Dazu kommen vier Anlassfälle: Events ankündigen und am Tag selbst begleiten, Gastronomie und Locations so zeigen, dass Leute hingehen, Recruiting für offene Stellen — bei Menschen, die schon hier leben — und Gewinnspiele, die die Community tatsächlich bewegen.",
+        ],
+      },
+      {
+        titel: "Wie das Ergebnis aussieht",
+        absaetze: [
+          "Wie unser Feed. Das ist keine Stilfrage, sondern der Grund, warum es funktioniert: Ein Beitrag, der aussieht wie eine Anzeige, wird wie eine Anzeige weggescrollt. Deshalb drehen und schneiden wir selbst, statt fertiges Material zu übernehmen.",
+          "Was wir nicht machen: Reichweitenzahlen versprechen. Wir können sagen, welche Formate wir produzieren und wie viele Menschen unseren Kanälen folgen. Was ein einzelner Beitrag erreicht, hängt an zu vielem, worauf niemand Einfluss hat — und eine Zusage, die man nicht halten kann, ist der schnellste Weg zu einer Zusammenarbeit, die nur einmal stattfindet.",
+        ],
+      },
+    ],
+  },
   {
     slug: "stellen-aus-salzburg",
     titel: "Warum bei uns nur eine Handvoll Stellen steht",
@@ -221,10 +420,45 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export function getBlogPosts(): BlogPost[] {
+/**
+ * Der heutige Tag als `JJJJ-MM-TT`, gerechnet in Salzburger Zeit.
+ *
+ * Nicht `new Date().toISOString()`: Das rechnet in UTC. Ein Beitrag fuer den
+ * 12. September waere damit ab 12.09. 02:00 Salzburger Zeit da — und im
+ * Winter ab 01:00. Der Unterschied faellt nur an einem einzigen Tag im Jahr
+ * auf, naemlich dann, wenn jemand nachts darauf schaut; aber ein Datum, das
+ * je nach Jahreszeit anders kippt, ist kein Datum.
+ *
+ * Die Sprache `sv-SE` steht hier, weil ihr Datumsformat bereits
+ * `JJJJ-MM-TT` ist — das erspart das Zusammensetzen aus Einzelteilen.
+ */
+function heute(): string {
+  return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Vienna" }).format(new Date());
+}
+
+/**
+ * ALLE Beitraege, auch die noch nicht erschienenen.
+ *
+ * Fuer Werkzeuge gedacht (scripts/pruefe-blog.mts), nicht fuer Seiten. Wer
+ * das hier in einer Komponente aufruft, stellt den Vorrat ins Schaufenster.
+ */
+export function getAlleBlogPosts(): BlogPost[] {
   return [...blogPosts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
+/** Die veroeffentlichten Beitraege, neueste zuerst. */
+export function getBlogPosts(): BlogPost[] {
+  const stichtag = heute();
+  return getAlleBlogPosts().filter((post) => post.publishedAt <= stichtag);
+}
+
+/**
+ * Ein Beitrag, sofern er erschienen ist.
+ *
+ * Ein Beitrag aus dem Vorrat liefert `null` und damit eine 404-Seite — er
+ * ist auch dann nicht erreichbar, wenn jemand die Adresse kennt oder raet.
+ */
 export function getBlogPost(slug: string): BlogPost | null {
-  return blogPosts.find((post) => post.slug === slug) ?? null;
+  const stichtag = heute();
+  return blogPosts.find((post) => post.slug === slug && post.publishedAt <= stichtag) ?? null;
 }

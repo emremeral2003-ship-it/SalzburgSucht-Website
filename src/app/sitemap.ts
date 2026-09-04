@@ -10,6 +10,13 @@ import { site } from "@/lib/site";
  * Beispielinserate bleiben draussen: Eine Suchmaschine soll niemanden auf eine
  * Stelle schicken, die es nicht gibt.
  */
+/**
+ * Stuendlich neu bauen — aus demselben Grund wie die Blogseiten: Sonst
+ * fehlte ein faellig gewordener Beitrag hier weiter, obwohl er auf der
+ * Website schon steht.
+ */
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const seiten: Array<{ pfad: string; prioritaet: number }> = [
     { pfad: "", prioritaet: 1 },

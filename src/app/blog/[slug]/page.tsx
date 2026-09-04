@@ -8,6 +8,26 @@ import { getBlogPost, getBlogPosts } from "@/data/blog";
 import { datumLesbar } from "@/lib/format";
 import { site } from "@/lib/site";
 
+/**
+ * Stuendlich neu bauen.
+ *
+ * Ohne das waere der Beitragsvorrat wirkungslos: Die Seite wird beim Bauen
+ * einmal erzeugt, und ein Beitrag, dessen Datum erst danach erreicht wird,
+ * erschiene nie — bis jemand zufaellig deployt. Mit `revalidate` prueft die
+ * Seite hoechstens eine Stunde spaeter noch einmal, welcher Tag ist.
+ *
+ * Eine Stunde ist reichlich fuer einen Blog, der nicht taeglich erscheint,
+ * und billig: Es ist eine Neuberechnung pro Stunde, nur wenn jemand da ist.
+ */
+export const revalidate = 3600;
+
+/**
+ * Vorgebaut werden nur die erschienenen Beitraege.
+ *
+ * Ein Beitrag aus dem Vorrat taucht hier absichtlich nicht auf. Wird er
+ * faellig, erzeugt Next ihn bei der ersten Anfrage (`dynamicParams` ist
+ * standardmaessig an) und legt ihn danach in den Zwischenspeicher.
+ */
 export async function generateStaticParams() {
   return getBlogPosts().map((post) => ({ slug: post.slug }));
 }
