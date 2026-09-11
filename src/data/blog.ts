@@ -9,8 +9,8 @@
  *
  * INHALTLICHE REGEL wie ueberall auf der Seite: keine erfundenen Fakten.
  * Jeder Beitrag stuetzt sich auf Belegtes — die Karte, die Kanaele, die
- * Ankuendigungen von Emre. Was nicht feststeht (Datum der Naya-Aktion,
- * Eroeffnungstag Linzergasse), steht auch so im Text.
+ * Ankuendigungen von Emre. Was nicht feststeht (Eroeffnungstag
+ * Linzergasse), steht auch so im Text.
  *
  * scripts/pruefe-blog.mts vergleicht die Zahlen in den Texten mit den
  * Datendateien. Wer eine Zahl aendert, aendert die Behauptung dort mit.

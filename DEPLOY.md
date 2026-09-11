@@ -95,8 +95,8 @@ Kein Blocker, aber vor dem Bekanntmachen erledigen:
 
 - Ausschreibungstexte der beiden Stellen von icmedia und BranIT gegenlesen
   lassen — die Fassungen in `src/data/jobs.ts` sind Entwürfe.
-- Naya-Aktion: genaues Startdatum ergänzen, sobald es feststeht
-  (`src/data/discovery.ts`).
+- Naya-Aktion am 2. Oktober: danach die Karte in `src/data/discovery.ts`
+  anpassen oder ersetzen, sonst kündigt sie ein vergangenes Event an.
 - Gewerbewortlaut im Impressum mit dem Gewerbeschein abgleichen — er muss
   wörtlich übereinstimmen.
 - Partnernamen in `src/data/partners.ts` gegenlesen; sie stammen aus dem
