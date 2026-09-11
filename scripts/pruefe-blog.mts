@@ -23,6 +23,7 @@ import { verstecke, verstecktePunkte } from "@/data/karte/verstecke";
 import { demoJobs } from "@/data/jobs";
 import { services } from "@/data/services";
 import { readFileSync } from "node:fs";
+import { stats } from "@/lib/site";
 
 let fehler = 0;
 const ok = (b: boolean, t: string) => { console.log((b ? "\u2713" : "\u2717") + " " + t); if (!b) fehler++; };
@@ -102,12 +103,12 @@ ok(dauerhaft === 3 && ablaufText.includes("Drei Dinge machen wir dauerhaft"), `3
 ok(services.length - dauerhaft === 4 && ablaufText.includes("vier Anlassf\u00e4lle"), `4 Anlassfaelle (ist: ${services.length - dauerhaft})`);
 ok(!/\u20ac|\bab \d/.test(ablaufText), "keine Preisangabe im Text");
 
-/* --- Zwischenstand-Beitrag ---------------------------------------------- */
-const standText = text("zwei-wochen-salzburgsucht-at");
-ok(standText.includes("37 Verstecke") && verstecke.length === 37, "Zwischenstand: 37 Verstecke");
-ok(standText.includes("39 Betriebe") && partners.length === 39, "Zwischenstand: 39 Partner");
-ok(standText.includes("zwei Stellen") && echte.length === 2, "Zwischenstand: zwei Stellen");
-ok(standText.includes("Bergerbr\u00e4uhofstra\u00dfe") && verstecke.some((v) => v.name === "Bergerbr\u00e4uhofstra\u00dfe"), "Zwischenstand: Versteck-19-Name");
+/* --- "Warum Salzburgsucht?" ------------------------------------------- */
+const warumText = text("warum-salzburgsucht");
+ok(stats.instagramFollower.wert === "18.000+" && warumText.includes("mehr als 18.000"), `Followerzahl passt zu site.ts (${stats.instagramFollower.wert})`);
+for (const n of ["Sahil Barbershop", "Fifty 4 Burgers", "Salz und Zucker B\u00e4ckerei"])
+  ok(partners.some((p) => p.name === n), `Beispielbetrieb ist Partner: ${n}`);
+ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsdatum");
 
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");

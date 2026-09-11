@@ -65,54 +65,51 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "zwei-wochen-salzburgsucht-at",
-    titel: "Zwei Wochen salzburgsucht.at — was seit dem Start dazugekommen ist",
+    slug: "warum-salzburgsucht",
+    titel: "Warum Salzburgsucht?",
     beschreibung:
-      "Seit Ende August ist Salzburgsucht mit eigener Website online. Was sich seitdem getan hat — und was als Nächstes kommt.",
-    kategorie: "Hinter den Kulissen",
+      "Warum es Salzburgsucht gibt: weil Salzburg mehr ist als drei Gassen, weil gute Tipps im Feed verschwinden und weil kleine Betriebe gesehen werden sollen.",
+    kategorie: "Community",
     publishedAt: "2026-09-11",
     auszug:
-      "Eine vollständige Karte, zwei echte Stellen, ein Blog mit Vorrat und ein Termin im Oktober. Ein kurzer Zwischenstand.",
+      "Nicht, weil es noch einen Kanal gebraucht hätte. Sondern weil die Fragen, die hier jeder stellt, eine Antwort verdienen, die bleibt.",
     abschnitte: [
       {
         titel: null,
         absaetze: [
-          "Ende August ist salzburgsucht.at online gegangen. Seitdem ist mehr passiert, als man von außen sieht — deshalb hier ein Zwischenstand, bevor der Alltag ihn überholt.",
+          "Salzburgsucht gibt es schon lange, bevor es diese Website gab. Trotzdem fragen uns Leute immer wieder dasselbe: Warum macht ihr das eigentlich? Hier die ehrliche Antwort — in vier Teilen.",
         ],
       },
       {
-        titel: "Die Karte ist vollständig",
+        titel: "Weil jeder dieselben Fragen stellt",
         absaetze: [
-          "Zum Start standen 36 unserer Verstecke auf der Karte, eines hing ohne Standort in der Liste: Der Straßenname aus unseren Unterlagen existierte so nicht. Inzwischen ist er geklärt — es ist die Bergerbräuhofstraße in Schallmoos. Damit hat jedes der 37 Verstecke seinen Punkt.",
-          "Bei der Gelegenheit haben wir auch alle Vermerke aus der Liste genommen, die eher unsere Arbeitsnotizen waren als Ortsangaben. Dort steht jetzt nur noch, wo etwas war.",
+          "Wo ist es gerade gut? Was ist am Wochenende los? Wer hat neu aufgesperrt, wer stellt gerade ein? Das sind keine besonderen Fragen. Es sind die Fragen, die in Salzburg jeden Tag in Gruppenchats, in der Mittagspause und an der Bar gestellt werden.",
+          "Genau dort hat Salzburgsucht angefangen: auf Instagram und TikTok, mit Antworten auf diese Fragen. Inzwischen folgen uns mehr als 18.000 Menschen — nicht, weil wir laut sind, sondern weil die Fragen nicht weniger werden.",
         ],
       },
       {
-        titel: "Echte Stellen, echte Partner",
+        titel: "Weil Salzburg mehr ist als die Postkarte",
         absaetze: [
-          "Im Job-Bereich stehen zwei Stellen aus der Region: Foto- und Videograf bei icmedia, IT-Consultant bei BranIT. Beide gibt es wirklich, und Bewerbungen landen direkt bei uns im Postfach.",
-          "Auf der Partnerseite stehen 39 Betriebe, mit denen wir zusammengearbeitet haben — von der Bäckerei bis zum Messezentrum. Wer dort fehlt und dazugehört, darf sich melden.",
+          "Die Festung, der Dom, die Getreidegasse — das kennt jeder, auch wer noch nie hier war. Aber wer hier wohnt, lebt in Lehen, in Itzling, in Maxglan, in Gnigl, in Hallein. Dort sperren die Lokale auf, von denen niemand im Reiseführer liest, und dort passiert das meiste von dem, was eine Stadt ausmacht.",
+          "Deshalb verstecken wir unser Geld auch nicht nur in der Altstadt. Die Karte auf unserer Startseite zeigt es: Die Verstecke liegen über die ganze Stadt und bis ins Umland verteilt. Wer eins sucht, steht plötzlich an einer Ecke, an der er sonst nur vorbeifährt — und das ist der eigentliche Punkt.",
         ],
       },
       {
-        titel: "Ein Blog, der nicht einschläft",
+        titel: "Weil kleine Betriebe gesehen werden sollen",
         absaetze: [
-          "Dieser Blog hat inzwischen einen Vorrat: Beiträge, die schon fertig sind und an ihrem Tag von selbst erscheinen. Das klingt nach Technik, ist aber vor allem ein Versprechen an uns selbst — dass hier nicht nach drei Wochen Stille herrscht, nur weil gerade viel los ist.",
+          "Eine neue Bäckerei, ein Burgerlokal, ein Barbershop: Solche Betriebe haben selten ein Werbebudget, aber oft genau das, was Leute suchen. Irgendwann haben sie von selbst angefragt, ob wir sie zeigen — und daraus ist über die Zeit ein Netz aus Partnern geworden, das von der Gastronomie bis zu Salzburger Institutionen reicht.",
+          "Wir zeigen sie so, wie unser Feed aussieht, nicht wie eine Anzeige. Das ist kein Stil, sondern der Grund, warum es funktioniert: Eine Empfehlung wirkt nur, solange sie sich wie eine anfühlt.",
         ],
       },
       {
-        titel: "Was als Nächstes kommt",
+        titel: "Weil ein Feed vergisst",
         absaetze: [
-          "Der nächste feste Termin ist der 2. Oktober: Da gibt es bei Naya zwei Matcha um zwei Euro. Alles Weitere — das nächste Versteck eingeschlossen — kündigen wir wie immer zuerst auf Instagram an.",
-          "Und wenn dir auf der Seite etwas fehlt oder etwas nicht stimmt: Schreib uns. Die meisten Verbesserungen der letzten zwei Wochen kamen genau so zustande.",
+          "Ein Beitrag auf Instagram ist nach zwei Tagen weg. Die gute Adresse, die Stelle, die gerade frei ist, der Ort, an dem schon einmal etwas versteckt war — all das verdient einen festen Platz. Deshalb gibt es jetzt diese Website: als Archiv und Schaufenster zu dem, was auf unseren Kanälen passiert.",
+          "Am Ende ist die Antwort auf „Warum Salzburgsucht?\u201c ganz einfach: Weil wir hier leben, weil wir wissen wollen, was los ist — und weil es offensichtlich vielen anderen genauso geht.",
         ],
       },
     ],
   },
-  /* ==========================================================================
-   * VORRAT — Datum in der Zukunft, deshalb noch nicht auf der Website.
-   * Siehe Kopf dieser Datei. Reihenfolge = Erscheinungsfolge.
-   * ========================================================================== */
   {
     slug: "keine-messung-auf-dieser-seite",
     titel: "Diese Website misst dich nicht",
