@@ -64,6 +64,51 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "zwei-wochen-salzburgsucht-at",
+    titel: "Zwei Wochen salzburgsucht.at — was seit dem Start dazugekommen ist",
+    beschreibung:
+      "Seit Ende August ist Salzburgsucht mit eigener Website online. Was sich seitdem getan hat — und was als Nächstes kommt.",
+    kategorie: "Hinter den Kulissen",
+    publishedAt: "2026-09-11",
+    auszug:
+      "Eine vollständige Karte, zwei echte Stellen, ein Blog mit Vorrat und ein Termin im Oktober. Ein kurzer Zwischenstand.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Ende August ist salzburgsucht.at online gegangen. Seitdem ist mehr passiert, als man von außen sieht — deshalb hier ein Zwischenstand, bevor der Alltag ihn überholt.",
+        ],
+      },
+      {
+        titel: "Die Karte ist vollständig",
+        absaetze: [
+          "Zum Start standen 36 unserer Verstecke auf der Karte, eines hing ohne Standort in der Liste: Der Straßenname aus unseren Unterlagen existierte so nicht. Inzwischen ist er geklärt — es ist die Bergerbräuhofstraße in Schallmoos. Damit hat jedes der 37 Verstecke seinen Punkt.",
+          "Bei der Gelegenheit haben wir auch alle Vermerke aus der Liste genommen, die eher unsere Arbeitsnotizen waren als Ortsangaben. Dort steht jetzt nur noch, wo etwas war.",
+        ],
+      },
+      {
+        titel: "Echte Stellen, echte Partner",
+        absaetze: [
+          "Im Job-Bereich stehen zwei Stellen aus der Region: Foto- und Videograf bei icmedia, IT-Consultant bei BranIT. Beide gibt es wirklich, und Bewerbungen landen direkt bei uns im Postfach.",
+          "Auf der Partnerseite stehen 39 Betriebe, mit denen wir zusammengearbeitet haben — von der Bäckerei bis zum Messezentrum. Wer dort fehlt und dazugehört, darf sich melden.",
+        ],
+      },
+      {
+        titel: "Ein Blog, der nicht einschläft",
+        absaetze: [
+          "Dieser Blog hat inzwischen einen Vorrat: Beiträge, die schon fertig sind und an ihrem Tag von selbst erscheinen. Das klingt nach Technik, ist aber vor allem ein Versprechen an uns selbst — dass hier nicht nach drei Wochen Stille herrscht, nur weil gerade viel los ist.",
+        ],
+      },
+      {
+        titel: "Was als Nächstes kommt",
+        absaetze: [
+          "Der nächste feste Termin ist der 2. Oktober: Da gibt es bei Naya zwei Matcha um zwei Euro. Alles Weitere — das nächste Versteck eingeschlossen — kündigen wir wie immer zuerst auf Instagram an.",
+          "Und wenn dir auf der Seite etwas fehlt oder etwas nicht stimmt: Schreib uns. Die meisten Verbesserungen der letzten zwei Wochen kamen genau so zustande.",
+        ],
+      },
+    ],
+  },
   /* ==========================================================================
    * VORRAT — Datum in der Zukunft, deshalb noch nicht auf der Website.
    * Siehe Kopf dieser Datei. Reihenfolge = Erscheinungsfolge.

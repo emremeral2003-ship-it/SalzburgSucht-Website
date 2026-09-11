@@ -102,6 +102,13 @@ ok(dauerhaft === 3 && ablaufText.includes("Drei Dinge machen wir dauerhaft"), `3
 ok(services.length - dauerhaft === 4 && ablaufText.includes("vier Anlassf\u00e4lle"), `4 Anlassfaelle (ist: ${services.length - dauerhaft})`);
 ok(!/\u20ac|\bab \d/.test(ablaufText), "keine Preisangabe im Text");
 
+/* --- Zwischenstand-Beitrag ---------------------------------------------- */
+const standText = text("zwei-wochen-salzburgsucht-at");
+ok(standText.includes("37 Verstecke") && verstecke.length === 37, "Zwischenstand: 37 Verstecke");
+ok(standText.includes("39 Betriebe") && partners.length === 39, "Zwischenstand: 39 Partner");
+ok(standText.includes("zwei Stellen") && echte.length === 2, "Zwischenstand: zwei Stellen");
+ok(standText.includes("Bergerbr\u00e4uhofstra\u00dfe") && verstecke.some((v) => v.name === "Bergerbr\u00e4uhofstra\u00dfe"), "Zwischenstand: Versteck-19-Name");
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");
