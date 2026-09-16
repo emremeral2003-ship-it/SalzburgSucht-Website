@@ -15,6 +15,25 @@ export const site = {
 } as const;
 
 /**
+ * Ein Umgebungswert, der leer wie nicht gesetzt behandelt wird.
+ *
+ * `??` greift nur bei `undefined` und `null`. Eine Variable, die im
+ * Vercel-Dashboard zwar existiert, aber LEER ist, kommt als "" an — und ""
+ * ist nicht nullish. Genau das ist hier passiert: NEXT_PUBLIC_INSTAGRAM_URL
+ * und NEXT_PUBLIC_TIKTOK_URL waren leer gesetzt, der Rueckfallwert kam nie
+ * zum Zug, und im Kopf und Fuss der Seite stand `href=""`. Ein solcher Link
+ * sieht normal aus und laedt beim Klick die eigene Seite neu — deshalb ist
+ * es niemandem als Fehler aufgefallen, sondern nur als "geht nicht".
+ *
+ * Rand-Leerzeichen fallen mit weg, aus demselben Grund wie in
+ * src/lib/mailer.ts: Beim Einfuegen ins Dashboard rutschen sie leicht mit.
+ */
+function ausUmgebung(wert: string | undefined, rueckfall: string): string {
+  const sauber = wert?.trim();
+  return sauber ? sauber : rueckfall;
+}
+
+/**
  * Social-Media-Links.
  *
  * Kommen aus der Umgebung, damit sie ohne Codeaenderung korrigierbar sind.
@@ -22,8 +41,8 @@ export const site = {
  * Handle abweicht, gehoert der richtige Wert in die .env, nicht hierher.
  */
 export const socialLinks = {
-  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/salzburgsucht/",
-  tiktok: process.env.NEXT_PUBLIC_TIKTOK_URL ?? "https://www.tiktok.com/@salzburgsucht",
+  instagram: ausUmgebung(process.env.NEXT_PUBLIC_INSTAGRAM_URL, "https://www.instagram.com/salzburgsucht/"),
+  tiktok: ausUmgebung(process.env.NEXT_PUBLIC_TIKTOK_URL, "https://www.tiktok.com/@salzburgsucht"),
 } as const;
 
 /**
