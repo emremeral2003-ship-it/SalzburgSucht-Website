@@ -22,6 +22,7 @@ import { partners } from "@/data/partners";
 import { verstecke, verstecktePunkte } from "@/data/karte/verstecke";
 import { demoJobs } from "@/data/jobs";
 import { services } from "@/data/services";
+import { contentKarten } from "@/data/discovery";
 import { readFileSync } from "node:fs";
 import { stats } from "@/lib/site";
 
@@ -109,6 +110,25 @@ ok(stats.instagramFollower.wert === "18.000+" && warumText.includes("mehr als 18
 for (const n of ["Sahil Barbershop", "Fifty 4 Burgers", "Salz und Zucker B\u00e4ckerei"])
   ok(partners.some((p) => p.name === n), `Beispielbetrieb ist Partner: ${n}`);
 ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsdatum");
+
+/* --- Naya-Aktion -------------------------------------------------------- */
+const nayaText = text("zwei-matcha-um-zwei-euro-bei-naya");
+const nayaKarte = contentKarten.find((d) => d.id === "event-naya-matcha");
+ok(!!nayaKarte && nayaKarte.text.includes("2. Oktober") && nayaText.includes("2. Oktober"),
+   "Beitrag und Startseiten-Karte nennen denselben Termin");
+ok(partners.some((p) => p.name === "Naya"), "Naya ist als Partner eingetragen");
+ok(!/Rainerstra\u00dfe|Hofstallgasse/.test(nayaText), "keine Adresse im Text, solange sie ungeklaert ist");
+ok(!/\d{1,2}(:|\.)\d{2}\s*Uhr/.test(nayaText), "keine erfundene Uhrzeit");
+
+/* --- "Was nicht auf die Seite kommt" ------------------------------------ */
+const regelText = text("was-nicht-auf-die-seite-kommt");
+ok(Object.keys(stats).length === 1 && regelText.includes("genau eine Reichweitenzahl"),
+   `genau eine belegte Kennzahl (ist: ${Object.keys(stats).length})`);
+ok(demoJobs.some((j) => j.demo) && demoJobs.filter((j) => j.demo).every((j) => !j.active),
+   "Demo-Inserate existieren, sind aber abgeschaltet");
+const sz = blogPosts.find((p) => p.slug === "salz-und-zucker-linzergasse")!;
+ok(sz.abschnitte.flatMap((a) => a.absaetze).join(" ").includes("Eröffnungsdatum steht noch nicht fest"),
+   "Salz & Zucker hat weiterhin kein Datum");
 
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");

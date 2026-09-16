@@ -65,6 +65,82 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "zwei-matcha-um-zwei-euro-bei-naya",
+    titel: "Zwei Matcha um 2 € bei Naya — am 2. Oktober",
+    beschreibung:
+      "Am 2. Oktober gibt es bei Naya zwei Matcha um zwei Euro. Was zu der Aktion bekannt ist und wo du die Details erfährst.",
+    kategorie: "Gastro",
+    publishedAt: "2026-09-16",
+    auszug:
+      "Einer für dich, einer zum Mitbringen: Am 2. Oktober gibt es bei Naya zwei Matcha um zwei Euro.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Am 2. Oktober gibt es bei Naya zwei Matcha um zwei Euro. Einen für dich, einen zum Mitbringen — mehr ist die Aktion nicht, und mehr muss sie auch nicht sein.",
+        ],
+      },
+      {
+        titel: "Warum wir das zeigen",
+        absaetze: [
+          "Naya gehört zu den Betrieben, mit denen wir zusammenarbeiten. Matcha ist dort kein Nebenprodukt, sondern das, wofür Leute hingehen — und ein Preis, bei dem man jemanden mitnimmt, passt zu einem Getränk, das ohnehin selten allein getrunken wird.",
+          "Solche Aktionen kündigen wir an, weil sie genau das tun, was wir gut finden: Sie bringen Leute an einem bestimmten Tag an einen bestimmten Ort, statt nur Reichweite zu erzeugen.",
+        ],
+      },
+      {
+        titel: "Was noch offen ist",
+        absaetze: [
+          "Uhrzeit und Bedingungen geben wir bekannt, sobald sie feststehen. Wir schreiben hier bewusst nichts dazu, was wir nicht sicher wissen — nichts ist ärgerlicher, als wegen einer Uhrzeit hinzufahren, die sich jemand ausgedacht hat.",
+          "Den aktuellen Stand gibt es wie immer zuerst auf unserem Instagram-Kanal. Dort steht auch, falls sich am Termin noch etwas ändert.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "was-nicht-auf-die-seite-kommt",
+    titel: "Was bei uns nicht auf die Seite kommt",
+    beschreibung:
+      "Keine erfundenen Zahlen, keine Reichweitenversprechen, keine Stellen, die es nicht gibt: die Regeln, nach denen diese Website gebaut ist.",
+    kategorie: "Hinter den Kulissen",
+    publishedAt: "2026-09-29",
+    auszug:
+      "Über das, was fehlt, redet selten jemand. Dabei sagt es mehr über eine Seite aus als alles, was draufsteht.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Die meisten Seiten erzählen, was sie alles können. Wir schreiben hier einmal auf, was auf salzburgsucht.at bewusst nicht steht — weil man daran besser erkennt, worauf man sich verlassen kann.",
+        ],
+      },
+      {
+        titel: "Keine Zahl, die wir nicht belegen können",
+        absaetze: [
+          "Auf der Seite steht genau eine Reichweitenzahl, und die ist von uns bestätigt. Alles andere — TikTok-Zahlen, Aufrufe, Interaktionsraten — fehlt, solange wir es nicht sauber belegen können. Eine erfundene Zahl auf einer Seite, die Unternehmen überzeugen soll, ist kein Marketing, sondern ein Risiko.",
+          "Dasselbe gilt für Termine. Beim neuen Standort von Salz & Zucker steht bis heute kein Eröffnungstag, weil wir keinen haben. Lieber eine Lücke als ein Datum, an dem jemand vor einer verschlossenen Tür steht.",
+        ],
+      },
+      {
+        titel: "Keine Marker, die Genauigkeit vortäuschen",
+        absaetze: [
+          "Auf der Karte mit unseren Verstecken kennen wir bei manchen Orten nur den Stadtteil, nicht die Adresse. Man könnte alle Punkte gleich zeichnen, niemandem wäre es aufgefallen. Stattdessen steht an jedem Punkt, wie genau er ist.",
+        ],
+      },
+      {
+        titel: "Keine Stellen, die es nicht gibt",
+        absaetze: [
+          "Im Job-Bereich standen anfangs Beispielinserate, damit wir das Layout bauen konnten. Die sind abgeschaltet, sobald echte Stellen da waren, und sie tauchen auch in Suchmaschinen nicht auf. Niemand soll sich auf eine Stelle bewerben, die als Platzhalter entstanden ist.",
+        ],
+      },
+      {
+        titel: "Kein Versprechen, das wir nicht halten können",
+        absaetze: [
+          "Betrieben sagen wir nicht zu, wie viele Menschen ein Beitrag erreicht. Wir können sagen, was wir produzieren und wie groß unsere Community ist. Was ein einzelner Beitrag tut, hängt an zu vielem, worauf niemand Einfluss hat.",
+          "Das klingt nach Zurückhaltung und ist in Wahrheit Eigennutz: Eine Zusage, die man nicht hält, ist der kürzeste Weg zu einer Zusammenarbeit, die nur einmal stattfindet.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "warum-salzburgsucht",
     titel: "Warum Salzburgsucht?",
     beschreibung:
