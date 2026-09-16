@@ -162,7 +162,7 @@ export function CountUp({
     <span ref={ref} className={`${fertig ? "zahl-fertig " : ""}${className}`}>
       {/* Bewusst de-DE statt de-AT: Intl setzt fuer de-AT ein schmales
           geschuetztes Leerzeichen als Tausendertrennung ("18 000"), waehrend
-          dieselbe Zahl an jeder anderen Stelle der Seite "18.000" heisst.
+          dieselbe Zahl an jeder anderen Stelle der Seite "19.700" heisst.
           Zwei Schreibweisen derselben Zahl auf einer Seite sehen nach Fehler
           aus — und diese Zahl ist das wichtigste Argument der Marke. */}
       {(wert ?? ziel).toLocaleString("de-DE")}

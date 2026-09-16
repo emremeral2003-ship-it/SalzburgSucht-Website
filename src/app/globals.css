@@ -1298,7 +1298,7 @@
   /* -------------------------------------------------------------------------
      Zaehler
 
-     Wenn die 18.000 erreicht sind, geht einmal ein Schein auf und wieder aus.
+     Wenn die Zielzahl erreicht ist, geht einmal ein Schein auf und wieder aus.
      Eineinhalb Sekunden, danach ist Ruhe. Ein dauerhaft pulsierender Wert
      waere eine Werbetafel.
   ------------------------------------------------------------------------- */

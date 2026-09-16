@@ -42,9 +42,9 @@ export function StatBadge({ tone = "hell" }: { tone?: "hell" | "dunkel" }) {
         {/* Zaehlt beim ersten Sichtbarwerden von 0 hoch. Der vollstaendige
             Wert steht dabei die ganze Zeit im Markup — die Animation
             ueberschreibt ihn nur kurz. Wer kein JavaScript ausfuehrt oder
-            weniger Bewegung eingestellt hat, sieht sofort 18.000+. */}
+            weniger Bewegung eingestellt hat, sieht sofort die volle Zahl. */}
         <strong className="font-bold">
-          <CountUp ziel={18000} suffix="+" />
+          <CountUp ziel={stats.instagramFollower.zahl} />
         </strong>{" "}
         <span className={dunkel ? "text-white/70" : "text-muted"}>
           {stats.instagramFollower.label}
@@ -75,7 +75,7 @@ export function StatBlock({ tone = "dunkel" }: { tone?: "hell" | "dunkel" }) {
           dunkel ? "text-primary" : "text-primary-dark"
         }`}
       >
-        <CountUp ziel={18000} suffix="+" />
+        <CountUp ziel={stats.instagramFollower.zahl} />
       </p>
       <p className={`mt-3 max-w-[24ch] leading-relaxed ${dunkel ? "text-white/75" : "text-muted"}`}>
         Menschen in unserer Instagram-Community — aus Stadt und Land Salzburg.
@@ -121,7 +121,7 @@ export function ZahlenBand() {
             {/* Deutlich groesser als vorher. Diese Zahl ist das Argument der
                 Marke — sie darf die Flaeche fuellen, in der sie steht. */}
             <p className="num display mt-6 text-[clamp(3.75rem,2rem+8vw,7rem)] leading-[0.85] text-primary-dark">
-              <CountUp ziel={18000} suffix="+" />
+              <CountUp ziel={stats.instagramFollower.zahl} />
             </p>
             <p className="mt-5 max-w-[30ch] text-lg leading-relaxed text-muted">
               Menschen folgen Salzburgsucht auf Instagram — aus Stadt und Land.

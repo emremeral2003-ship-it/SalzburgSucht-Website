@@ -271,7 +271,7 @@ export default async function HomePage() {
           staerke={0.035}
         />
         {/* Das Ereignis dieses Abschnitts steckt nicht in einer eigenen Welle,
-            sondern im Zaehler selbst: Wenn die Zahl bei 18.000 ankommt, gehen
+            sondern im Zaehler selbst: Wenn die Zahl am Ziel ankommt, gehen
             zwei Ringe aus ihr heraus (`.zahl-fertig` im Stylesheet).
 
             Hier stand kurzzeitig eine zusaetzliche grosse Welle. Sie ist

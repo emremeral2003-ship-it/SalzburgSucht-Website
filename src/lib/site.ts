@@ -55,9 +55,13 @@ export const socialLinks = {
  */
 export const stats = {
   instagramFollower: {
-    wert: "18.000+",
+    /* `zahl` ist die Vorlage fuer die Zaehlanimation, `wert` die Schreibweise
+       im Text. Beides stand frueher an vier Stellen im Code — beim ersten
+       Aktualisieren war die Haelfte davon veraltet. Jetzt nur noch hier. */
+    zahl: 19700,
+    wert: "19.700",
     label: "Follower auf Instagram",
-    hinweis: "Stand August 2026",
+    hinweis: "Stand September 2026",
   },
 } as const;
 

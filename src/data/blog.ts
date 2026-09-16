@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
         titel: "Weil jeder dieselben Fragen stellt",
         absaetze: [
           "Wo ist es gerade gut? Was ist am Wochenende los? Wer hat neu aufgesperrt, wer stellt gerade ein? Das sind keine besonderen Fragen. Es sind die Fragen, die in Salzburg jeden Tag in Gruppenchats, in der Mittagspause und an der Bar gestellt werden.",
-          "Genau dort hat Salzburgsucht angefangen: auf Instagram und TikTok, mit Antworten auf diese Fragen. Inzwischen folgen uns mehr als 18.000 Menschen — nicht, weil wir laut sind, sondern weil die Fragen nicht weniger werden.",
+          "Genau dort hat Salzburgsucht angefangen: auf Instagram und TikTok, mit Antworten auf diese Fragen. Inzwischen folgen uns 19.700 Menschen — nicht, weil wir laut sind, sondern weil die Fragen nicht weniger werden.",
         ],
       },
       {
@@ -501,7 +501,7 @@ export const blogPosts: BlogPost[] = [
     slug: "was-ist-salzburgsucht",
     titel: "Was Salzburgsucht ist — und was hier gerade entsteht",
     beschreibung:
-      "Aus einem Salzburger Instagram-Kanal mit 18.000+ Followern wird eine Plattform: Empfehlungen, Aktionen, Kooperationen und Jobs aus der Region.",
+      "Aus einem Salzburger Instagram-Kanal mit 19.700 Followern wird eine Plattform: Empfehlungen, Aktionen, Kooperationen und Jobs aus der Region.",
     kategorie: "Hinter den Kulissen",
     publishedAt: "2026-08-27",
     auszug:
@@ -510,7 +510,7 @@ export const blogPosts: BlogPost[] = [
       {
         titel: null,
         absaetze: [
-          "Salzburgsucht ist auf Instagram und TikTok entstanden — mit dem, was Menschen hier ohnehin ständig suchen: Wo ist es gerade gut? Was ist am Wochenende los? Wer stellt gerade ein? Inzwischen folgen dem Kanal mehr als 18.000 Menschen, und aus einzelnen Beiträgen ist eine der größten Salzburg-Communities auf Social Media geworden.",
+          "Salzburgsucht ist auf Instagram und TikTok entstanden — mit dem, was Menschen hier ohnehin ständig suchen: Wo ist es gerade gut? Was ist am Wochenende los? Wer stellt gerade ein? Inzwischen folgen dem Kanal 19.700 Menschen, und aus einzelnen Beiträgen ist eine der größten Salzburg-Communities auf Social Media geworden.",
         ],
       },
       {

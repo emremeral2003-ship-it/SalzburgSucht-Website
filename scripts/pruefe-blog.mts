@@ -106,7 +106,7 @@ ok(!/\u20ac|\bab \d/.test(ablaufText), "keine Preisangabe im Text");
 
 /* --- "Warum Salzburgsucht?" ------------------------------------------- */
 const warumText = text("warum-salzburgsucht");
-ok(stats.instagramFollower.wert === "18.000+" && warumText.includes("mehr als 18.000"), `Followerzahl passt zu site.ts (${stats.instagramFollower.wert})`);
+ok(warumText.includes(stats.instagramFollower.wert), `Followerzahl im Text = site.ts (${stats.instagramFollower.wert})`);
 for (const n of ["Sahil Barbershop", "Fifty 4 Burgers", "Salz und Zucker B\u00e4ckerei"])
   ok(partners.some((p) => p.name === n), `Beispielbetrieb ist Partner: ${n}`);
 ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsdatum");
