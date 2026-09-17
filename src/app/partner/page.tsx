@@ -30,18 +30,6 @@ export default function PartnerPage() {
 
       <Container className="abschnitt">
         <PartnerGrid />
-
-        {/*
-          Logos statt Namen erst nach schriftlicher Freigabe. Fremde Logos aus
-          dem Netz zu ziehen ist eine Markenrechtsverletzung — und faellt genau
-          bei den Unternehmen auf, die man als Referenz nennen will.
-        */}
-        <p className="mt-10 max-w-[62ch] rounded-card border border-dashed border-line-strong bg-soft px-5 py-4 text-sm leading-relaxed text-muted">
-          <strong className="font-semibold text-ink">Hinweis zur Darstellung:</strong>{" "}
-          Hier stehen vorerst nur Namen. Logos werden ergänzt, sobald die
-          jeweilige Freigabe vorliegt — ungefragt verwendete Logos wären
-          rechtlich heikel und gegenüber den Betrieben unfair.
-        </p>
       </Container>
 
       <section className="border-t border-line bg-soft">

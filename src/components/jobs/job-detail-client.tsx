@@ -57,6 +57,26 @@ export function JobViewTracker({ job }: { job: Job }) {
  * Adresse markieren. Ohne sie ist die Sackgasse still — und eine stille
  * Sackgasse auf einer Bewerbungsseite kostet genau die Bewerbung.
  */
+/**
+ * Wohin "Jetzt bewerben" fuehrt — eine externe Bewerbungsseite oder ein
+ * vorbereiteter Mailentwurf.
+ *
+ * Steht hier und nicht in der Komponente, weil derselbe Weg an zwei Stellen
+ * gebraucht wird: auf der Detailseite und auf den Karten in der Stellenliste.
+ * Zwei Kopien derselben Adressbildung waeren genau die Art Doppelung, bei der
+ * spaeter eine Seite den Betreff aendert und die andere nicht.
+ */
+export function bewerbungsZiel(job: Job): { ziel: string; extern: boolean } | null {
+  if (job.applicationType === "url" && job.applicationUrl) {
+    return { ziel: job.applicationUrl, extern: true };
+  }
+  if (job.applicationEmail) {
+    const betreff = encodeURIComponent(`Bewerbung: ${job.title}`);
+    return { ziel: `mailto:${job.applicationEmail}?subject=${betreff}`, extern: false };
+  }
+  return null;
+}
+
 export function ApplyButton({
   job,
   ort = "job_detail",
@@ -65,14 +85,9 @@ export function ApplyButton({
   /** Wo der Knopf steht — geht in die Messung. */
   ort?: string;
 }) {
-  const externesZiel =
-    job.applicationType === "url" && job.applicationUrl
-      ? job.applicationUrl
-      : null;
-  const mailZiel = job.applicationEmail
-    ? `mailto:${job.applicationEmail}?subject=${encodeURIComponent(`Bewerbung: ${job.title}`)}`
-    : null;
-  const ziel = externesZiel ?? mailZiel;
+  const weg = bewerbungsZiel(job);
+  const ziel = weg?.ziel ?? null;
+  const externesZiel = weg?.extern ? weg.ziel : null;
 
   if (!ziel) {
     return (
