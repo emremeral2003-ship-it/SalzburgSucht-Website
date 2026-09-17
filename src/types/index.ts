@@ -2,7 +2,18 @@
 
 export type ApplicationType = "url" | "email";
 
-export type EmploymentType = "Vollzeit" | "Teilzeit" | "Geringfügig" | "Praktikum";
+/**
+ * "Voll- oder Teilzeit" ist bewusst ein eigener Wert und nicht zwei Inserate:
+ * Betriebe schreiben eine Stelle oft so aus, und wer sie auf "Vollzeit"
+ * verkuerzt, verliert genau die Bewerber, die Teilzeit suchen. Der Filter in
+ * src/app/jobs/page.tsx zeigt solche Stellen deshalb unter BEIDEN Reitern.
+ */
+export type EmploymentType =
+  | "Vollzeit"
+  | "Teilzeit"
+  | "Voll- oder Teilzeit"
+  | "Geringfügig"
+  | "Praktikum";
 
 export type Job = {
   id: string;

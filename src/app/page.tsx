@@ -228,7 +228,7 @@ export default async function HomePage() {
                   <ArrowRight className="cta-pfeil size-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href="/#entdecken"
+                  href="#entdecken"
                   size="lg"
                   variant="secondary"
                   event={ANALYTICS_EVENTS.communityCtaClick}
@@ -330,9 +330,12 @@ export default async function HomePage() {
           Hauptnavigation und der zweite Handlungsaufruf im Hero, seit die
           Suchwand hier sass. Die Karte ist der bessere Landeplatz fuer
           "Salzburg entdecken", als die Suchwand es je war. */}
+      {/* `scroll-mt-24` haelt die Ueberschrift beim Sprung unter dem
+          klebenden Kopf frei — der ist 73 Pixel hoch, ohne diesen Abstand
+          landet die Sektion exakt darunter. */}
       <section
         id="entdecken"
-        className="buehne-nacht schale auf-dunkel relative isolate overflow-hidden text-white"
+        className="buehne-nacht schale auf-dunkel relative isolate scroll-mt-24 overflow-hidden text-white"
       >
         <Container className="abschnitt">
           <Reveal className="max-w-[52ch]">

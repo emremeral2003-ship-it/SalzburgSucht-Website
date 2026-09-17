@@ -38,21 +38,24 @@ export function JobViewTracker({ job }: { job: Job }) {
  * ein Button, der nirgendwohin fuehrt, kostet Vertrauen.
  *
  * ---------------------------------------------------------------------------
- * BEWUSST NUR `mailto:` (Entscheidung von Emre, 28.08.2026)
+ * `mailto:` MIT SICHTBARER ADRESSE DARUNTER
  * ---------------------------------------------------------------------------
- * Hier standen zwischenzeitlich zusaetzliche Wege — Adresse kopieren, in
- * Gmail schreiben, in Outlook schreiben. Sie sind auf Wunsch wieder raus.
+ * Der Knopf bleibt ein `mailto:`-Link (Entscheidung von Emre, 28.08.2026);
+ * die zusaetzlichen Knoepfe von damals — kopieren, Gmail, Outlook — sind
+ * weiterhin draussen.
  *
- * Was das heisst, damit es niemanden spaeter ueberrascht: Ein `mailto:`-Link
- * oeffnet nur dann etwas, wenn auf dem Geraet ein Standard-Mailprogramm
- * eingetragen ist. Ist keines eingetragen — etwa bei jemandem, der seine Post
- * ausschliesslich im Browser liest — passiert beim Klick NICHTS. Keine
- * Fehlermeldung, kein Fenster. Ob das eingetreten ist, laesst sich im Browser
- * nicht abfragen, also laesst es sich auch nicht auffangen.
+ * Das Problem daran ist real und war der Grund fuer "Jetzt bewerben geht
+ * nicht": Ein `mailto:`-Link oeffnet nur dann etwas, wenn auf dem Geraet ein
+ * Standard-Mailprogramm eingetragen ist. Ist keines eingetragen — etwa bei
+ * jemandem, der seine Post ausschliesslich im Browser liest — passiert beim
+ * Klick NICHTS. Keine Fehlermeldung, kein Fenster. Ob das eingetreten ist,
+ * laesst sich im Browser nicht abfragen, also auch nicht auffangen.
  *
- * Auf Telefonen ist praktisch immer ein Mailprogramm eingerichtet; dort
- * funktioniert der Knopf. Betroffen sind vor allem Schreibtischrechner ohne
- * eingerichtetes Mailprogramm.
+ * Deshalb steht die Adresse jetzt als Text unter dem Knopf. Das ist keine
+ * zweite Schaltflaeche, sondern eine Zeile: Wer den Knopf drueckt und nichts
+ * passiert, sieht sofort, wohin die Bewerbung gehen soll, und kann die
+ * Adresse markieren. Ohne sie ist die Sackgasse still — und eine stille
+ * Sackgasse auf einer Bewerbungsseite kostet genau die Bewerbung.
  */
 export function ApplyButton({
   job,
@@ -81,24 +84,35 @@ export function ApplyButton({
   }
 
   return (
-    <ButtonLink
-      href={ziel}
-      size="lg"
-      className="gruppe-cta w-full"
-      event={ANALYTICS_EVENTS.jobApplyClick}
-      eventProps={{
-        job_id: job.id,
-        job_title: job.title,
-        company: job.company,
-        cta_location: ort,
-      }}
-    >
-      Jetzt bewerben
-      {externesZiel ? (
-        <Extern className="cta-pfeil size-4" />
-      ) : (
-        <Mail className="cta-pfeil size-4" />
-      )}
-    </ButtonLink>
+    <>
+      <ButtonLink
+        href={ziel}
+        size="lg"
+        className="gruppe-cta w-full"
+        event={ANALYTICS_EVENTS.jobApplyClick}
+        eventProps={{
+          job_id: job.id,
+          job_title: job.title,
+          company: job.company,
+          cta_location: ort,
+        }}
+      >
+        Jetzt bewerben
+        {externesZiel ? (
+          <Extern className="cta-pfeil size-4" />
+        ) : (
+          <Mail className="cta-pfeil size-4" />
+        )}
+      </ButtonLink>
+
+      {!externesZiel && job.applicationEmail ? (
+        <p className="mt-3 text-center text-sm leading-relaxed text-muted">
+          Öffnet sich kein Mailprogramm? Schreib direkt an{" "}
+          <span className="font-semibold break-all text-ink select-all">
+            {job.applicationEmail}
+          </span>
+        </p>
+      ) : null}
+    </>
   );
 }

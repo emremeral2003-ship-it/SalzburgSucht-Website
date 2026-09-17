@@ -5,6 +5,7 @@ import { JobCard } from "@/components/jobs/job-card";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/layout";
 import { EmptyState } from "@/components/ui/feedback";
+import type { Job } from "@/types";
 import { getJobs } from "@/lib/db/jobs";
 import { socialLinks } from "@/lib/site";
 import type { EmploymentType } from "@/types";
@@ -36,8 +37,16 @@ export default async function JobsPage({ searchParams }: PageProps<"/jobs">) {
   const { art } = await searchParams;
   const gewaehlt = typeof art === "string" ? art : "alle";
 
-  const alle = await getJobs();
-  const jobs = gewaehlt === "alle" ? alle : alle.filter((job) => job.employmentType === gewaehlt);
+  /* Eine Stelle, die als "Voll- oder Teilzeit" ausgeschrieben ist, gehoert
+     unter beide Reiter — sonst sucht jemand unter "Teilzeit" und findet sie
+     nicht, obwohl der Betrieb genau das anbietet. */
+  const passt = (job: Job) =>
+    job.employmentType === gewaehlt ||
+    (job.employmentType === "Voll- oder Teilzeit" &&
+      (gewaehlt === "Vollzeit" || gewaehlt === "Teilzeit"));
+
+  const alleJobs = await getJobs();
+  const jobs = gewaehlt === "alle" ? alleJobs : alleJobs.filter(passt);
 
   return (
     <>

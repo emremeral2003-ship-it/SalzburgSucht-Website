@@ -77,6 +77,21 @@ export function ButtonLink({
   Omit<ComponentProps<"a">, "href">) {
   const extern = href.startsWith("http") || href.startsWith("mailto:");
 
+  /**
+   * Ein Sprungziel im selben Dokument ("#entdecken") bekommt einen einfachen
+   * Anker statt eines <Link>.
+   *
+   * Grund: Steht der Hash schon in der Adresszeile, haelt der Router einen
+   * weiteren Klick auf dasselbe Ziel fuer einen Wechsel zur aktuellen Seite
+   * und tut nichts. Der Knopf "Salzburg entdecken" war damit nach dem ersten
+   * Gebrauch tot — er sah aus wie vorher und bewegte nichts mehr.
+   *
+   * Ein gewoehnlicher Anker springt dagegen jedes Mal zum Ziel, auch beim
+   * zehnten Klick, und das Sanftscrollen kommt aus `scroll-behavior` im
+   * Stylesheet. Kein JavaScript noetig.
+   */
+  const ankerImDokument = href.startsWith("#");
+
   // Messung und eigener Klickhandler muessen beide laufen. Wuerde `onClick`
   // einfach mitgespreizt, ueberschriebe es die Messung stillschweigend.
   const beiKlick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -84,7 +99,7 @@ export function ButtonLink({
     onClick?.(e);
   };
 
-  if (extern) {
+  if (extern || ankerImDokument) {
     return (
       <a
         href={href}

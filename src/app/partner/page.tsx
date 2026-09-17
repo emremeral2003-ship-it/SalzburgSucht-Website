@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { PartnerGrid } from "@/components/home/shared";
-import { KarteSpaeter } from "@/components/karte/karte-spaeter";
 import { ButtonLink } from "@/components/ui/button";
 import { Container, SectionHeader } from "@/components/ui/layout";
 import { partners } from "@/data/partners";
@@ -28,29 +27,6 @@ export default function PartnerPage() {
           </p>
         </Container>
       </section>
-
-      {/* Die Karte steht VOR der Namensliste, nicht danach.
-
-          Eine Liste von vierundzwanzig Namen beantwortet die Frage "mit wem?".
-          Die Karte beantwortet "wo?" — und das ist bei einer Marke, deren
-          ganzes Versprechen "aus Salzburg, fuer Salzburg" lautet, die
-          wichtigere der beiden Antworten. Wer zuerst sieht, dass die Punkte
-          ueber die ganze Stadt und ins Umland reichen, liest die Namensliste
-          danach anders. */}
-      <Container className="abschnitt pb-0">
-        <div className="mx-auto max-w-[56ch] text-center">
-          <p className="eyebrow">Auf der Karte</p>
-          <h2 className="display display-m mt-3 text-ink">Wo wir schon gearbeitet haben</h2>
-          <p className="mt-4 text-[1.0625rem] leading-relaxed text-muted sm:text-lg">
-            Von der Altstadt bis nach Elixhausen. Ein Betrieb in der Liste
-            springt auf der Karte an — und umgekehrt.
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <KarteSpaeter art="partner" />
-        </div>
-      </Container>
 
       <Container className="abschnitt">
         <PartnerGrid />

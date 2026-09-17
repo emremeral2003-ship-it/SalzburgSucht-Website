@@ -75,6 +75,51 @@ export const demoJobs: Job[] = [
     demo: false,
   },
   {
+    /**
+     * Fifty 4 Burgers (Emre, 17.09.2026). Logo aus der Kundenablage.
+     *
+     * OFFEN, weil vom Betrieb zu bestaetigen: Aufgaben, Stundenausmass,
+     * Eintrittstermin und Entlohnung. Der Text bleibt deshalb bewusst
+     * allgemein — lieber knapp als mit Zusagen, die der Betrieb nicht
+     * gegeben hat. Der Ort stammt aus dem Partnereintrag (Linzer Gasse).
+     */
+    id: "fifty4-mitarbeiter-1",
+    slug: "mitarbeiter-fifty4burgers",
+    company: "Fifty 4 Burgers",
+    title: "Mitarbeiter:in Service & Küche (m/w/d)",
+    location: "Salzburg — Linzer Gasse",
+    employmentType: "Voll- oder Teilzeit",
+    shortDescription:
+      "Voll- oder Teilzeit im Burgerlokal in der Linzer Gasse — Service, Theke und Küche im Team.",
+    description:
+      "Fifty 4 Burgers ist ein Burgerlokal mitten in Salzburg, in der Linzer Gasse. Gesucht werden Mitarbeiter:innen für Service und Küche — in Vollzeit oder Teilzeit, je nachdem, was zu dir passt. Du arbeitest im Team an der Theke, im Service und in der Zubereitung. Erfahrung in der Gastronomie ist willkommen, aber keine Bedingung: Eingeschult wird vor Ort.",
+    responsibilities: [
+      "Gäste an Theke und im Lokal betreuen",
+      "Bestellungen aufnehmen und ausgeben",
+      "In der Zubereitung mitarbeiten",
+      "Sauberkeit und Ordnung im Arbeitsbereich",
+    ],
+    requirements: [
+      "Verlässlichkeit und Freude am Umgang mit Gästen",
+      "Bereitschaft zu Abend- und Wochenenddiensten",
+      "Gute Deutschkenntnisse",
+      "Gastronomieerfahrung von Vorteil, aber nicht Bedingung",
+    ],
+    benefits: [
+      "Voll- oder Teilzeit — das Stundenausmaß wird gemeinsam festgelegt",
+      "Einschulung im Betrieb",
+      "Lokal mitten in der Stadt, gut erreichbar",
+    ],
+    logo: "/images/jobs/fifty4burgers.png",
+    applicationType: "email",
+    applicationUrl: null,
+    applicationEmail: "office@salzburgsucht.at",
+    publishedAt: "2026-09-17",
+    active: true,
+    featured: false,
+    demo: false,
+  },
+  {
     id: "branit-it-consultant-1",
     slug: "it-consultant-branit",
     company: "BranIT",
