@@ -138,7 +138,9 @@ export function LeistungsSchau() {
         <div className="rounded-card border border-line bg-page p-5 shadow-float sm:p-6 lg:sticky lg:top-24">
           <div className="flex items-baseline justify-between gap-3">
             <p className="eyebrow">So sieht das aus</p>
-            <span className="text-[0.8125rem] text-muted">Beispiel</span>
+            <span className="text-[0.8125rem] text-muted">
+              {leistung.video ? "Echter Beitrag" : "Beispiel"}
+            </span>
           </div>
 
           <div aria-live="polite" className="mt-5">
@@ -154,6 +156,7 @@ export function LeistungsSchau() {
                   art={leistung.vorschau}
                   farbe={leistung.farbe}
                   Motiv={Motiv}
+                  video={leistung.video}
                 />
               </div>
 

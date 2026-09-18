@@ -18,10 +18,12 @@ import { Logo } from "@/components/logo";
  *      ueberzeugen soll, ist ein Haftungsrisiko und kein Verkaufsargument.
  *   2. **Sichtbar als Attrappe gekennzeichnet.** Wer glaubt, echte Beitraege
  *      zu sehen, faellt spaeter darauf herein.
- *   3. **Keine Bilddateien.** Die Flaechen sind Farbverlaeufe mit einem
- *      grossen, sehr schwachen Symbol. Ein heruntergeladenes Stockfoto von
- *      Salzburg waere genau das Tourismus-Klischee, das die Marke nicht sein
- *      will — und kostet Ladezeit auf Mobilfunk.
+ *   3. **Keine fremden Bilder.** Solange kein eigener, freigegebener Beitrag
+ *      vorliegt, ist die Flaeche ein Farbverlauf mit einem grossen, sehr
+ *      schwachen Symbol. Ein heruntergeladenes Stockfoto von Salzburg waere
+ *      genau das Tourismus-Klischee, das die Marke nicht sein will. Liegt ein
+ *      eigener Beitrag vor (`video`), tritt er an die Stelle der Attrappe —
+ *      dann ist es kein Platzhalter mehr, sondern die Arbeit selbst.
  *   4. **Immer dasselbe Aussenmass.** Ein quadratischer Rahmen neben zwei
  *      hochkanten laesst in der Reihe eine halbe Kachel leer. Ein Feed-Post
  *      ist auf dem Telefon ohnehin ein quadratisches Bild *in* einem
@@ -41,6 +43,13 @@ type Props = {
   farbe: string;
   /** Grosses, sehr schwaches Symbol in der Flaeche — das einzige Motiv. */
   Motiv?: ComponentType<{ className?: string }>;
+  /**
+   * Pfad eines echten Beispielvideos ohne Endung. Ist einer gesetzt, tritt er
+   * an die Stelle der Attrappe: Das Video laeuft stumm im Hintergrund, der
+   * Hinweis "Attrappe" faellt weg (es ist ja keine), und der nachgemalte
+   * Abspielknopf ebenso — er saesse auf einem Video, das bereits laeuft.
+   */
+  video?: string | null;
   className?: string;
 };
 
@@ -55,6 +64,45 @@ function Absender({ hell = false }: { hell?: boolean }) {
         className={`text-[0.8125rem] font-semibold ${hell ? "text-white drop-shadow" : "text-white/95"}`}
       >
         salzburgsucht
+      </span>
+    </span>
+  );
+}
+
+/**
+ * Ein echter Beitrag als stummer Videoschnipsel.
+ *
+ * `autoPlay muted loop playsInline` ist die einzige Kombination, die Browser
+ * ohne Zutun abspielen: Ton wuerde jeder von ihnen blockieren, und ohne
+ * `playsInline` reisst iOS das Video in den Vollbildmodus — mitten im
+ * Seitenfluss.
+ *
+ * In der Leistungsschau bekommt die Vorschau bei jedem Wechsel einen neuen
+ * Schluessel. Der Videoknoten wird dadurch neu aufgebaut und startet von
+ * vorn — genau das ist das gewuenschte "beim Ueberfahren spielt es los",
+ * ganz ohne eigenen Zustand oder Klickhorcher.
+ *
+ * `preload="none"` und das Standbild: Ohne das laedt jeder Besuch der
+ * Startseite mehrere Megabyte, auch wer nie eine Leistung anfaehrt. Bis zum
+ * ersten Bild steht das Standbild da, keine schwarze Flaeche.
+ */
+function VideoFlaeche({ video, className = "" }: { video: string; className?: string }) {
+  return (
+    <span className={`relative block overflow-hidden bg-dark-deep ${className}`}>
+      <video
+        key={video}
+        src={`${video}.mp4`}
+        poster={`${video}.jpg`}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        className="size-full object-cover"
+      />
+      <span className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/45 to-transparent" />
+      <span className="absolute bottom-3 left-3 opacity-90">
+        <Logo tone="dunkel" className="text-[0.625rem]" />
       </span>
     </span>
   );
@@ -85,13 +133,19 @@ function Flaeche({
   );
 }
 
-export function BeitragsRahmen({ art, farbe, Motiv, className = "" }: Props) {
+export function BeitragsRahmen({ art, farbe, Motiv, video, className = "" }: Props) {
+  /* Ein echtes Video laeuft immer randlos ueber den ganzen Bildschirm, auch
+     bei `art: "post"`. Der quadratische Ausschnitt ist fuer eine Farbflaeche
+     gedacht; ein hochkantes Video darin waere oben und unten beschnitten,
+     und genau die Bildsprache, die hier gezeigt werden soll, ginge verloren. */
+  const randlos = art !== "post" || !!video;
+
   return (
     <div
       aria-hidden
       className={`relative aspect-[9/16] w-full overflow-hidden rounded-2xl bg-dark-deep ${className}`}
     >
-      {art === "post" ? (
+      {!randlos ? (
         <div className="flex h-full flex-col">
           <div className="px-3 pt-3">
             <Absender />
@@ -110,8 +164,14 @@ export function BeitragsRahmen({ art, farbe, Motiv, className = "" }: Props) {
         </div>
       ) : (
         <>
-          <Flaeche farbe={farbe} Motiv={Motiv} className="absolute inset-0" />
-          <span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/35 to-transparent" />
+          {video ? (
+            <VideoFlaeche video={video} className="absolute inset-0" />
+          ) : (
+            <>
+              <Flaeche farbe={farbe} Motiv={Motiv} className="absolute inset-0" />
+              <span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/35 to-transparent" />
+            </>
+          )}
 
           {art === "story" ? (
             <span className="absolute inset-x-3 top-3 flex gap-1">
@@ -125,7 +185,7 @@ export function BeitragsRahmen({ art, farbe, Motiv, className = "" }: Props) {
             <Absender hell />
           </span>
 
-          {art === "reel" ? (
+          {art === "reel" && !video ? (
             <>
               <span className="absolute top-1/2 left-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/22 backdrop-blur-sm">
                 <svg viewBox="0 0 24 24" className="size-6 translate-x-0.5 fill-white">
@@ -141,9 +201,11 @@ export function BeitragsRahmen({ art, farbe, Motiv, className = "" }: Props) {
         </>
       )}
 
-      <span className="absolute top-3 right-3 rounded-full border border-white/40 bg-black/30 px-2.5 py-1 text-[0.625rem] font-bold tracking-[0.08em] text-white uppercase backdrop-blur-sm">
-        Attrappe
-      </span>
+      {video ? null : (
+        <span className="absolute top-3 right-3 rounded-full border border-white/40 bg-black/30 px-2.5 py-1 text-[0.625rem] font-bold tracking-[0.08em] text-white uppercase backdrop-blur-sm">
+          Attrappe
+        </span>
+      )}
     </div>
   );
 }

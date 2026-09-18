@@ -102,6 +102,16 @@ export type Service = {
   farbe: string;
   /** Formate, die typischerweise dazugehoeren. Aussage ueber Produktion, nicht ueber Ergebnis. */
   formate: string[];
+  /**
+   * Echter Beitrag als stummer Videoschnipsel, ohne Endung:
+   * "/videos/leistungen/gastronomie" laedt .mp4 und .jpg als Standbild.
+   *
+   * `null` heisst: fuer diese Leistung liegt noch kein freigegebenes Beispiel
+   * vor — dann bleibt die Farbflaeche mit dem Hinweis "Attrappe" stehen. Ein
+   * fremdes Video ersatzweise einzusetzen waere schlimmer als eine leere
+   * Flaeche.
+   */
+  video: string | null;
 };
 
 /* ---------------------------------------------------------------------------
