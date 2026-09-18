@@ -36,6 +36,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #3a94e8 0%, #0b4f8a 100%)",
     formate: ["Feed-Post", "Story"],
     video: "/videos/leistungen/social-media",
+    bild: null,
   },
   {
     slug: "reels",
@@ -48,6 +49,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #80bdff 0%, #2279c9 55%, #082f52 100%)",
     formate: ["Reel"],
     video: null,
+    bild: null,
   },
   {
     slug: "individuell",
@@ -60,6 +62,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #1e71bf 0%, #082f52 55%, #041a30 100%)",
     formate: ["Reel", "Feed-Post", "Story"],
     video: null,
+    bild: null,
   },
   {
     slug: "events",
@@ -72,6 +75,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #2279c9 0%, #082f52 100%)",
     formate: ["Story", "Reel"],
     video: "/videos/leistungen/events",
+    bild: null,
   },
   {
     slug: "gastronomie",
@@ -84,6 +88,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #80bdff 0%, #1e71bf 100%)",
     formate: ["Reel", "Feed-Post"],
     video: "/videos/leistungen/gastronomie",
+    bild: null,
   },
   {
     slug: "recruiting",
@@ -95,6 +100,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #0b4f8a 0%, #3a94e8 100%)",
     formate: ["Feed-Post", "Story"],
     video: null,
+    bild: null,
   },
   {
     slug: "gewinnspiele",
@@ -106,6 +112,7 @@ export const services: Service[] = [
     farbe: "linear-gradient(150deg, #3a94e8 0%, #80bdff 45%, #0b4f8a 100%)",
     formate: ["Feed-Post", "Story"],
     video: null,
+    bild: "/images/leistungen/gewinnspiele.jpg",
   },
 ];
 

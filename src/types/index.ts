@@ -112,6 +112,14 @@ export type Service = {
    * Flaeche.
    */
   video: string | null;
+  /**
+   * Echter Beitrag als Standbild (voller Pfad mit Endung), wenn kein Video
+   * vorliegt — etwa bei einem Feed-Post, den es nie als Video gab.
+   *
+   * Liegt beides vor, gewinnt `video`. `null` heisst wie dort: noch kein
+   * freigegebenes Beispiel, also bleibt die Attrappe stehen.
+   */
+  bild: string | null;
 };
 
 /* ---------------------------------------------------------------------------

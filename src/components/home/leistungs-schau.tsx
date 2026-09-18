@@ -139,7 +139,7 @@ export function LeistungsSchau() {
           <div className="flex items-baseline justify-between gap-3">
             <p className="eyebrow">So sieht das aus</p>
             <span className="text-[0.8125rem] text-muted">
-              {leistung.video ? "Echter Beitrag" : "Beispiel"}
+              {leistung.video || leistung.bild ? "Echter Beitrag" : "Beispiel"}
             </span>
           </div>
 
@@ -157,6 +157,7 @@ export function LeistungsSchau() {
                   farbe={leistung.farbe}
                   Motiv={Motiv}
                   video={leistung.video}
+                  bild={leistung.bild}
                 />
               </div>
 

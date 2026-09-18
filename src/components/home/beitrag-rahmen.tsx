@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ComponentType } from "react";
 
 import { Instagram } from "@/components/icons";
@@ -50,6 +51,12 @@ type Props = {
    * Abspielknopf ebenso — er saesse auf einem Video, das bereits laeuft.
    */
   video?: string | null;
+  /**
+   * Echter Beitrag als Standbild — fuer Beitraege, die es nie als Video gab.
+   * Wirkt wie `video`: keine Attrappe, kein nachgemalter Abspielknopf. Liegt
+   * beides vor, gewinnt das Video.
+   */
+  bild?: string | null;
   className?: string;
 };
 
@@ -108,6 +115,30 @@ function VideoFlaeche({ video, className = "" }: { video: string; className?: st
   );
 }
 
+/**
+ * Ein echter Beitrag als Standbild.
+ *
+ * Ueber `next/image` und nicht als einfaches `img`: Der Rahmen ist je nach
+ * Bildschirm rund 240 bis 340 Pixel breit, die Vorlage ist 900. Ohne
+ * Optimierung laedt jedes Telefon die volle Datei fuer eine Flaeche, die ein
+ * Viertel davon misst.
+ */
+function BildFlaeche({
+  bild,
+  className = "",
+}: {
+  bild: string;
+  className?: string;
+}) {
+  return (
+    <span className={`relative block overflow-hidden bg-dark-deep ${className}`}>
+      {/* `alt=""` ist Absicht und kein Versaeumnis: Der ganze Rahmen ist
+          `aria-hidden`, die Aussage steht als Fliesstext daneben. */}
+      <Image src={bild} alt="" fill sizes="(min-width: 1024px) 340px, 260px" className="object-cover" />
+    </span>
+  );
+}
+
 /** Die farbige Flaeche mit Lichtkante, Motiv und Wortmarke. */
 function Flaeche({
   farbe,
@@ -133,7 +164,10 @@ function Flaeche({
   );
 }
 
-export function BeitragsRahmen({ art, farbe, Motiv, video, className = "" }: Props) {
+export function BeitragsRahmen({ art, farbe, Motiv, video, bild, className = "" }: Props) {
+  /** Liegt ein echter Beitrag vor — egal ob bewegt oder still? */
+  const echt = !!video || !!bild;
+
   /* Ein echtes Video laeuft immer randlos ueber den ganzen Bildschirm, auch
      bei `art: "post"`. Der quadratische Ausschnitt ist fuer eine Farbflaeche
      gedacht; ein hochkantes Video darin waere oben und unten beschnitten,
@@ -152,7 +186,11 @@ export function BeitragsRahmen({ art, farbe, Motiv, video, className = "" }: Pro
           </div>
 
           {/* Das eigentliche Bild: quadratisch, wie im echten Feed. */}
-          <Flaeche farbe={farbe} Motiv={Motiv} className="mt-3 aspect-square w-full" />
+          {bild ? (
+            <BildFlaeche bild={bild} className="mt-3 aspect-square w-full" />
+          ) : (
+            <Flaeche farbe={farbe} Motiv={Motiv} className="mt-3 aspect-square w-full" />
+          )}
 
           {/* Bildunterschrift als angedeutete Zeilen — Blindtext waere hier
               eine erfundene Aussage, Balken sind ehrlicher. */}
@@ -166,6 +204,8 @@ export function BeitragsRahmen({ art, farbe, Motiv, video, className = "" }: Pro
         <>
           {video ? (
             <VideoFlaeche video={video} className="absolute inset-0" />
+          ) : bild ? (
+            <BildFlaeche bild={bild} className="absolute inset-0" />
           ) : (
             <>
               <Flaeche farbe={farbe} Motiv={Motiv} className="absolute inset-0" />
@@ -185,7 +225,7 @@ export function BeitragsRahmen({ art, farbe, Motiv, video, className = "" }: Pro
             <Absender hell />
           </span>
 
-          {art === "reel" && !video ? (
+          {art === "reel" && !echt ? (
             <>
               <span className="absolute top-1/2 left-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/22 backdrop-blur-sm">
                 <svg viewBox="0 0 24 24" className="size-6 translate-x-0.5 fill-white">
@@ -201,7 +241,7 @@ export function BeitragsRahmen({ art, farbe, Motiv, video, className = "" }: Pro
         </>
       )}
 
-      {video ? null : (
+      {echt ? null : (
         <span className="absolute top-3 right-3 rounded-full border border-white/40 bg-black/30 px-2.5 py-1 text-[0.625rem] font-bold tracking-[0.08em] text-white uppercase backdrop-blur-sm">
           Attrappe
         </span>
