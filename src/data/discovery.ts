@@ -55,6 +55,14 @@ export type ContentKarte = {
    * diese ohnehin in der passenden Groesse aus.
    */
   vorschau?: string;
+  /**
+   * Rabattcode einer Aktion, hervorgehoben unter dem Text.
+   *
+   * Eigenes Feld und nicht im Fliesstext: Ein Code, den man im Laden nennen
+   * muss, ist das Einzige auf der Karte, das man sich merken soll — im Satz
+   * mitlaufend wird er ueberlesen. `undefined` bei allen Karten ohne Aktion.
+   */
+  code?: string;
   /** Instagram-Permalink des Beitrags. `null`, solange keiner hinterlegt ist. */
   url: string | null;
   demo: boolean;
@@ -80,15 +88,21 @@ export const contentKarten: ContentKarte[] = [
    * ==========================================================================
    */
   {
-    /* Cover von Emre am 28.08.2026 ausgewaehlt: die Auslage der Baeckerei.
-       Auf 4:5 zugeschnitten, Bildausschnitt leicht nach oben gezogen, damit
-       die Vitrine im Bild bleibt und nicht die Tischkante. */
-    id: "gastro-salz-und-zucker",
+    /* Cover von Emre am 18.09.2026 geliefert: Fruehlingsrollen mit Sauce,
+       auf 4:5 zugeschnitten wie alle Cover dieser Reihe.
+
+       Bedingungen wortwoertlich von Emre (18.09.2026): unbefristet, ab 10 EUR
+       Bestellwert, NUR bei Abholung im Laden, der Code wird dort genannt.
+       Keine Lieferung - das stand in der ersten Fassung anders und war
+       falsch. Wer wegen einer Bedingung hinfaehrt, die es nicht gibt, kommt
+       kein zweites Mal. */
+    id: "gastro-mr-wen",
     kategorie: "Gastro",
-    titel: "Salz & Zucker sperrt in der Linzergasse auf",
-    text: "Die Bäckerei eröffnet demnächst ihren neuen Standort in der Linzergasse 2 — frisch und handgemacht, mitten in der Stadt.",
-    bild: "/images/salz-und-zucker-auslage.jpg",
-    alt: "Blech mit Schokoladencroissants in der Auslage, eine Hand greift mit der Zange danach",
+    titel: "Mr. Wen Salzburg",
+    text: "Gratis Frühlingsrollen ab 10 € Bestellwert — nur bei Abholung im Laden, den Code einfach beim Bestellen nennen. In Maxglan, Mirabell, Kaigasse und Himmelreich.",
+    bild: "/images/mr-wen-fruehlingsrollen.jpg",
+    alt: "Frühlingsrolle mit Stäbchen über einer Schale süßsaurer Sauce, daneben weitere Rollen auf dunklem Teller",
+    code: "SALZBURG SUCHT",
     video: null,
     url: null,
     demo: false,

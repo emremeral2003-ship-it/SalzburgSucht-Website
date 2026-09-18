@@ -197,6 +197,16 @@ function Karte({
           {karte.text}
         </span>
 
+        {/* Der Rabattcode. Eigene Zeile, gestrichelter Rahmen — er soll aus
+            dem Text herausstechen wie ein Gutschein und nicht wie ein
+            weiteres Etikett aussehen. Farben und Rundung kommen aus
+            denselben Marken-Tokens wie die Kategoriepille darueber. */}
+        {karte.code ? (
+          <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-dashed border-primary bg-primary-soft px-3 py-1.5 text-[0.8125rem] font-bold tracking-[0.06em] text-primary-deep uppercase">
+            Code: {karte.code}
+          </span>
+        ) : null}
+
         {/* Die Zeile mit dem Ziel wächst erst beim Darueberfahren auf. Ohne
             Zeiger — also auf jedem Telefon — steht sie dauerhaft da; das
             regelt das Stylesheet ueber `(hover: none)`. Bei Karten ohne
