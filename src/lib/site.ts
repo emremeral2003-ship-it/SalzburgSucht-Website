@@ -81,7 +81,10 @@ export const navigation = [
   { href: "/#entdecken", label: "Entdecken" },
   { href: "/community", label: "Community" },
   { href: "/unternehmen", label: "Für Unternehmen" },
-  { href: "/partner", label: "Partner" },
+  /* Beschriftung "Kunden", Adresse weiterhin /partner: Eine Umbenennung
+     der Adresse haette jeden bestehenden Link auf die Seite gebrochen — auch
+     die, die schon in Suchmaschinen und in Nachrichten stehen. */
+  { href: "/partner", label: "Kunden" },
   { href: "/blog", label: "Blog" },
   { href: "/ueber-uns", label: "Über uns" },
 ] as const;
