@@ -48,7 +48,7 @@ export const services: Service[] = [
     vorschau: "reel",
     farbe: "linear-gradient(150deg, #80bdff 0%, #2279c9 55%, #082f52 100%)",
     formate: ["Reel"],
-    video: null,
+    video: "/videos/leistungen/reels",
     bild: null,
   },
   {
