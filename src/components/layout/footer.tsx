@@ -61,6 +61,29 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name}
           </p>
           <p>Salzburg, Österreich</p>
+          {/* Agenturzeile.
+
+              Sichtbar und gewoehnlich verlinkt — das ist der Unterschied
+              zwischen einem Hinweis und einem versteckten Link. Ein Link, den
+              nur Suchmaschinen sehen (ausgeblendet, winzig, in
+              Hintergrundfarbe), faellt bei Google unter Cloaking und trifft im
+              Ernstfall BEIDE Domains: diese hier als Quelle und ic-media.at
+              als Ziel.
+
+              Ankertext bewusst schlicht. "Social Media Agentur Salzburg" im
+              Fuss jeder Unterseite waere ein ueberoptimierter Ankertext und
+              damit das naechste Muster, auf das Google achtet. */}
+          <p>
+            Website von{" "}
+            <a
+              href="https://ic-media.at/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="font-semibold text-white/80 underline decoration-white/30 underline-offset-4 transition-colors duration-200 hover:text-white hover:decoration-white"
+            >
+              IC Media
+            </a>
+          </p>
         </div>
       </div>
     </footer>
