@@ -58,10 +58,10 @@ export const stats = {
     /* `zahl` ist die Vorlage fuer die Zaehlanimation, `wert` die Schreibweise
        im Text. Beides stand frueher an vier Stellen im Code — beim ersten
        Aktualisieren war die Haelfte davon veraltet. Jetzt nur noch hier. */
-    zahl: 19700,
-    wert: "19.700",
+    zahl: 20000,
+    wert: "20.000+",
     label: "Follower auf Instagram",
-    hinweis: "Stand September 2026",
+    hinweis: "Stand Oktober 2026",
   },
 } as const;
 

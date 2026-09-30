@@ -58,7 +58,7 @@ ok(
 /* --- Behauptungen gegen die Daten --------------------------------------- */
 const text = (slug: string) => {
   const p = blogPosts.find((x) => x.slug === slug)!;
-  return [p.titel, p.auszug, ...p.abschnitte.flatMap((a) => a.absaetze)].join(" ");
+  return [p.titel, p.auszug, ...p.abschnitte.flatMap((a) => [a.titel ?? "", ...a.absaetze])].join(" ");
 };
 
 const partnerText = text("partnernetz-salzburg");
@@ -73,9 +73,9 @@ for (const n of ["Fifty 4 Burgers", "Elixhausner Wirt", "AK Salzburg", "WIFI Sal
 
 const jobText = text("stellen-aus-salzburg");
 const echte = demoJobs.filter((j) => !j.demo && j.active);
-ok(echte.length === 2 && jobText.includes("zwei Stellen"), `2 aktive echte Stellen (ist: ${echte.length})`);
+ok(echte.length === 3 && jobText.includes("drei Stellen"), `3 aktive echte Stellen (ist: ${echte.length})`);
 ok(echte.every((j) => j.applicationEmail === "office@salzburgsucht.at"), "beide Bewerbungen an office@salzburgsucht.at");
-ok(echte.every((j) => j.employmentType === "Vollzeit"), "beide Vollzeit");
+ok(echte.every((j) => j.employmentType && j.location), "jede echte Stelle hat Anstellungsart und Ort");
 ok(echte.some((j) => j.company === "icmedia") && echte.some((j) => j.company === "BranIT"), "icmedia und BranIT genannt");
 
 const geldText = text("geld-verstecken-in-salzburg");
@@ -106,7 +106,7 @@ ok(!/\u20ac|\bab \d/.test(ablaufText), "keine Preisangabe im Text");
 
 /* --- "Warum Salzburgsucht?" ------------------------------------------- */
 const warumText = text("warum-salzburgsucht");
-ok(warumText.includes(stats.instagramFollower.wert), `Followerzahl im Text = site.ts (${stats.instagramFollower.wert})`);
+ok(warumText.includes(stats.instagramFollower.wert.replace("+", "")), `Followerzahl im Text = site.ts (${stats.instagramFollower.wert})`);
 for (const n of ["Sahil Barbershop", "Fifty 4 Burgers", "Salz und Zucker B\u00e4ckerei"])
   ok(partners.some((p) => p.name === n), `Beispielbetrieb ist Partner: ${n}`);
 ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsdatum");
@@ -129,6 +129,31 @@ ok(demoJobs.some((j) => j.demo) && demoJobs.filter((j) => j.demo).every((j) => !
 const sz = blogPosts.find((p) => p.slug === "salz-und-zucker-linzergasse")!;
 ok(sz.abschnitte.flatMap((a) => a.absaetze).join(" ").includes("Eröffnungsdatum steht noch nicht fest"),
    "Salz & Zucker hat weiterhin kein Datum");
+
+/* --- SEO-Beitraege vom Oktober ------------------------------------------ */
+const werbung = text("werbung-in-salzburg-lokale-reichweite");
+ok(werbung.includes(stats.instagramFollower.wert.replace("+", "")), `Werbebeitrag nennt ${stats.instagramFollower.wert}`);
+ok(werbung.includes("37 Orte") && verstecke.length === 37, "Werbebeitrag: 37 Orte auf der Karte");
+ok(werbung.includes("39 Betriebe") && partners.length === 39, "Werbebeitrag: 39 Partner");
+
+const anzeige = text("stellenanzeige-salzburg-schalten");
+for (const firma of ["icmedia", "BranIT", "Fifty 4 Burgers"])
+  ok(anzeige.includes(firma) && echte.some((j) => j.company === firma), `Stellenbeitrag nennt echte Firma: ${firma}`);
+ok(anzeige.includes("Voll- oder Teilzeit") && echte.some((j) => j.employmentType === "Voll- oder Teilzeit"),
+   "Stellenbeitrag: Anstellungsart stimmt mit dem Inserat ueberein");
+
+const wen = text("mr-wen-salzburg");
+const wenKarte = contentKarten.find((d) => d.id === "gastro-mr-wen")!;
+ok(wen.includes(wenKarte.code!) && wenKarte.code === "SALZBURG SUCHT", "Mr.-Wen-Beitrag: Code wie auf der Karte");
+for (const ort of ["Maxglan", "Mirabell", "Kaigasse", "Himmelreich"])
+  ok(wen.includes(ort) && wenKarte.text.includes(ort), `Mr.-Wen-Beitrag: Standort ${ort} steht auch auf der Karte`);
+ok(wen.includes("Abholung im Laden") && wenKarte.text.includes("Abholung im Laden"), "Mr.-Wen-Beitrag: nur Abholung, wie auf der Karte");
+
+const umlandText = text("salzburg-umland-flachgau-tennengau");
+ok(umlandText.includes("sieben im Umland") && verstecke.filter((v) => v.gebiet === "umland").length === 7,
+   "Umland-Beitrag: sieben Verstecke ausserhalb der Stadt");
+for (const n of ["Elixhausner Wirt", "Jumpdome Salzburg", "Chef Döner Bergheim"])
+  ok(partners.some((p) => p.name === n), `Umland-Beitrag: Partner existiert (${n})`);
 
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");

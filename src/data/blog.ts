@@ -50,7 +50,7 @@ export type BlogPost = {
   titel: string;
   /** Max. 155 Zeichen — geht in die Meta-Description. */
   beschreibung: string;
-  kategorie: "Community" | "Gastro" | "Jobs" | "Hinter den Kulissen";
+  kategorie: "Community" | "Gastro" | "Jobs" | "Für Unternehmen" | "Hinter den Kulissen";
   /**
    * Erscheinungstag als `JJJJ-MM-TT`.
    *
@@ -64,6 +64,164 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "werbung-in-salzburg-lokale-reichweite",
+    titel: "Werbung in Salzburg: was über 20.000 lokale Follower bedeuten",
+    beschreibung:
+      "Warum Reichweite aus der Region mehr wert ist als große Zahlen von überallher — und was Betriebe aus Stadt und Land Salzburg davon haben.",
+    kategorie: "Für Unternehmen",
+    publishedAt: "2026-10-01",
+    auszug:
+      "Eine Zahl allein sagt wenig. Entscheidend ist, wo die Leute wohnen, die sie ausmachen.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Salzburgsucht hat auf Instagram inzwischen über 20.000 Follower. Für einen Betrieb in Salzburg ist an dieser Zahl aber nicht die Zahl das Interessante, sondern die Herkunft der Leute dahinter.",
+        ],
+      },
+      {
+        titel: "Reichweite ist nicht gleich Reichweite",
+        absaetze: [
+          "Ein Kanal mit hunderttausend Followern in ganz Europa bringt einem Lokal in der Linzer Gasse wenig: Die meisten davon werden nie in Salzburg stehen. Unsere Community ist in Stadt und Land Salzburg zu Hause — sie fragt sich, wo sie heute Abend isst und was am Wochenende los ist. Das ist kein Vorteil in der Statistik, sondern im Radius.",
+          "Deshalb verteilen sich auch unsere Aktionen über die ganze Region: Die Karte auf der Startseite zeigt 37 Orte, an denen wir schon etwas versteckt haben, von der Altstadt bis nach Hallein.",
+        ],
+      },
+      {
+        titel: "Was Betriebe bei uns buchen",
+        absaetze: [
+          "Drei Dinge laufen dauerhaft: Social-Media-Promotion mit Posts und Story-Kampagnen auf unseren Kanälen, Reels und Videos, die wir selbst drehen und schneiden, und individuelle Kampagnen, wenn nichts davon passt.",
+          "Dazu kommen vier Anlassfälle: Events ankündigen und am Tag selbst begleiten, Gastronomie und Locations zeigen, Recruiting für offene Stellen — bei Menschen, die schon hier leben — und Gewinnspiele. Wie das aussieht, steht auf der Startseite: Bei jeder Leistung läuft ein echter Beitrag als Beispiel.",
+        ],
+      },
+      {
+        titel: "Was wir nicht versprechen",
+        absaetze: [
+          "Zahlen für einen einzelnen Beitrag. Wir sagen, was wir produzieren und wie groß unsere Community ist — was ein bestimmtes Reel erreicht, hängt an zu vielem, worauf niemand Einfluss hat.",
+          "Preise stehen aus demselben Grund nicht auf der Seite: Sie hängen an Umfang, Format und Zeitraum. Nach dem ersten Gespräch bekommt ihr eine konkrete Zahl statt einer geratenen.",
+        ],
+      },
+      {
+        titel: "39 Betriebe sind schon dabei",
+        absaetze: [
+          "Von der Bäckerei über den Barbershop bis zum Messezentrum — wer im Partnernetz steht, findet sich auf unserer Kundenseite. Wenn ihr wissen wollt, ob euer Betrieb dazupasst: eine Nachricht über das Kooperationsformular genügt, und ihr bekommt eine ehrliche Einschätzung statt eines Angebots für alles.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "stellenanzeige-salzburg-schalten",
+    titel: "Offene Stelle in Salzburg besetzen — mit einer Anzeige, die Einheimische sehen",
+    beschreibung:
+      "Wie Betriebe ihre offene Stelle über Salzburgsucht ausschreiben: kuratierter Eintrag, Verbreitung über unsere Kanäle, Bewerbungen direkt ins Postfach.",
+    kategorie: "Jobs",
+    publishedAt: "2026-10-07",
+    auszug:
+      "Wer in Salzburg jemanden sucht, braucht keine hundert Klicks aus ganz Österreich, sondern zehn aus dem Umkreis.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Personal zu finden ist in der Gastronomie und im Handwerk gerade das größte Thema. Das Problem ist selten die Zahl der Bewerbungen, sondern woher sie kommen: Eine Anzeige auf einem großen Portal erreicht ganz Österreich, aber nicht die Leute, die zwei Straßen weiter wohnen.",
+        ],
+      },
+      {
+        titel: "Was gerade bei uns steht",
+        absaetze: [
+          "Drei Stellen, alle aus der Region: Foto- und Videograf bei icmedia, IT-Consultant bei BranIT, Mitarbeiter:in für Service und Küche bei Fifty 4 Burgers in der Linzer Gasse — dort in Voll- oder Teilzeit.",
+          "Mehr sind es bewusst nicht. Eine Jobliste, die alles aufnimmt, ist schnell voll und damit nutzlos; wir zeigen Stellen von Betrieben, mit denen wir tatsächlich zu tun haben.",
+        ],
+      },
+      {
+        titel: "Wie eine Anzeige zustande kommt",
+        absaetze: [
+          "Ihr schreibt uns, was ihr sucht. Wir machen daraus einen Eintrag im Job-Bereich mit Aufgaben, Anforderungen und dem, was ihr bietet — und begleiten ihn auf unseren Kanälen, dort, wo unsere Community ohnehin täglich hinschaut.",
+          "Bewerbungen laufen über eine E-Mail-Adresse, die ihr bestimmt. Kein Konto, kein Bewerbungsportal, kein Formular mit vierzehn Pflichtfeldern — das kostet erfahrungsgemäß mehr Bewerbungen, als es sortiert.",
+        ],
+      },
+      {
+        titel: "Was wir dafür brauchen",
+        absaetze: [
+          "Aufgaben, Anstellungsart, Arbeitsort und eine Kontaktadresse. Alles, was ihr nicht sicher sagen könnt, lassen wir weg, statt es zu schreiben: Eine Anzeige, die Dinge verspricht, die im Vorstellungsgespräch anders klingen, kostet euch den Bewerber genau dort.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "mr-wen-salzburg",
+    titel: "Mr. Wen Salzburg: vier Standorte — und gratis Frühlingsrollen",
+    beschreibung:
+      "Mr. Wen gibt es in Maxglan, Mirabell, Kaigasse und Himmelreich. Mit dem Code SALZBURG SUCHT gibt es ab 10 € Bestellwert Frühlingsrollen gratis.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-13",
+    auszug:
+      "Vier Standorte in Salzburg — und eine Aktion, für die ihr nur einen Satz an der Theke braucht.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Mr. Wen gehört zu den Betrieben, mit denen wir zusammenarbeiten. Wer in Salzburg asiatisch essen will, kommt an dem Namen inzwischen schwer vorbei — es gibt ihn gleich viermal in der Stadt.",
+        ],
+      },
+      {
+        titel: "Wo ihr Mr. Wen findet",
+        absaetze: [
+          "In Maxglan, beim Mirabellplatz, in der Kaigasse und im Himmelreich. Damit ist links und rechts der Salzach jeweils einer in der Nähe — für die Altstadt die Kaigasse, für die Neustadt Mirabell.",
+        ],
+      },
+      {
+        titel: "Die Aktion",
+        absaetze: [
+          "Mit dem Rabattcode SALZBURG SUCHT gibt es ab einem Bestellwert von 10 € Frühlingsrollen gratis dazu. Der Code gilt bei Abholung im Laden — ihr nennt ihn einfach beim Bestellen, mehr braucht es nicht.",
+          "Eine Befristung gibt es derzeit nicht. Sollte sich das ändern, sagen wir es hier und auf unseren Kanälen.",
+        ],
+      },
+      {
+        titel: "Warum wir das zeigen",
+        absaetze: [
+          "Weil solche Aktionen genau das tun, was wir gut finden: Sie bringen Leute an einem bestimmten Tag an einen bestimmten Ort, statt nur Reichweite zu erzeugen. Und weil ein gratis Vorspeise-Teller der niederschwelligste Grund ist, ein Lokal zum ersten Mal auszuprobieren.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "salzburg-umland-flachgau-tennengau",
+    titel: "Nicht nur Stadt: Salzburgsucht im Flachgau und Tennengau",
+    beschreibung:
+      "Hallein, Oberalm, Puch, Bergheim, Wals-Siezenheim, Elixhausen: Warum unsere Karte und unser Partnernetz über die Stadtgrenze hinausreichen.",
+    kategorie: "Community",
+    publishedAt: "2026-10-20",
+    auszug:
+      "Sieben unserer Verstecke lagen außerhalb der Stadt. Das ist kein Ausflug, sondern Absicht.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "„Salzburg\u201c heißt für viele die Altstadt und höchstens noch der Bahnhof. Für die meisten Menschen, die hier leben, heißt es etwas anderes: Sie wohnen in Hallein, arbeiten in der Stadt, kaufen in Bergheim ein und gehen in Wals-Siezenheim ins Fitnessstudio.",
+        ],
+      },
+      {
+        titel: "Sieben Verstecke außerhalb der Stadt",
+        absaetze: [
+          "Von unseren 37 Verstecken lagen sieben im Umland: in Hallein, Oberalm und Puch im Tennengau, in Bergheim, Viehhausen, Kleßheim und Wals-Siezenheim im Flachgau. Wer die Karte auf der Startseite durchgeht, sieht das sofort.",
+          "Das ist kein Zufall und auch kein Ausflug. Ein Versteck bringt Leute dazu, an einer Ecke stehen zu bleiben, an der sie sonst vorbeifahren — und im Umland ist dieser Effekt größer als in einer Gasse, durch die ohnehin jeden Tag Tausende gehen.",
+        ],
+      },
+      {
+        titel: "Partner jenseits der Stadtgrenze",
+        absaetze: [
+          "Auch im Partnernetz steht nicht nur Stadt: der Elixhausner Wirt in Elixhausen, Jumpdome in Wals-Siezenheim, Chef Döner in Bergheim. Betriebe im Umland haben dasselbe Problem wie die in der Stadt, nur schärfer — sie müssen Leute zu sich bringen, die nicht zufällig vorbeikommen.",
+        ],
+      },
+      {
+        titel: "Was das für Betriebe im Umland heißt",
+        absaetze: [
+          "Unsere Community wohnt in Stadt und Land. Für eine Ankündigung aus Hallein oder Bergheim ist das der Unterschied zwischen „schön für euch\u201c und „da fahr ich hin\u201c.",
+          "Wenn euer Betrieb außerhalb der Stadt liegt und ihr überlegt, ob das überhaupt passt: Fragt einfach. Wir sagen auch, wenn es nichts bringt.",
+        ],
+      },
+    ],
+  },
   {
     slug: "zwei-matcha-um-zwei-euro-bei-naya",
     titel: "Zwei Matcha um 2 € bei Naya — am 2. Oktober",
@@ -160,7 +318,7 @@ export const blogPosts: BlogPost[] = [
         titel: "Weil jeder dieselben Fragen stellt",
         absaetze: [
           "Wo ist es gerade gut? Was ist am Wochenende los? Wer hat neu aufgesperrt, wer stellt gerade ein? Das sind keine besonderen Fragen. Es sind die Fragen, die in Salzburg jeden Tag in Gruppenchats, in der Mittagspause und an der Bar gestellt werden.",
-          "Genau dort hat Salzburgsucht angefangen: auf Instagram und TikTok, mit Antworten auf diese Fragen. Inzwischen folgen uns 19.700 Menschen — nicht, weil wir laut sind, sondern weil die Fragen nicht weniger werden.",
+          "Genau dort hat Salzburgsucht angefangen: auf Instagram und TikTok, mit Antworten auf diese Fragen. Inzwischen folgen uns über 20.000 Menschen — nicht, weil wir laut sind, sondern weil die Fragen nicht weniger werden.",
         ],
       },
       {
@@ -356,12 +514,12 @@ export const blogPosts: BlogPost[] = [
     kategorie: "Jobs",
     publishedAt: "2026-09-04",
     auszug:
-      "Zwei Stellen stehen gerade auf der Seite. Warum es nicht zweihundert sind — und was passiert, wenn du dich bewirbst.",
+      "Drei Stellen stehen gerade auf der Seite. Warum es nicht zweihundert sind — und was passiert, wenn du dich bewirbst.",
     abschnitte: [
       {
         titel: null,
         absaetze: [
-          "Auf Salzburgsucht gibt es einen Job-Bereich, und wer ihn aufmacht, findet dort gerade zwei Stellen. Das ist kein Anfangszustand, den wir möglichst schnell hinter uns bringen wollen — es ist der Plan.",
+          "Auf Salzburgsucht gibt es einen Job-Bereich, und wer ihn aufmacht, findet dort gerade drei Stellen. Das ist kein Anfangszustand, den wir möglichst schnell hinter uns bringen wollen — es ist der Plan.",
         ],
       },
       {
@@ -369,7 +527,8 @@ export const blogPosts: BlogPost[] = [
         absaetze: [
           "icmedia sucht einen Foto- und Videografen (m/w/d) in Vollzeit für Salzburg. Shootings bei Kunden vor Ort, Reels und TikToks drehen und schneiden, Bildbearbeitung und Farbkorrektur. Wer schon einmal versucht hat, ein Reel so zu bauen, dass es nicht nach Werbung aussieht, weiß, worum es bei der Stelle geht.",
           "BranIT sucht einen IT-Consultant (m/w/d) in Vollzeit, remote und vor Ort. Bestehende IT-Umgebungen analysieren, daraus Roadmaps entwickeln, Migrationen begleiten — Microsoft 365, Azure, Hybrid Cloud. Gefragt ist jemand, der Technik so erklären kann, dass sie beim Kunden ankommt.",
-          "Beide Ausschreibungen stehen vollständig im Job-Bereich: Aufgaben, Anforderungen und das, was der Betrieb dafür bietet.",
+          "Fifty 4 Burgers sucht Mitarbeiter:innen für Service und Küche, in Voll- oder Teilzeit, im Lokal in der Linzer Gasse. Erfahrung in der Gastronomie ist willkommen, aber keine Bedingung — eingeschult wird vor Ort.",
+          "Alle drei Ausschreibungen stehen vollständig im Job-Bereich: Aufgaben, Anforderungen und das, was der Betrieb dafür bietet.",
         ],
       },
       {
@@ -382,7 +541,7 @@ export const blogPosts: BlogPost[] = [
       {
         titel: "Wie die Bewerbung läuft",
         absaetze: [
-          "Beide Stellen laufen im Moment über uns. Der Bewerbungsknopf öffnet eine E-Mail an office@salzburgsucht.at; von dort geht deine Bewerbung an den Betrieb weiter. Kein Konto, kein Formular mit vierzehn Pflichtfeldern.",
+          "Alle drei Stellen laufen im Moment über uns. Der Bewerbungsknopf öffnet eine E-Mail an office@salzburgsucht.at; von dort geht deine Bewerbung an den Betrieb weiter. Kein Konto, kein Formular mit vierzehn Pflichtfeldern.",
           "Wenn du eine Stelle offen hast und sie hier sehen willst, schreib uns einfach — ob sie zu dem passt, was wir zeigen, klären wir dann gemeinsam.",
         ],
       },
@@ -501,7 +660,7 @@ export const blogPosts: BlogPost[] = [
     slug: "was-ist-salzburgsucht",
     titel: "Was Salzburgsucht ist — und was hier gerade entsteht",
     beschreibung:
-      "Aus einem Salzburger Instagram-Kanal mit 19.700 Followern wird eine Plattform: Empfehlungen, Aktionen, Kooperationen und Jobs aus der Region.",
+      "Aus einem Salzburger Instagram-Kanal mit über 20.000 Followern wird eine Plattform: Empfehlungen, Aktionen, Kooperationen und Jobs aus der Region.",
     kategorie: "Hinter den Kulissen",
     publishedAt: "2026-08-27",
     auszug:
@@ -510,7 +669,7 @@ export const blogPosts: BlogPost[] = [
       {
         titel: null,
         absaetze: [
-          "Salzburgsucht ist auf Instagram und TikTok entstanden — mit dem, was Menschen hier ohnehin ständig suchen: Wo ist es gerade gut? Was ist am Wochenende los? Wer stellt gerade ein? Inzwischen folgen dem Kanal 19.700 Menschen, und aus einzelnen Beiträgen ist eine der größten Salzburg-Communities auf Social Media geworden.",
+          "Salzburgsucht ist auf Instagram und TikTok entstanden — mit dem, was Menschen hier ohnehin ständig suchen: Wo ist es gerade gut? Was ist am Wochenende los? Wer stellt gerade ein? Inzwischen folgen dem Kanal über 20.000 Menschen, und aus einzelnen Beiträgen ist eine der größten Salzburg-Communities auf Social Media geworden.",
         ],
       },
       {

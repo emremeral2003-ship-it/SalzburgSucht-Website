@@ -41,7 +41,7 @@ Zahlen entschieden. Die Datenstruktur ist darauf vorbereitet, das Produkt ist
 es bewusst nicht.
 
 ## Belegte Fakten
-- **19.700 Instagram-Follower** (Stand September 2026) — die einzige gesicherte
+- **20.000+ Instagram-Follower** (Stand Oktober 2026) — die einzige gesicherte
   Reichweitenzahl.
 - 24 Betriebe und Institutionen als bisherige Zusammenarbeiten, namentlich
   bekannt, ohne Logofreigabe.
