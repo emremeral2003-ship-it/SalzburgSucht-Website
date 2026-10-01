@@ -65,6 +65,90 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "fifty-4-burgers-linzer-gasse",
+    titel: "Fifty 4 Burgers in der Linzer Gasse — und eine offene Stelle",
+    beschreibung:
+      "Ein Burgerlokal mitten in der Salzburger Altstadt, Partner von Salzburgsucht — und gerade auf der Suche nach Verstärkung für Service und Küche.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-02",
+    auszug:
+      "Rechte Altstadtseite, ein paar Schritte von der Staatsbrücke. Wer dort gerade jemanden sucht — und wofür.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Fifty 4 Burgers liegt in der Linzer Gasse, auf der rechten Altstadtseite, ein paar Schritte von der Staatsbrücke entfernt. Der Betrieb gehört zu den Partnern, mit denen wir zusammenarbeiten.",
+        ],
+      },
+      {
+        titel: "Mitten in der Stadt, nicht am Rand",
+        absaetze: [
+          "Die Linzer Gasse ist die Gasse, durch die man geht, wenn man vom Bahnhof in die Altstadt will. Für ein Lokal ist das eine gute und eine schwierige Lage zugleich: viel Laufkundschaft, aber auch viel Konkurrenz auf wenigen hundert Metern.",
+          "Genau deshalb zeigen wir solche Betriebe. Wer dort hineingeht, hat sich meistens vorher entschieden — und diese Entscheidung fällt heute auf dem Telefon.",
+        ],
+      },
+      {
+        titel: "Gesucht: Service und Küche",
+        absaetze: [
+          "Aktuell sucht Fifty 4 Burgers Verstärkung, in Voll- oder Teilzeit. Es geht um Service und Küche: Gäste an der Theke und im Lokal betreuen, Bestellungen aufnehmen und ausgeben, in der Zubereitung mitarbeiten.",
+          "Gastronomieerfahrung ist willkommen, aber keine Bedingung — eingeschult wird im Betrieb. Gefragt sind Verlässlichkeit, Freude am Umgang mit Gästen und die Bereitschaft zu Abend- und Wochenenddiensten.",
+          "Das vollständige Inserat steht in unserem Job-Bereich. Bewerbungen laufen über uns und gehen von dort an den Betrieb weiter; ein Konto oder ein Bewerbungsportal braucht niemand.",
+        ],
+      },
+      {
+        titel: "Was hier nicht steht",
+        absaetze: [
+          "Was auf der Karte steht und was das Beste davon ist — dazu sagen wir nichts, weil wir es euch nicht abnehmen wollen. Geht hin und findet es heraus. Wir schreiben hier nur, was wir wissen.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "gewinnspiele-mit-lokalen-betrieben",
+    titel: "Gewinnspiele mit lokalen Betrieben: wie das in Salzburg abläuft",
+    beschreibung:
+      "Ein Gewinnspiel bringt Kommentare, Reichweite und neue Follower — wenn der Preis stimmt. Wie wir solche Aktionen mit Salzburger Betrieben machen.",
+    kategorie: "Für Unternehmen",
+    publishedAt: "2026-10-02",
+    auszug:
+      "Zehn Tickets, ein Betrieb, eine Community: Warum Gewinnspiele für lokale Unternehmen so gut funktionieren — und woran sie scheitern.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Von allen Formaten, die wir anbieten, bewegt eines die Community am verlässlichsten: das Gewinnspiel. Nicht weil Menschen gierig wären, sondern weil es das einzige Format ist, bei dem Mitmachen einen Unterschied macht.",
+        ],
+      },
+      {
+        titel: "Ein Beispiel",
+        absaetze: [
+          "Mit JumpDome in Wals-Siezenheim haben wir zehn Tickets verlost. Die Aufgabe war denkbar einfach: den Sprungbuddy in den Kommentaren markieren. Mehr Mechanik braucht es nicht — und mehr sollte es auch nicht sein.",
+          "Dieser Beitrag steht bei uns auf der Startseite als Beispiel für das Format, bei „Gewinnspiele\u201c in der Leistungsübersicht.",
+        ],
+      },
+      {
+        titel: "Warum Markieren mehr bringt als Liken",
+        absaetze: [
+          "Ein Like kostet nichts und sagt nichts. Ein Kommentar, in dem jemand eine andere Person markiert, bringt den Beitrag in deren Benachrichtigungen — und holt damit genau die Leute, die sonst nie von euch gehört hätten.",
+          "Deshalb ist der Preis entscheidend: Er muss etwas sein, das man zu zweit einlöst. Zwei Tickets, zwei Essen, ein Erlebnis für zwei. Ein Gutschein über 20 €, den man allein verbraucht, erzeugt die Hälfte der Bewegung.",
+        ],
+      },
+      {
+        titel: "Woran Gewinnspiele scheitern",
+        absaetze: [
+          "An zu vielen Bedingungen. Wer folgen, liken, teilen, zwei Leute markieren und die Story reposten soll, wird nichts davon tun.",
+          "Und an Preisen, die nichts mit dem Betrieb zu tun haben. Ein verlostes iPhone bringt tausend Teilnehmer, von denen keiner jemals euer Lokal betritt — ihr kauft Reichweite, die sich am nächsten Tag wieder abmeldet. Der eigene Preis filtert von allein auf die, die in Frage kommen.",
+        ],
+      },
+      {
+        titel: "Was wir dafür brauchen",
+        absaetze: [
+          "Den Preis, einen Zeitraum und die Teilnahmebedingungen. Das Grafische, die Ankündigung und die Abwicklung auf unseren Kanälen übernehmen wir. Was wir nicht zusagen, ist eine Teilnehmerzahl — die hängt vom Preis ab, und den bestimmt ihr.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "werbung-in-salzburg-lokale-reichweite",
     titel: "Werbung in Salzburg: was über 20.000 lokale Follower bedeuten",
     beschreibung:

@@ -155,6 +155,22 @@ ok(umlandText.includes("sieben im Umland") && verstecke.filter((v) => v.gebiet =
 for (const n of ["Elixhausner Wirt", "Jumpdome Salzburg", "Chef Döner Bergheim"])
   ok(partners.some((p) => p.name === n), `Umland-Beitrag: Partner existiert (${n})`);
 
+/* --- Beitraege vom 02.10. ----------------------------------------------- */
+const fifty = text("fifty-4-burgers-linzer-gasse");
+const fiftyStelle = echte.find((j) => j.company === "Fifty 4 Burgers");
+ok(!!fiftyStelle, "Fifty 4 Burgers hat ein aktives Inserat");
+ok(fifty.includes("Voll- oder Teilzeit") && fiftyStelle?.employmentType === "Voll- oder Teilzeit",
+   "Fifty-Beitrag: Anstellungsart wie im Inserat");
+ok(fifty.includes("Linzer Gasse") && partners.some((p) => p.name === "Fifty 4 Burgers"),
+   "Fifty-Beitrag: Betrieb ist Partner, Ort genannt");
+ok(!/Pommes|Sauce|Men\u00fc|schmeckt|beste[rn]? Burger/i.test(fifty),
+   "Fifty-Beitrag behauptet nichts ueber die Speisekarte");
+
+const gewinn = text("gewinnspiele-mit-lokalen-betrieben");
+ok(partners.some((p) => p.name === "Jumpdome Salzburg"), "JumpDome ist als Partner eingetragen");
+ok(gewinn.includes("zehn Tickets"), "Gewinnspiel-Beitrag nennt die Zahl aus dem Beitragsbild");
+ok(services.some((x) => x.slug === "gewinnspiele" && x.bild), "Leistung 'Gewinnspiele' hat das Beispielbild, auf das der Text verweist");
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");
