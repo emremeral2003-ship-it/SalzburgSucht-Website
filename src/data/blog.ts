@@ -142,13 +142,18 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    /* Reihenfolge ist Absicht, nicht Zufall: quer - zwei hoch - zwei hoch
+       - quer. So beginnt und endet die Galerie mit einem Querformat, und
+       die Hochformate stehen immer paarweise. Steht ein Hochformat allein
+       in einer Reihe, bleibt daneben eine leere Haelfte, weil das naechste
+       Querformat die volle Breite braucht. */
     galerie: [
       { bild: "/images/blog/naya/team.jpg", alt: "Fünf Mitarbeiterinnen und Mitarbeiter von Naya in schwarzen Schürzen vor dem Lokal", breite: 1400, hoehe: 788 },
       { bild: "/images/blog/naya/eingiessen.jpg", alt: "Matcha wird aus einem Krug in einen Becher mit Erdbeerschicht gegossen", breite: 788, hoehe: 1400 },
       { bild: "/images/blog/naya/vorbereitung.jpg", alt: "Vorbereitete Matcha-Becher und Becherstapel auf der Arbeitsfläche", breite: 788, hoehe: 1400 },
       { bild: "/images/blog/naya/warteschlange.jpg", alt: "Wartende Gäste auf dem Gehsteig entlang der Hausfront", breite: 788, hoehe: 1400 },
-      { bild: "/images/blog/naya/theke.jpg", alt: "Blick über die Theke von Naya mit Menütafeln und arbeitendem Team", breite: 1400, hoehe: 788 },
       { bild: "/images/blog/naya/gaeste.jpg", alt: "Gäste an den Tischen vor dem Lokal mit Matcha-Bechern", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/naya/theke.jpg", alt: "Blick über die Theke von Naya mit Menütafeln und arbeitendem Team", breite: 1400, hoehe: 788 },
     ],
   },
   {
