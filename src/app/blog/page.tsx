@@ -60,8 +60,8 @@ export default function BlogPage() {
                   <Image
                     src={post.cover.bild}
                     alt=""
-                    width={800}
-                    height={450}
+                    width={post.cover.breite}
+                    height={post.cover.hoehe}
                     sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, 92vw"
                     className="aspect-[16/9] w-full object-cover"
                   />

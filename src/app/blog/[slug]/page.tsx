@@ -98,11 +98,11 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
             <Image
               src={post.cover.bild}
               alt={post.cover.alt}
-              width={1600}
-              height={900}
+              width={post.cover.breite}
+              height={post.cover.hoehe}
               sizes="(min-width: 768px) 46rem, 100vw"
               priority
-              className="w-full rounded-card border border-line object-cover shadow-card"
+              className="h-auto w-full rounded-card border border-line shadow-card"
             />
           </figure>
         ) : null}
@@ -132,20 +132,34 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
         </div>
 
         {post.galerie && post.galerie.length > 0 ? (
+          /* Jedes Bild behaelt sein eigenes Seitenverhaeltnis.
+
+             Vorher steckten alle in demselben hochkanten Rahmen mit
+             `object-cover` — bei einem Querformat schneidet das links und
+             rechts genau das weg, worum es auf dem Bild geht.
+
+             Querformate nehmen deshalb ab der zweispaltigen Ansicht die
+             volle Breite ein (`sm:col-span-2`). Nebeneinander waeren sie
+             halb so hoch wie die Hochformate daneben und wirkten wie
+             Fehldrucke; ueber die ganze Breite haben sie dieselbe Hoehe wie
+             ein Hochformat in einer Spalte, und die Reihe bleibt ruhig. */
           <div className="mt-12">
             <ul className="grid gap-4 sm:grid-cols-2">
-              {post.galerie.map((bild) => (
-                <li key={bild.bild}>
-                  <Image
-                    src={bild.bild}
-                    alt={bild.alt}
-                    width={1200}
-                    height={1600}
-                    sizes="(min-width: 640px) 22rem, 92vw"
-                    className="h-full w-full rounded-card border border-line object-cover shadow-card"
-                  />
-                </li>
-              ))}
+              {post.galerie.map((bild) => {
+                const quer = bild.breite > bild.hoehe;
+                return (
+                  <li key={bild.bild} className={quer ? "sm:col-span-2" : undefined}>
+                    <Image
+                      src={bild.bild}
+                      alt={bild.alt}
+                      width={bild.breite}
+                      height={bild.hoehe}
+                      sizes={quer ? "(min-width: 768px) 46rem, 92vw" : "(min-width: 640px) 22rem, 92vw"}
+                      className="h-auto w-full rounded-card border border-line shadow-card"
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ) : null}

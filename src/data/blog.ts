@@ -50,6 +50,16 @@ export type BlogAbschnitt = {
 export type BlogBild = {
   bild: string;
   alt: string;
+  /**
+   * Die echten Masse der Datei.
+   *
+   * Sie stehen hier, damit die Galerie jedes Bild in seinem eigenen
+   * Seitenverhaeltnis zeigen kann. Vorher lagen alle in demselben hochkanten
+   * Rahmen und wurden beschnitten — bei einem Querformat heisst das, dass
+   * links und rechts genau das wegfaellt, wofuer man es aufgenommen hat.
+   */
+  breite: number;
+  hoehe: number;
 };
 
 export type BlogPost = {
@@ -93,6 +103,8 @@ export const blogPosts: BlogPost[] = [
     cover: {
       bild: "/images/blog/naya/schlange.jpg",
       alt: "Lange Warteschlange junger Menschen auf dem Gehsteig vor den Geschäften neben Naya",
+      breite: 1600,
+      hoehe: 900,
     },
     abschnitte: [
       {
@@ -131,12 +143,12 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     galerie: [
-      { bild: "/images/blog/naya/team.jpg", alt: "Fünf Mitarbeiterinnen und Mitarbeiter von Naya in schwarzen Schürzen vor dem Lokal" },
-      { bild: "/images/blog/naya/eingiessen.jpg", alt: "Matcha wird aus einem Krug in einen Becher mit Erdbeerschicht gegossen" },
-      { bild: "/images/blog/naya/vorbereitung.jpg", alt: "Vorbereitete Matcha-Becher und Becherstapel auf der Arbeitsfläche" },
-      { bild: "/images/blog/naya/warteschlange.jpg", alt: "Wartende Gäste auf dem Gehsteig entlang der Hausfront" },
-      { bild: "/images/blog/naya/theke.jpg", alt: "Blick über die Theke von Naya mit Menütafeln und arbeitendem Team" },
-      { bild: "/images/blog/naya/gaeste.jpg", alt: "Gäste an den Tischen vor dem Lokal mit Matcha-Bechern" },
+      { bild: "/images/blog/naya/team.jpg", alt: "Fünf Mitarbeiterinnen und Mitarbeiter von Naya in schwarzen Schürzen vor dem Lokal", breite: 1400, hoehe: 788 },
+      { bild: "/images/blog/naya/eingiessen.jpg", alt: "Matcha wird aus einem Krug in einen Becher mit Erdbeerschicht gegossen", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/naya/vorbereitung.jpg", alt: "Vorbereitete Matcha-Becher und Becherstapel auf der Arbeitsfläche", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/naya/warteschlange.jpg", alt: "Wartende Gäste auf dem Gehsteig entlang der Hausfront", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/naya/theke.jpg", alt: "Blick über die Theke von Naya mit Menütafeln und arbeitendem Team", breite: 1400, hoehe: 788 },
+      { bild: "/images/blog/naya/gaeste.jpg", alt: "Gäste an den Tischen vor dem Lokal mit Matcha-Bechern", breite: 788, hoehe: 1400 },
     ],
   },
   {
