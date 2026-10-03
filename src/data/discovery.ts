@@ -108,23 +108,19 @@ export const contentKarten: ContentKarte[] = [
     demo: false,
   },
   {
-    /* Cover: Foto von Naya aus Emres Ablage (~/Downloads/Naya Posts 45.png,
-       getauscht am 11.09.2026) — zwei Matcha im Naya-Becher, also genau das
-       Angebot der Aktion. Neuer Dateiname statt Ueberschreiben, weil die
-       Bildoptimierung von Next.js nach Pfad zwischenspeichert.
+    /* Rueckblick statt Ankuendigung (03.10.2026): Die Aktion war am
+       2. Oktober, die Karte kuendigte sie weiter an. Eine Startseite, die
+       ein vergangenes Datum bewirbt, ist schlimmer als keine Karte.
 
-       Termin laut Emre: 2. Oktober 2026. Die Adresse steht bewusst NICHT
-       im Text — Partnerdaten (Hofstallgasse) und Kundenprofil
-       (Rainerstraße 24) widersprechen sich noch.
-
-       NACH DEM 2. OKTOBER veraltet die Karte: dann Text anpassen oder die
-       Karte ersetzen. */
+       Zahl und Fotos von Emre, aufgenommen am Aktionstag. Cover auf 4:5
+       zugeschnitten wie alle Karten dieser Reihe. Die ganze Geschichte
+       steht im Blog unter /blog/700-matcha-bei-naya. */
     id: "event-naya-matcha",
     kategorie: "Event",
-    titel: "Zwei Matcha um 2 € bei Naya",
-    text: "Am 2. Oktober gibt es bei Naya zwei Matcha um zwei Euro — einen für dich, einen zum Mitbringen.",
-    bild: "/images/naya-matcha-duo.jpg",
-    alt: "Zwei Matcha mit Erdbeerschicht in Naya-Bechern, von einer Person in den Händen gehalten",
+    titel: "Über 700 Matcha bei Naya",
+    text: "Zwei Matcha um zwei Euro — am 2. Oktober reichte die Schlange bis zu den Nachbargeschäften. Über 700 Becher gingen über die Theke.",
+    bild: "/images/naya-700-matcha.jpg",
+    alt: "Gäste an den Tischen vor dem Lokal, auf dem Tisch mehrere Matcha-Becher",
     video: null,
     url: null,
     demo: false,

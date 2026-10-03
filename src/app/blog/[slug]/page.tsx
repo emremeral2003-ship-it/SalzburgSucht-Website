@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -87,6 +88,25 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
       </section>
 
       <Container className="abschnitt max-w-[46rem]">
+        {post.cover ? (
+          /* Der Aufmacher sitzt zwischen Kopf und Text, nicht im Kopf selbst:
+             Im Kopf laege er hinter der Ueberschrift und muesste abgedunkelt
+             werden, damit die Schrift lesbar bleibt — das kostet genau das
+             Bild, das man zeigen will. `priority`, weil er das erste sichtbare
+             Element ist. */
+          <figure className="mb-10">
+            <Image
+              src={post.cover.bild}
+              alt={post.cover.alt}
+              width={1600}
+              height={900}
+              sizes="(min-width: 768px) 46rem, 100vw"
+              priority
+              className="w-full rounded-card border border-line object-cover shadow-card"
+            />
+          </figure>
+        ) : null}
+
         <div className="space-y-10">
           {post.abschnitte.map((abschnitt, index) => (
             <section key={index}>
@@ -110,6 +130,25 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
             </section>
           ))}
         </div>
+
+        {post.galerie && post.galerie.length > 0 ? (
+          <div className="mt-12">
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {post.galerie.map((bild) => (
+                <li key={bild.bild}>
+                  <Image
+                    src={bild.bild}
+                    alt={bild.alt}
+                    width={1200}
+                    height={1600}
+                    sizes="(min-width: 640px) 22rem, 92vw"
+                    className="h-full w-full rounded-card border border-line object-cover shadow-card"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         {weitere.length > 0 ? (
           <div className="mt-16 border-t border-line pt-10">

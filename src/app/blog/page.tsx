@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowRight } from "@/components/icons";
@@ -50,8 +51,23 @@ export default function BlogPage() {
             <li key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full flex-col rounded-card border border-line bg-page p-6 shadow-card transition-shadow duration-200 hover:border-primary hover:shadow-card-hover"
+                className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-page shadow-card transition-shadow duration-200 hover:border-primary hover:shadow-card-hover"
               >
+                {/* Nur Beitraege mit Bild bekommen eines. Ein Platzhalter bei
+                    den uebrigen waere eine graue Flaeche, die wie ein
+                    Ladefehler aussieht. */}
+                {post.cover ? (
+                  <Image
+                    src={post.cover.bild}
+                    alt=""
+                    width={800}
+                    height={450}
+                    sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, 92vw"
+                    className="aspect-[16/9] w-full object-cover"
+                  />
+                ) : null}
+
+                <div className="flex h-full flex-col p-6">
                 <p className="eyebrow">{post.kategorie}</p>
                 <h2 className="mt-3 text-xl font-bold leading-snug text-ink">
                   {post.titel}
@@ -65,6 +81,7 @@ export default function BlogPage() {
                     Lesen
                     <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-[3px]" />
                   </span>
+                </div>
                 </div>
               </Link>
             </li>

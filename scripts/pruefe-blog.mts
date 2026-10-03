@@ -115,7 +115,13 @@ ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsda
 const nayaText = text("zwei-matcha-um-zwei-euro-bei-naya");
 const nayaKarte = contentKarten.find((d) => d.id === "event-naya-matcha");
 ok(!!nayaKarte && nayaKarte.text.includes("2. Oktober") && nayaText.includes("2. Oktober"),
-   "Beitrag und Startseiten-Karte nennen denselben Termin");
+   "Ankuendigungsbeitrag und Karte nennen denselben Termin");
+/* Die Karte ist seit 03.10. ein Rueckblick. Sie darf die Aktion nicht mehr
+   als bevorstehend ankuendigen - genau das war vorher der Fall. */
+ok(!/^Am 2\. Oktober gibt es/.test(nayaKarte!.text), "Karte kuendigt die Aktion nicht mehr als kuenftig an");
+const rueckblick = text("700-matcha-bei-naya");
+ok(rueckblick.includes("700") && nayaKarte!.text.includes("700"), "Rueckblick und Karte nennen dieselbe Zahl");
+ok(rueckblick.includes("2. Oktober"), "Rueckblick nennt das Datum der Aktion");
 ok(partners.some((p) => p.name === "Naya"), "Naya ist als Partner eingetragen");
 ok(!/Rainerstra\u00dfe|Hofstallgasse/.test(nayaText), "keine Adresse im Text, solange sie ungeklaert ist");
 ok(!/\d{1,2}(:|\.)\d{2}\s*Uhr/.test(nayaText), "keine erfundene Uhrzeit");

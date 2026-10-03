@@ -45,6 +45,13 @@ export type BlogAbschnitt = {
   absaetze: string[];
 };
 
+/** Ein Bild mit Beschreibung. `alt` ist Pflicht, nicht Zierde: Ohne sie ist
+    das Bild fuer Screenreader und bei einem Ladefehler schlicht nicht da. */
+export type BlogBild = {
+  bild: string;
+  alt: string;
+};
+
 export type BlogPost = {
   slug: string;
   titel: string;
@@ -61,9 +68,77 @@ export type BlogPost = {
   /** Anreisser fuer die Uebersichtsseite. */
   auszug: string;
   abschnitte: BlogAbschnitt[];
+  /** Aufmacher: steht oben im Beitrag und als Vorschau in der Uebersicht. */
+  cover?: BlogBild;
+  /**
+   * Weitere Bilder, als Raster unter dem Text.
+   *
+   * Bewusst am Ende und nicht zwischen den Abschnitten: Ein Beitrag, der
+   * zwischen jedem Absatz ein Bild hat, liest sich nicht mehr — und die
+   * Bildergroesse muesste dann je Stelle anders sein.
+   */
+  galerie?: BlogBild[];
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "700-matcha-bei-naya",
+    titel: "Über 700 Matcha an einem Tag — die Aktion bei Naya",
+    beschreibung:
+      "Zwei Matcha um zwei Euro bei Naya: Am 2. Oktober standen die Leute bis vor die Nachbargeschäfte. Über 700 Becher gingen über die Theke.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-03",
+    auszug:
+      "Zwei Matcha um zwei Euro — und eine Schlange, die bis zum Dönerladen reichte. Wie der 2. Oktober bei Naya gelaufen ist.",
+    cover: {
+      bild: "/images/blog/naya/schlange.jpg",
+      alt: "Lange Warteschlange junger Menschen auf dem Gehsteig vor den Geschäften neben Naya",
+    },
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Zwei Matcha um zwei Euro, einen Tag lang, bei Naya. So stand es hier auf der Seite und auf unseren Kanälen. Was daraus geworden ist, zeigt das Bild oben besser als jeder Satz: Die Schlange reichte am 2. Oktober über die Nachbargeschäfte hinweg bis zum Dönerladen.",
+        ],
+      },
+      {
+        titel: "Über 700 Matcha",
+        absaetze: [
+          "Am Ende des Tages waren mehr als 700 Becher über die Theke gegangen. Das ist keine Zahl, die man plant — das ist eine Zahl, bei der im Laden irgendwann niemand mehr mitzählt und hinterher die Becherstapel zusammengerechnet werden.",
+          "Für ein einzelnes Lokal an einem einzelnen Tag ist das viel. Und es erklärt auch, warum wir solche Aktionen überhaupt machen: Sie bringen Leute an einem bestimmten Tag an einen bestimmten Ort. Reichweite allein tut das nicht.",
+        ],
+      },
+      {
+        titel: "Wer das gestemmt hat",
+        absaetze: [
+          "Das Team von Naya. Zwei Euro sind schnell versprochen — dahinter steht jemand, der stundenlang Matcha aufgießt, Becher schichtet und nebenbei eine Schlange bei Laune hält, die nicht kürzer wird.",
+          "Wer an dem Tag dort war und gewartet hat: Das war der Grund. Nicht Langsamkeit, sondern 700 Becher.",
+        ],
+      },
+      {
+        titel: "Warum das funktioniert hat",
+        absaetze: [
+          "Der Preis war klar, die Bedingung war eine einzige, und das Angebot war etwas, das man zu zweit holt. Genau daran scheitern die meisten Aktionen: zu viele Regeln, oder ein Preis, den man allein verbraucht.",
+          "Zwei Matcha um zwei Euro heißt, dass jemand jemanden mitbringt. Auf den Fotos sieht man das Ergebnis — an den Tischen vor dem Lokal sitzt niemand allein.",
+        ],
+      },
+      {
+        titel: "Und jetzt?",
+        absaetze: [
+          "Danke an Naya für den langen Tag und an alle, die angestellt sind. Die nächste Aktion kündigen wir wie immer zuerst auf Instagram an.",
+          "Und wenn ihr einen Betrieb habt und so etwas überlegt: Schreibt uns. Wir sagen auch ehrlich, wenn wir glauben, dass es bei euch nicht aufgeht.",
+        ],
+      },
+    ],
+    galerie: [
+      { bild: "/images/blog/naya/team.jpg", alt: "Fünf Mitarbeiterinnen und Mitarbeiter von Naya in schwarzen Schürzen vor dem Lokal" },
+      { bild: "/images/blog/naya/eingiessen.jpg", alt: "Matcha wird aus einem Krug in einen Becher mit Erdbeerschicht gegossen" },
+      { bild: "/images/blog/naya/vorbereitung.jpg", alt: "Vorbereitete Matcha-Becher und Becherstapel auf der Arbeitsfläche" },
+      { bild: "/images/blog/naya/warteschlange.jpg", alt: "Wartende Gäste auf dem Gehsteig entlang der Hausfront" },
+      { bild: "/images/blog/naya/theke.jpg", alt: "Blick über die Theke von Naya mit Menütafeln und arbeitendem Team" },
+      { bild: "/images/blog/naya/gaeste.jpg", alt: "Gäste an den Tischen vor dem Lokal mit Matcha-Bechern" },
+    ],
+  },
   {
     slug: "fifty-4-burgers-linzer-gasse",
     titel: "Fifty 4 Burgers in der Linzer Gasse — und eine offene Stelle",
