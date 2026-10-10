@@ -108,7 +108,7 @@ export const contentKarten: ContentKarte[] = [
     demo: false,
   },
   {
-    /* Nova Luna, neues tuerkisches Restaurant in der Rainerstraße 27.
+    /* Novaluna, neues tuerkisches Restaurant in der Rainerstraße 27.
        Angaben von Emre (10.10.2026): Start Samstag, 17. Oktober, ein Doener
        um einen Euro. Der 17.10.2026 ist nachgeprueft ein Samstag.
 
@@ -116,12 +116,12 @@ export const contentKarten: ContentKarte[] = [
        auf einen Tag begrenzt ist, und die Oeffnungszeiten.
 
        BILD IST EIN PLATZHALTER (public/images/platzhalter/event.png, erzeugt
-       von scripts/platzhalter-bilder.mjs). Von Nova Luna liegt noch kein
+       von scripts/platzhalter-bilder.mjs). Von Novaluna liegt noch kein
        Foto vor. Sobald eines da ist, gehoert es hierher - eine abstrakte
        Flaeche verkauft kein Lokal. */
-    id: "event-nova-luna-doener",
+    id: "event-novaluna-doener",
     kategorie: "Event",
-    titel: "1 € Döner bei Nova Luna",
+    titel: "1 € Döner bei Novaluna",
     text: "Ab Samstag, 17. Oktober: ein Döner um einen Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
     bild: "/images/platzhalter/event.png",
     alt: "Abstrakte blaue Fläche als vorläufiges Titelbild",

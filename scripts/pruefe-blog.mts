@@ -111,7 +111,7 @@ for (const n of ["Sahil Barbershop", "Fifty 4 Burgers", "Salz und Zucker B\u00e4
   ok(partners.some((p) => p.name === n), `Beispielbetrieb ist Partner: ${n}`);
 ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsdatum");
 
-/* --- Naya-Aktion (Karte ist seit 10.10. durch Nova Luna ersetzt) -------- */
+/* --- Naya-Aktion (Karte ist seit 10.10. durch Novaluna ersetzt) -------- */
 const nayaText = text("zwei-matcha-um-zwei-euro-bei-naya");
 ok(partners.some((p) => p.name === "Naya"), "Naya ist als Partner eingetragen");
 ok(!/Rainerstra\u00dfe|Hofstallgasse/.test(nayaText), "keine Adresse im Text, solange sie ungeklaert ist");
@@ -121,9 +121,9 @@ ok(rueckblick.includes("700"), "Rueckblick nennt die Zahl");
 ok(rueckblick.includes("2. Oktober"), "Rueckblick nennt das Datum der Aktion");
 
 /* --- Karten in "Gerade in Salzburg" ------------------------------------- */
-const nova = contentKarten.find((d) => d.id === "event-nova-luna-doener");
+const nova = contentKarten.find((d) => d.id === "event-novaluna-doener");
 ok(!!nova && nova.text.includes("17. Oktober") && nova.text.includes("Rainerstraße 27"),
-   "Nova-Luna-Karte nennt Datum und Adresse");
+   "Novaluna-Karte nennt Datum und Adresse");
 ok(!contentKarten.some((d) => d.id === "event-naya-matcha"),
    "die abgelaufene Naya-Karte ist von der Startseite genommen");
 /* Kein Fehler, aber ein Hinweis: Platzhalterbilder sollen nicht liegen
