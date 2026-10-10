@@ -109,11 +109,14 @@ export const contentKarten: ContentKarte[] = [
   },
   {
     /* Novaluna, neues tuerkisches Restaurant in der Rainerstraße 27.
-       Angaben von Emre (10.10.2026): Start Samstag, 17. Oktober, ein Doener
-       um einen Euro. Der 17.10.2026 ist nachgeprueft ein Samstag.
+       Angaben von Emre (10.10.2026): ein Doener um einen Euro, NUR am
+       Samstag, 17. Oktober - nicht ab diesem Tag. Die erste Fassung sagte
+       "ab", das war falsch und haette Leute am Montag ins Lokal geschickt.
+       Der 17.10.2026 ist nachgeprueft ein Samstag.
 
-       OFFEN und deshalb nicht im Text: wie lange die Aktion laeuft, ob sie
-       auf einen Tag begrenzt ist, und die Oeffnungszeiten.
+       NACH DEM 17. OKTOBER veraltet die Karte: ersetzen oder entfernen.
+
+       OFFEN und deshalb nicht im Text: die Oeffnungszeiten.
 
        BILD IST EIN PLATZHALTER (public/images/platzhalter/event.png, erzeugt
        von scripts/platzhalter-bilder.mjs). Von Novaluna liegt noch kein
@@ -122,7 +125,7 @@ export const contentKarten: ContentKarte[] = [
     id: "event-novaluna-doener",
     kategorie: "Event",
     titel: "1 € Döner bei Novaluna",
-    text: "Ab Samstag, 17. Oktober: ein Döner um einen Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
+    text: "Nur am Samstag, 17. Oktober: ein Döner um einen Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
     bild: "/images/platzhalter/event.png",
     alt: "Abstrakte blaue Fläche als vorläufiges Titelbild",
     video: null,
