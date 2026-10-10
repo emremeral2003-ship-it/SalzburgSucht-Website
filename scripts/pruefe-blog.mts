@@ -111,20 +111,25 @@ for (const n of ["Sahil Barbershop", "Fifty 4 Burgers", "Salz und Zucker B\u00e4
   ok(partners.some((p) => p.name === n), `Beispielbetrieb ist Partner: ${n}`);
 ok(!/gegr\u00fcndet|seit 20\d\d/i.test(warumText), "kein erfundenes Gruendungsdatum");
 
-/* --- Naya-Aktion -------------------------------------------------------- */
+/* --- Naya-Aktion (Karte ist seit 10.10. durch Nova Luna ersetzt) -------- */
 const nayaText = text("zwei-matcha-um-zwei-euro-bei-naya");
-const nayaKarte = contentKarten.find((d) => d.id === "event-naya-matcha");
-ok(!!nayaKarte && nayaKarte.text.includes("2. Oktober") && nayaText.includes("2. Oktober"),
-   "Ankuendigungsbeitrag und Karte nennen denselben Termin");
-/* Die Karte ist seit 03.10. ein Rueckblick. Sie darf die Aktion nicht mehr
-   als bevorstehend ankuendigen - genau das war vorher der Fall. */
-ok(!/^Am 2\. Oktober gibt es/.test(nayaKarte!.text), "Karte kuendigt die Aktion nicht mehr als kuenftig an");
-const rueckblick = text("700-matcha-bei-naya");
-ok(rueckblick.includes("700") && nayaKarte!.text.includes("700"), "Rueckblick und Karte nennen dieselbe Zahl");
-ok(rueckblick.includes("2. Oktober"), "Rueckblick nennt das Datum der Aktion");
 ok(partners.some((p) => p.name === "Naya"), "Naya ist als Partner eingetragen");
 ok(!/Rainerstra\u00dfe|Hofstallgasse/.test(nayaText), "keine Adresse im Text, solange sie ungeklaert ist");
 ok(!/\d{1,2}(:|\.)\d{2}\s*Uhr/.test(nayaText), "keine erfundene Uhrzeit");
+const rueckblick = text("700-matcha-bei-naya");
+ok(rueckblick.includes("700"), "Rueckblick nennt die Zahl");
+ok(rueckblick.includes("2. Oktober"), "Rueckblick nennt das Datum der Aktion");
+
+/* --- Karten in "Gerade in Salzburg" ------------------------------------- */
+const nova = contentKarten.find((d) => d.id === "event-nova-luna-doener");
+ok(!!nova && nova.text.includes("17. Oktober") && nova.text.includes("Rainerstraße 27"),
+   "Nova-Luna-Karte nennt Datum und Adresse");
+ok(!contentKarten.some((d) => d.id === "event-naya-matcha"),
+   "die abgelaufene Naya-Karte ist von der Startseite genommen");
+/* Kein Fehler, aber ein Hinweis: Platzhalterbilder sollen nicht liegen
+   bleiben. Sie sehen aus wie Design und sind in Wahrheit eine Luecke. */
+for (const k of contentKarten.filter((d) => d.bild.includes("/platzhalter/")))
+  console.log(`  ! ${k.id} nutzt noch ein Platzhalterbild (${k.bild})`);
 
 /* --- "Was nicht auf die Seite kommt" ------------------------------------ */
 const regelText = text("was-nicht-auf-die-seite-kommt");

@@ -108,19 +108,23 @@ export const contentKarten: ContentKarte[] = [
     demo: false,
   },
   {
-    /* Rueckblick statt Ankuendigung (03.10.2026): Die Aktion war am
-       2. Oktober, die Karte kuendigte sie weiter an. Eine Startseite, die
-       ein vergangenes Datum bewirbt, ist schlimmer als keine Karte.
+    /* Nova Luna, neues tuerkisches Restaurant in der Rainerstraße 27.
+       Angaben von Emre (10.10.2026): Start Samstag, 17. Oktober, ein Doener
+       um einen Euro. Der 17.10.2026 ist nachgeprueft ein Samstag.
 
-       Zahl und Fotos von Emre, aufgenommen am Aktionstag. Cover auf 4:5
-       zugeschnitten wie alle Karten dieser Reihe. Die ganze Geschichte
-       steht im Blog unter /blog/700-matcha-bei-naya. */
-    id: "event-naya-matcha",
+       OFFEN und deshalb nicht im Text: wie lange die Aktion laeuft, ob sie
+       auf einen Tag begrenzt ist, und die Oeffnungszeiten.
+
+       BILD IST EIN PLATZHALTER (public/images/platzhalter/event.png, erzeugt
+       von scripts/platzhalter-bilder.mjs). Von Nova Luna liegt noch kein
+       Foto vor. Sobald eines da ist, gehoert es hierher - eine abstrakte
+       Flaeche verkauft kein Lokal. */
+    id: "event-nova-luna-doener",
     kategorie: "Event",
-    titel: "Über 700 Matcha bei Naya",
-    text: "Zwei Matcha um zwei Euro — am 2. Oktober reichte die Schlange bis zu den Nachbargeschäften. Über 700 Becher gingen über die Theke.",
-    bild: "/images/naya-700-matcha.jpg",
-    alt: "Gäste an den Tischen vor dem Lokal, auf dem Tisch mehrere Matcha-Becher",
+    titel: "1 € Döner bei Nova Luna",
+    text: "Ab Samstag, 17. Oktober: ein Döner um einen Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
+    bild: "/images/platzhalter/event.png",
+    alt: "Abstrakte blaue Fläche als vorläufiges Titelbild",
     video: null,
     url: null,
     demo: false,
