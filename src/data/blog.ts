@@ -92,6 +92,89 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ein-euro-doener-novaluna",
+    titel: "Ein Döner um einen Euro: Novaluna in der Rainerstraße",
+    beschreibung:
+      "Am Samstag, 17. Oktober, gibt es bei Novaluna in der Rainerstraße 27 den Döner um einen Euro — nur an diesem einen Tag.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-12",
+    auszug:
+      "Neues türkisches Restaurant in der Rainerstraße 27 — und ein Samstag, an dem der Döner einen Euro kostet.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "In der Rainerstraße 27 hat mit Novaluna ein neues türkisches Restaurant aufgesperrt. Am Samstag, dem 17. Oktober, gibt es dort den Döner um einen Euro.",
+        ],
+      },
+      {
+        titel: "Nur dieser eine Tag",
+        absaetze: [
+          "Die Aktion gilt ausschließlich am 17. Oktober — nicht ab diesem Tag. Wer am Sonntag oder Montag vorbeischaut, zahlt den normalen Preis. Das schreiben wir so deutlich hin, weil genau diese Verwechslung Leute umsonst hinfahren lässt.",
+          "Wie lange am Samstag ausgegeben wird und wann Schluss ist, wissen wir nicht. Erfahrungsgemäß hängt das an dem, was die Küche schafft.",
+        ],
+      },
+      {
+        titel: "Rechnet mit Andrang",
+        absaetze: [
+          "Was bei solchen Aktionen passiert, haben wir gerade erst gesehen: Bei Naya gingen an einem einzigen Tag über 700 Matcha über die Theke, die Schlange reichte bis zu den Nachbargeschäften.",
+          "Ein Euro für einen Döner ist ein ähnlich eindeutiges Angebot. Wer nicht warten will, kommt besser früh — und bringt Geduld mit, wenn es doch dauert. Hinter der Theke steht an so einem Tag ein Team, das durchgehend arbeitet.",
+        ],
+      },
+      {
+        titel: "Wo genau",
+        absaetze: [
+          "Rainerstraße 27, also auf der Neustadtseite zwischen Hauptbahnhof und Mirabellplatz — die Gegend, in der man ohnehin vorbeikommt, wenn man vom Bahnhof in die Stadt geht.",
+          "Alles Weitere zur Aktion geben wir auf unseren Kanälen bekannt, dort steht auch, falls sich noch etwas ändert.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "salzburg-im-oktober-2026",
+    titel: "Was im Oktober bei unseren Partnern läuft",
+    beschreibung:
+      "Ein Euro Döner bei Novaluna, gratis Frühlingsrollen bei Mr. Wen und irgendwo in der Stadt wieder Geld: der Oktober bei Salzburgsucht.",
+    kategorie: "Community",
+    publishedAt: "2026-10-12",
+    auszug:
+      "Drei Dinge, für die es sich diesen Monat auszahlt, in Salzburg aufmerksam zu sein.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Der Oktober ist bei uns ungewöhnlich voll. Damit nichts untergeht, hier alles auf einen Blick — mit dem, was tatsächlich feststeht, und ohne das, was wir noch nicht wissen.",
+        ],
+      },
+      {
+        titel: "Samstag, 17. Oktober: ein Euro, ein Döner",
+        absaetze: [
+          "Novaluna, das neue türkische Restaurant in der Rainerstraße 27, gibt den Döner an diesem Samstag um einen Euro ab. Nur an diesem Tag. Mehr dazu steht in unserem Beitrag zur Aktion.",
+        ],
+      },
+      {
+        titel: "Laufend: gratis Frühlingsrollen bei Mr. Wen",
+        absaetze: [
+          "Mit dem Rabattcode SALZBURG SUCHT gibt es bei Mr. Wen ab einem Bestellwert von 10 € Frühlingsrollen gratis dazu. Der Code gilt bei Abholung im Laden — ihr nennt ihn einfach beim Bestellen.",
+          "Mr. Wen gibt es viermal in Salzburg: in Maxglan, beim Mirabellplatz, in der Kaigasse und im Himmelreich. Eine Befristung gibt es für diese Aktion bislang nicht.",
+        ],
+      },
+      {
+        titel: "Jederzeit: wir verstecken Geld",
+        absaetze: [
+          "Irgendwo in der Stadt liegt immer wieder etwas. Alle bisherigen 37 Verstecke stehen auf der Karte auf unserer Startseite, von der Altstadt bis nach Hallein — das aktuelle steht dort nie, sonst wäre es keines.",
+          "Angekündigt wird jedes Versteck auf Instagram. Wer es als Erster findet, behält es.",
+        ],
+      },
+      {
+        titel: "Und wenn ihr selbst etwas plant",
+        absaetze: [
+          "Betriebe, die im November oder zum Jahresende etwas vorhaben — eine Eröffnung, eine Aktion, ein Gewinnspiel —, melden sich am besten jetzt. Je früher wir es wissen, desto besser lässt es sich vorbereiten; eine Aktion, die drei Tage vorher angekündigt wird, verschenkt die Hälfte.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "700-matcha-bei-naya",
     titel: "Über 700 Matcha an einem Tag — die Aktion bei Naya",
     beschreibung:

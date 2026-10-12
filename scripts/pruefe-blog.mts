@@ -182,6 +182,22 @@ ok(partners.some((p) => p.name === "Jumpdome Salzburg"), "JumpDome ist als Partn
 ok(gewinn.includes("zehn Tickets"), "Gewinnspiel-Beitrag nennt die Zahl aus dem Beitragsbild");
 ok(services.some((x) => x.slug === "gewinnspiele" && x.bild), "Leistung 'Gewinnspiele' hat das Beispielbild, auf das der Text verweist");
 
+/* --- Oktober-Beitraege --------------------------------------------------- */
+const doener = text("ein-euro-doener-novaluna");
+ok(!!nova && nova.text.includes("17. Oktober") && doener.includes("17. Oktober"),
+   "Doener-Beitrag und Karte nennen denselben Tag");
+ok(doener.includes("Rainerstraße 27") && nova!.text.includes("Rainerstraße 27"),
+   "Doener-Beitrag und Karte nennen dieselbe Adresse");
+ok(/nicht ab diesem Tag|ausschließlich am 17/.test(doener),
+   "Doener-Beitrag stellt klar, dass es nur dieser eine Tag ist");
+ok(!/\d{1,2}(:|\.)\d{2}\s*Uhr/.test(doener), "keine erfundene Uhrzeit im Doener-Beitrag");
+
+const oktober = text("salzburg-im-oktober-2026");
+ok(oktober.includes(wenKarte.code!), "Monatsuebersicht nennt den Mr.-Wen-Code wie auf der Karte");
+ok(oktober.includes("37 Verstecke") && verstecke.length === 37, "Monatsuebersicht: 37 Verstecke");
+for (const ort of ["Maxglan", "Mirabell", "Kaigasse", "Himmelreich"])
+  ok(oktober.includes(ort), `Monatsuebersicht nennt Standort ${ort}`);
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");
