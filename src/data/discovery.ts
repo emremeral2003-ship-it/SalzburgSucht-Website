@@ -109,25 +109,23 @@ export const contentKarten: ContentKarte[] = [
   },
   {
     /* Novaluna, neues tuerkisches Restaurant in der Rainerstraße 27.
-       Angaben von Emre (10.10.2026): ein Doener um einen Euro, NUR am
-       Samstag, 17. Oktober - nicht ab diesem Tag. Die erste Fassung sagte
-       "ab", das war falsch und haette Leute am Montag ins Lokal geschickt.
-       Der 17.10.2026 ist nachgeprueft ein Samstag.
+       Stand 14.10.2026 (Emre): zwei Doener fuer zwei Euro am Sonntag,
+       18. Oktober. Das ersetzt die erste Ankuendigung (ein Doener um einen
+       Euro am Samstag, 17.) - Angebot UND Tag haben sich geaendert.
+       Der 18.10.2026 ist nachgeprueft ein Sonntag.
 
-       NACH DEM 17. OKTOBER veraltet die Karte: ersetzen oder entfernen.
+       NACH DEM 18. OKTOBER veraltet die Karte: ersetzen oder entfernen.
 
        OFFEN und deshalb nicht im Text: die Oeffnungszeiten.
 
-       BILD IST EIN PLATZHALTER (public/images/platzhalter/event.png, erzeugt
-       von scripts/platzhalter-bilder.mjs). Von Novaluna liegt noch kein
-       Foto vor. Sobald eines da ist, gehoert es hierher - eine abstrakte
-       Flaeche verkauft kein Lokal. */
+       Foto von Emre aus dem Referenzordner, auf 4:5 zugeschnitten wie alle
+       Karten dieser Reihe. Der Platzhalter ist damit weg. */
     id: "event-novaluna-doener",
     kategorie: "Event",
-    titel: "1 € Döner bei Novaluna",
-    text: "Nur am Samstag, 17. Oktober: ein Döner um einen Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
-    bild: "/images/platzhalter/event.png",
-    alt: "Abstrakte blaue Fläche als vorläufiges Titelbild",
+    titel: "2 Döner für 2 € bei Novaluna",
+    text: "Nur am Sonntag, 18. Oktober: zwei Döner für zwei Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
+    bild: "/images/novaluna-doener.jpg",
+    alt: "Döner im Sesamweckerl mit Tomaten, Zwiebeln und Feta, in Papier auf einem Teller",
     video: null,
     url: null,
     demo: false,

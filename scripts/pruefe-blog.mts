@@ -122,7 +122,7 @@ ok(rueckblick.includes("2. Oktober"), "Rueckblick nennt das Datum der Aktion");
 
 /* --- Karten in "Gerade in Salzburg" ------------------------------------- */
 const nova = contentKarten.find((d) => d.id === "event-novaluna-doener");
-ok(!!nova && nova.text.includes("17. Oktober") && nova.text.includes("Rainerstraße 27"),
+ok(!!nova && nova.text.includes("18. Oktober") && nova.text.includes("Rainerstraße 27"),
    "Novaluna-Karte nennt Datum und Adresse");
 ok(!contentKarten.some((d) => d.id === "event-naya-matcha"),
    "die abgelaufene Naya-Karte ist von der Startseite genommen");
@@ -183,14 +183,20 @@ ok(gewinn.includes("zehn Tickets"), "Gewinnspiel-Beitrag nennt die Zahl aus dem 
 ok(services.some((x) => x.slug === "gewinnspiele" && x.bild), "Leistung 'Gewinnspiele' hat das Beispielbild, auf das der Text verweist");
 
 /* --- Oktober-Beitraege --------------------------------------------------- */
-const doener = text("ein-euro-doener-novaluna");
-ok(!!nova && nova.text.includes("17. Oktober") && doener.includes("17. Oktober"),
+const doener = text("zwei-doener-zwei-euro-novaluna");
+ok(!!nova && nova.text.includes("18. Oktober") && doener.includes("18. Oktober"),
    "Doener-Beitrag und Karte nennen denselben Tag");
 ok(doener.includes("Rainerstraße 27") && nova!.text.includes("Rainerstraße 27"),
    "Doener-Beitrag und Karte nennen dieselbe Adresse");
-ok(/nicht ab diesem Tag|ausschließlich am 17/.test(doener),
+ok(doener.includes("zwei Döner für zwei Euro") && nova!.text.includes("zwei Döner für zwei Euro"),
+   "Doener-Beitrag und Karte nennen dasselbe Angebot");
+ok(/nicht ab diesem Tag|ausschließlich am 18/.test(doener),
    "Doener-Beitrag stellt klar, dass es nur dieser eine Tag ist");
 ok(!/\d{1,2}(:|\.)\d{2}\s*Uhr/.test(doener), "keine erfundene Uhrzeit im Doener-Beitrag");
+/* Die alte Fassung sprach vom 17. und von einem Euro. Taucht das irgendwo
+   wieder auf, widersprechen sich Beitrag, Karte und Monatsuebersicht. */
+ok(!blogPosts.some((p) => JSON.stringify(p).includes("17. Oktober")),
+   "kein Beitrag nennt mehr den alten Termin");
 
 const oktober = text("salzburg-im-oktober-2026");
 ok(oktober.includes(wenKarte.code!), "Monatsuebersicht nennt den Mr.-Wen-Code wie auf der Karte");

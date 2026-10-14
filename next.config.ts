@@ -23,6 +23,26 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
   },
+
+  /**
+   * Dauerhafte Umleitungen fuer Adressen, die es einmal gab.
+   *
+   * Ein veroeffentlichter Beitrag wurde womoeglich schon geteilt oder von
+   * Google erfasst. Wer seine Adresse aendert, ohne umzuleiten, macht aus
+   * jedem dieser Links eine 404-Seite — und verschenkt dazu die Bewertung,
+   * die die alte Adresse bei Suchmaschinen schon hatte.
+   */
+  async redirects() {
+    return [
+      {
+        /* 12.10. veroeffentlicht als "ein Doener um einen Euro", am 14.10.
+           zu "zwei Doener fuer zwei Euro" korrigiert. */
+        source: "/blog/ein-euro-doener-novaluna",
+        destination: "/blog/zwei-doener-zwei-euro-novaluna",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

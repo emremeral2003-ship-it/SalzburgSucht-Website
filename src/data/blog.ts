@@ -92,33 +92,51 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "ein-euro-doener-novaluna",
-    titel: "Ein Döner um einen Euro: Novaluna in der Rainerstraße",
+    /* Die erste Fassung kuendigte einen Doener um einen Euro am Samstag,
+       17.10. an. Emre hat am 14.10. korrigiert: zwei Doener fuer zwei Euro
+       am Sonntag, 18.10. Angebot und Tag haben sich geaendert, deshalb auch
+       die Adresse des Beitrags - die alte leitet ueber next.config.ts
+       dauerhaft hierher um, damit geteilte Links nicht ins Leere laufen. */
+    slug: "zwei-doener-zwei-euro-novaluna",
+    titel: "Zwei Döner für zwei Euro: Novaluna in der Rainerstraße",
     beschreibung:
-      "Am Samstag, 17. Oktober, gibt es bei Novaluna in der Rainerstraße 27 den Döner um einen Euro — nur an diesem einen Tag.",
+      "Am Sonntag, 18. Oktober, gibt es bei Novaluna in der Rainerstraße 27 zwei Döner für zwei Euro — nur an diesem einen Tag.",
     kategorie: "Gastro",
     publishedAt: "2026-10-12",
     auszug:
-      "Neues türkisches Restaurant in der Rainerstraße 27 — und ein Samstag, an dem der Döner einen Euro kostet.",
+      "Neues türkisches Restaurant in der Rainerstraße 27 — und ein Sonntag, an dem zwei Döner zusammen zwei Euro kosten.",
+    cover: {
+      bild: "/images/blog/novaluna/doener.jpg",
+      alt: "Döner im Sesamweckerl mit Tomaten, Zwiebeln und Feta, in Papier auf einem Teller",
+      breite: 1500,
+      hoehe: 1126,
+    },
     abschnitte: [
       {
         titel: null,
         absaetze: [
-          "In der Rainerstraße 27 hat mit Novaluna ein neues türkisches Restaurant aufgesperrt. Am Samstag, dem 17. Oktober, gibt es dort den Döner um einen Euro.",
+          "In der Rainerstraße 27 hat mit Novaluna ein neues türkisches Restaurant aufgesperrt. Am Sonntag, dem 18. Oktober, gibt es dort zwei Döner für zwei Euro.",
         ],
       },
       {
         titel: "Nur dieser eine Tag",
         absaetze: [
-          "Die Aktion gilt ausschließlich am 17. Oktober — nicht ab diesem Tag. Wer am Sonntag oder Montag vorbeischaut, zahlt den normalen Preis. Das schreiben wir so deutlich hin, weil genau diese Verwechslung Leute umsonst hinfahren lässt.",
-          "Wie lange am Samstag ausgegeben wird und wann Schluss ist, wissen wir nicht. Erfahrungsgemäß hängt das an dem, was die Küche schafft.",
+          "Die Aktion gilt ausschließlich am 18. Oktober — nicht ab diesem Tag. Wer am Montag vorbeischaut, zahlt den normalen Preis. Das schreiben wir so deutlich hin, weil genau diese Verwechslung Leute umsonst hinfahren lässt.",
+          "Wie lange am Sonntag ausgegeben wird und wann Schluss ist, wissen wir nicht. Erfahrungsgemäß hängt das an dem, was die Küche schafft.",
+        ],
+      },
+      {
+        titel: "Zwei Döner, nicht einer",
+        absaetze: [
+          "Der Zuschnitt ist kein Zufall: Zwei Stück für zwei Euro heißt, dass man jemanden mitbringt. Dasselbe Prinzip hat bei Naya funktioniert — zwei Matcha um zwei Euro, und an den Tischen saß niemand allein.",
+          "Für ein Lokal, das gerade erst aufgesperrt hat, ist das der Unterschied zwischen einem vollen Tag und zwei vollen Mundpropaganda-Wochen danach.",
         ],
       },
       {
         titel: "Rechnet mit Andrang",
         absaetze: [
-          "Was bei solchen Aktionen passiert, haben wir gerade erst gesehen: Bei Naya gingen an einem einzigen Tag über 700 Matcha über die Theke, die Schlange reichte bis zu den Nachbargeschäften.",
-          "Ein Euro für einen Döner ist ein ähnlich eindeutiges Angebot. Wer nicht warten will, kommt besser früh — und bringt Geduld mit, wenn es doch dauert. Hinter der Theke steht an so einem Tag ein Team, das durchgehend arbeitet.",
+          "Bei Naya gingen an einem einzigen Aktionstag über 700 Becher über die Theke, die Schlange reichte bis zu den Nachbargeschäften. Zwei Döner für zwei Euro ist ein ähnlich eindeutiges Angebot.",
+          "Wer nicht warten will, kommt besser früh — und bringt Geduld mit, wenn es doch dauert. Hinter der Theke steht an so einem Tag ein Team, das durchgehend arbeitet.",
         ],
       },
       {
@@ -134,7 +152,7 @@ export const blogPosts: BlogPost[] = [
     slug: "salzburg-im-oktober-2026",
     titel: "Was im Oktober bei unseren Partnern läuft",
     beschreibung:
-      "Ein Euro Döner bei Novaluna, gratis Frühlingsrollen bei Mr. Wen und irgendwo in der Stadt wieder Geld: der Oktober bei Salzburgsucht.",
+      "Zwei Döner für zwei Euro bei Novaluna, gratis Frühlingsrollen bei Mr. Wen und irgendwo in der Stadt wieder Geld: der Oktober bei Salzburgsucht.",
     kategorie: "Community",
     publishedAt: "2026-10-12",
     auszug:
@@ -147,9 +165,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        titel: "Samstag, 17. Oktober: ein Euro, ein Döner",
+        titel: "Sonntag, 18. Oktober: zwei Döner für zwei Euro",
         absaetze: [
-          "Novaluna, das neue türkische Restaurant in der Rainerstraße 27, gibt den Döner an diesem Samstag um einen Euro ab. Nur an diesem Tag. Mehr dazu steht in unserem Beitrag zur Aktion.",
+          "Novaluna, das neue türkische Restaurant in der Rainerstraße 27, gibt an diesem Sonntag zwei Döner für zwei Euro ab. Nur an diesem Tag. Mehr dazu steht in unserem Beitrag zur Aktion.",
         ],
       },
       {
