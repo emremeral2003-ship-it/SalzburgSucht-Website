@@ -128,6 +128,13 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
+        titel: "Organisiert haben wir das",
+        absaetze: [
+          "Das Event kam nicht von allein zustande: Planung und Ablauf lagen bei Salzburgsucht — von der Idee über die Ankündigung auf unseren Kanälen bis zur Einteilung des Tages. Dazu der Videodreh vor Ort, Schnitt und Produktion, und das Sicherheitspersonal, das bei einer Schlange dieser Länge keine Nettigkeit ist, sondern Voraussetzung.",
+          "Für den Betrieb heißt das: Er kümmert sich um das, was er kann — Spieße, Theke, Tempo. Alles andere kommt von uns aus einer Hand.",
+        ],
+      },
+      {
         titel: "Warum zwei und nicht einer",
         absaetze: [
           "Zwei Döner für zwei Euro heißt, dass jemand jemanden mitbringt. Genau dieses Prinzip hat schon bei Naya funktioniert, wo an einem Tag über 700 Matcha über die Theke gingen — auch dort saß an den Tischen niemand allein.",

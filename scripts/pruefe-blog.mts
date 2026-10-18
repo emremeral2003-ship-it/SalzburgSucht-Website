@@ -198,6 +198,9 @@ ok(nova!.text.includes("18. Oktober") && nova!.text.includes("Rainerstraße 27")
    "Karte nennt Tag und Adresse");
 ok(!/^Nur am Sonntag/.test(nova!.text), "Karte kuendigt die Aktion nicht mehr als kuenftig an");
 ok(doenerRueckblick.includes("700"), "Rueckblick stellt den Bezug zur Naya-Aktion her");
+ok(/Planung und Ablauf lagen bei Salzburgsucht/.test(doenerRueckblick) &&
+   /Videodreh/.test(doenerRueckblick) && /Sicherheitspersonal/.test(doenerRueckblick),
+   "Rueckblick nennt Planung, Dreh und Sicherheitspersonal als Leistung");
 
 const oktober = text("salzburg-im-oktober-2026");
 ok(oktober.includes(wenKarte.code!), "Monatsuebersicht nennt den Mr.-Wen-Code wie auf der Karte");
