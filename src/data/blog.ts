@@ -92,6 +92,65 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "800-doener-novaluna-eroeffnung",
+    titel: "Über 800 Döner an einem Tag — Novaluna feiert Eröffnung",
+    beschreibung:
+      "Zwei Döner für zwei Euro zur Eröffnung von Novaluna in der Rainerstraße 27: über 800 Stück gingen am 18. Oktober über die Theke.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-19",
+    auszug:
+      "Rotes Band, drei Spieße und eine Schlange, die die halbe Straße entlangging. Wie die Eröffnung von Novaluna gelaufen ist.",
+    cover: {
+      bild: "/images/blog/novaluna/schlange.jpg",
+      alt: "Lange Warteschlange entlang der Häuserfront vor dem Lokal, daneben parkende Autos auf der Straße",
+      breite: 1600,
+      hoehe: 900,
+    },
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Zwei Döner für zwei Euro, einen Tag lang, zur Eröffnung. Am Sonntag, dem 18. Oktober, hat Novaluna in der Rainerstraße 27 aufgesperrt — und was daraus wurde, sieht man oben: Die Schlange ging an den Nachbargeschäften vorbei die halbe Straße entlang.",
+        ],
+      },
+      {
+        titel: "Über 800 Döner",
+        absaetze: [
+          "Am Ende des Tages waren mehr als 800 Döner zubereitet und an die Community ausgegeben. Drei Spieße liefen durchgehend, hinter der Theke arbeitete das Team ohne Pause durch.",
+          "Das ist keine Zahl, die man plant. Das ist eine Zahl, bei der im Laden irgendwann niemand mehr mitzählt — und die hinterher aus dem Verbrauch hochgerechnet wird.",
+        ],
+      },
+      {
+        titel: "Eröffnung mit rotem Band",
+        absaetze: [
+          "Begonnen hat der Tag klassisch: rotes Band vor der Tür, die Familie davor, Schere. Novaluna ist Pizza, Kebab und Grill in einem — das steht so auch über dem Eingang.",
+          "Für ein Lokal, das zum ersten Mal aufsperrt, ist der erste Tag der wichtigste des Jahres. Wer da nicht kommt, kommt vielleicht nie.",
+        ],
+      },
+      {
+        titel: "Warum zwei und nicht einer",
+        absaetze: [
+          "Zwei Döner für zwei Euro heißt, dass jemand jemanden mitbringt. Genau dieses Prinzip hat schon bei Naya funktioniert, wo an einem Tag über 700 Matcha über die Theke gingen — auch dort saß an den Tischen niemand allein.",
+          "Ein einzelner Döner um einen Euro hätte dieselbe Rechnung ergeben und die halbe Wirkung. Der Preis entscheidet nicht nur, ob jemand kommt, sondern mit wem.",
+        ],
+      },
+      {
+        titel: "Danke",
+        absaetze: [
+          "An das Team von Novaluna, das den Tag durchgezogen hat, und an alle, die angestellt sind und gewartet haben. Wenn es länger gedauert hat: Das waren die 800.",
+          "Die nächste Aktion kündigen wir wie immer zuerst auf Instagram an.",
+        ],
+      },
+    ],
+    galerie: [
+      { bild: "/images/blog/novaluna/eroeffnung.jpg", alt: "Eröffnung mit rotem Band vor dem Eingang von Novaluna, Pizza-Kebab-Grill", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/novaluna/spiesse.jpg", alt: "Drei Dönerspieße nebeneinander, einer wird mit dem Messer abgeschnitten", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/novaluna/sauce.jpg", alt: "Fertig belegter Döner mit Sauce, über der Salattheke gehalten", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/novaluna/reihe.jpg", alt: "Mehrere vorbereitete Döner nebeneinander auf der Theke", breite: 788, hoehe: 1400 },
+      { bild: "/images/blog/novaluna/theke.jpg", alt: "Blick in das Lokal mit Menütafeln und dem Team hinter der Theke", breite: 1400, hoehe: 786 },
+    ],
+  },
+  {
     /* Die erste Fassung kuendigte einen Doener um einen Euro am Samstag,
        17.10. an. Emre hat am 14.10. korrigiert: zwei Doener fuer zwei Euro
        am Sonntag, 18.10. Angebot und Tag haben sich geaendert, deshalb auch

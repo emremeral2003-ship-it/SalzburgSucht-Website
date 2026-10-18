@@ -109,23 +109,18 @@ export const contentKarten: ContentKarte[] = [
   },
   {
     /* Novaluna, neues tuerkisches Restaurant in der Rainerstraße 27.
-       Stand 14.10.2026 (Emre): zwei Doener fuer zwei Euro am Sonntag,
-       18. Oktober. Das ersetzt die erste Ankuendigung (ein Doener um einen
-       Euro am Samstag, 17.) - Angebot UND Tag haben sich geaendert.
-       Der 18.10.2026 ist nachgeprueft ein Sonntag.
+       Rueckblick seit 19.10.2026: Die Aktion war am 18. Oktober, die Karte
+       kuendigte sie bis dahin an. Zahl und Fotos von Emre, aufgenommen am
+       Eroeffnungstag. Die ganze Geschichte steht im Blog unter
+       /blog/800-doener-novaluna-eroeffnung.
 
-       NACH DEM 18. OKTOBER veraltet die Karte: ersetzen oder entfernen.
-
-       OFFEN und deshalb nicht im Text: die Oeffnungszeiten.
-
-       Foto von Emre aus dem Referenzordner, auf 4:5 zugeschnitten wie alle
-       Karten dieser Reihe. Der Platzhalter ist damit weg. */
+       Cover auf 4:5 zugeschnitten wie alle Karten dieser Reihe. */
     id: "event-novaluna-doener",
     kategorie: "Event",
-    titel: "2 Döner für 2 € bei Novaluna",
-    text: "Nur am Sonntag, 18. Oktober: zwei Döner für zwei Euro im neuen türkischen Restaurant in der Rainerstraße 27.",
-    bild: "/images/novaluna-doener.jpg",
-    alt: "Döner im Sesamweckerl mit Tomaten, Zwiebeln und Feta, in Papier auf einem Teller",
+    titel: "Über 800 Döner zur Eröffnung von Novaluna",
+    text: "Zwei Döner für zwei Euro zur Eröffnung am 18. Oktober — über 800 Stück gingen in der Rainerstraße 27 über die Theke.",
+    bild: "/images/novaluna-eroeffnung.jpg",
+    alt: "Eröffnung mit rotem Band vor dem Eingang von Novaluna",
     video: null,
     url: null,
     demo: false,
