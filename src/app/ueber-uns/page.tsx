@@ -63,8 +63,12 @@ export default function UeberUnsPage() {
                     text: "Was funktioniert, bauen wir aus. Was niemand nutzt, lassen wir weg — statt es größer zu machen.",
                   },
                   {
+                    /* Hier stand, was langfristig geplant ist. Auf Emres
+                       Wunsch (21.10.2026) raus: Das soll noch niemand
+                       erfahren. Ersetzt durch eine Aussage, die stimmt, ohne
+                       Plaene zu verraten. */
                     titel: "Langfristig",
-                    text: "Ein eigenes Salzburger Jobportal ist das Ziel. Ob und wie es kommt, entscheiden die Zahlen aus dieser ersten Phase.",
+                    text: "Was daraus wird, entscheiden die Zahlen aus dieser ersten Phase — und das, was uns die Community und die Betriebe zurückmelden.",
                   },
                 ].map((punkt) => (
                   <li key={punkt.titel} className="border-l-2 border-primary pl-5">
