@@ -92,6 +92,136 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    /* Aktion und Gewinnspiel wortwoertlich von Emre (23.10.2026): Code
+       SALZBURG SUCHT -> gratis Edamame zur Bestellung; verlost wird ein
+       Gutschein ueber 50 EUR unter allen, die Soja UND Salzburgsucht auf
+       Instagram und TikTok folgen. Ein Enddatum gibt es (noch) nicht —
+       deshalb steht hier auch keins. */
+    slug: "soja-salzburg-edamame",
+    titel: "Gratis Edamame bei Soja — und ein 50-€-Gutschein zu gewinnen",
+    beschreibung:
+      "Mit dem Code SALZBURG SUCHT gibt es bei Soja gratis Edamame zur Bestellung. Dazu verlosen wir einen Gutschein über 50 €.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-23",
+    auszug:
+      "Eine Vorspeise, die nichts kostet, und ein Gutschein über 50 €, für den ihr nur zwei Konten folgen müsst.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Soja gehört zu den Betrieben, mit denen wir gerade zusammenarbeiten — und wir starten gleich mit zwei Dingen auf einmal: einer Aktion, die ab sofort an der Theke gilt, und einem Gewinnspiel über unsere Kanäle.",
+        ],
+      },
+      {
+        titel: "Gratis Edamame mit dem Code",
+        absaetze: [
+          "Sagt beim Bestellen den Code SALZBURG SUCHT, dann gibt es Edamame gratis zu eurer Bestellung dazu. Mehr ist nicht zu tun — kein Screenshot, keine Anmeldung, kein Mindestumsatz, von dem wir wüssten.",
+          "Es ist genau die Art Aktion, die wir mögen: niederschwellig genug, dass man sie beim ersten Besuch einfach mitnimmt, und groß genug, dass sie einen Grund liefert, überhaupt hinzugehen.",
+        ],
+      },
+      {
+        titel: "50 € Gutschein — so seid ihr dabei",
+        absaetze: [
+          "Zusätzlich verlosen wir gemeinsam mit Soja einen Gutschein über 50 €. Teilnehmen könnt ihr, indem ihr Soja und Salzburgsucht auf Instagram und TikTok folgt.",
+          "Die Verlosung läuft über unsere Kanäle, dort sagen wir auch, wann sie endet und wer gewonnen hat. Wer uns ohnehin folgt, muss nur noch Soja dazunehmen.",
+        ],
+      },
+      {
+        titel: "Warum wir solche Aktionen zeigen",
+        absaetze: [
+          "Weil sie beides tun: Sie bringen Leute an einem bestimmten Tag an einen bestimmten Ort — und sie sind messbar. Ein Code, den jemand an der Theke nennt, ist ein Besuch, den man zählen kann. Reichweite allein ist das nicht.",
+        ],
+      },
+    ],
+  },
+  {
+    /* KOI Salzburg steht als Partner mit Standort Rainerstraße in
+       src/data/partners.ts — mehr behaupten wir hier nicht. Aktion und
+       Gewinnspiel von Emre (23.10.2026): Code SALZBURG SUCHT -> ein Getraenk
+       gratis, das nicht auf der Karte steht; 50-EUR-Gutschein unter allen,
+       die KOI und Salzburgsucht auf Instagram und TikTok folgen. */
+    slug: "koi-salzburg-gratis-getraenk",
+    titel: "KOI Salzburg: ein Getränk, das nicht auf der Karte steht",
+    beschreibung:
+      "Mit dem Code SALZBURG SUCHT gibt es bei KOI in der Rainerstraße ein Getränk gratis, das auf keiner Karte steht. Dazu: 50 € Gutschein zu gewinnen.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-23",
+    auszug:
+      "Bei KOI gibt es mit unserem Code ein Getränk, das ihr auf der Karte vergeblich sucht — und einen Gutschein über 50 € dazu.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "KOI in der Rainerstraße gehört zu den Betrieben in unserem Partnernetz. Was dort jetzt läuft, ist die vielleicht ungewöhnlichste Aktion, die wir bisher angekündigt haben.",
+        ],
+      },
+      {
+        titel: "Das Getränk, das nicht auf der Karte steht",
+        absaetze: [
+          "Nennt beim Bestellen den Code SALZBURG SUCHT, dann bekommt ihr ein Getränk gratis dazu — eines, das auf der Karte gar nicht zu finden ist.",
+          "Was es ist, verraten wir hier nicht. Nicht, weil wir geheimnisvoll tun wollen, sondern weil es genau das ist, was die Aktion ausmacht: Ihr müsst hingehen und den Code sagen, um es zu erfahren.",
+        ],
+      },
+      {
+        titel: "50 € Gutschein — so seid ihr dabei",
+        absaetze: [
+          "Gemeinsam mit KOI verlosen wir einen Gutschein über 50 €. Teilnehmen könnt ihr, indem ihr KOI Salzburg und Salzburgsucht auf Instagram und TikTok folgt.",
+          "Gezogen und bekanntgegeben wird über unsere Kanäle — dort steht auch, bis wann ihr mitmachen könnt.",
+        ],
+      },
+      {
+        titel: "Wo ihr KOI findet",
+        absaetze: [
+          "In der Rainerstraße, also in der Neustadt zwischen Bahnhof und Mirabellplatz. Für alle, die ohnehin in der Gegend unterwegs sind, ist das kein Umweg, sondern eine Ecke, an der man sonst vorbeigeht.",
+        ],
+      },
+    ],
+  },
+  {
+    /* Kennis: Aktion und Gewinnspiel von Emre (23.10.2026). Code
+       SALZBURG SUCHT -> ein mittlerer Smoothie gratis zur Bestellung;
+       verlost werden ZWEI Gutscheine ueber je 25 EUR (nicht einer ueber 50)
+       unter allen, die Kennis und Salzburgsucht folgen. Eine Adresse liegt
+       uns nicht vor, deshalb steht hier keine. */
+    slug: "kennis-salzburg-smoothie",
+    titel: "Kennis in Salzburg: gratis Smoothie mit dem Code",
+    beschreibung:
+      "Mit dem Code SALZBURG SUCHT gibt es bei Kennis einen mittleren Smoothie gratis zur Bestellung. Dazu verlosen wir zweimal 25 €.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-23",
+    auszug:
+      "Ein mittlerer Smoothie gratis zu eurer Bestellung — und zwei Gutscheine über je 25 €, die wir verlosen.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Kennis ist der nächste Salzburger Betrieb, mit dem wir eine Aktion für die Community fahren. Und die ist, zugegeben, schwer auszuschlagen.",
+        ],
+      },
+      {
+        titel: "Ein mittlerer Smoothie gratis",
+        absaetze: [
+          "Sagt beim Bestellen den Code SALZBURG SUCHT, dann gibt es einen mittleren Smoothie gratis zu eurer Bestellung dazu.",
+          "Kein Formular, kein Screenshot, keine Karte zum Vorzeigen — der Satz an der Theke genügt.",
+        ],
+      },
+      {
+        titel: "Zweimal 25 € zu gewinnen",
+        absaetze: [
+          "Zusätzlich verlosen wir gemeinsam mit Kennis zwei Gutscheine über je 25 €. Zwei statt einem — damit die Chance doppelt so hoch ist.",
+          "Teilnehmen könnt ihr, indem ihr Kennis und Salzburgsucht folgt. Die Verlosung läuft über unsere Kanäle; dort steht auch, bis wann.",
+        ],
+      },
+      {
+        titel: "Warum immer derselbe Code",
+        absaetze: [
+          "SALZBURG SUCHT ist bei allen unseren Partnerbetrieben derselbe Satz — bei Kennis, bei Soja, bei KOI, bei Mr. Wen. Ihr müsst euch also nichts merken außer diesen zwei Wörtern, und die kennt ihr schon.",
+          "Was ihr dafür bekommt, ist je Betrieb verschieden. Was gerade läuft, steht hier im Blog und auf der Startseite.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "800-doener-novaluna-eroeffnung",
     titel: "Über 800 Döner an einem Tag — Novaluna feiert Eröffnung",
     beschreibung:
@@ -515,7 +645,8 @@ export const blogPosts: BlogPost[] = [
       {
         titel: "Die Aktion",
         absaetze: [
-          "Mit dem Rabattcode SALZBURG SUCHT gibt es ab einem Bestellwert von 10 € Frühlingsrollen gratis dazu. Der Code gilt bei Abholung im Laden — ihr nennt ihn einfach beim Bestellen, mehr braucht es nicht.",
+          "Mit dem Rabattcode SALZBURG SUCHT gibt es ab einem Bestellwert von 10 € Frühlingsrollen gratis dazu. Der Code gilt bei Abholung im Laden — ihr nennt ihn einfach beim Bestellen.",
+          "Dazugekommen ist seit Oktober eine zweite Bedingung: Folgt Mr. Wen auf Social Media. Beides zusammen — folgen und den Code nennen — und die Frühlingsrollen sind eure.",
           "Eine Befristung gibt es derzeit nicht. Sollte sich das ändern, sagen wir es hier und auf unseren Kanälen.",
         ],
       },

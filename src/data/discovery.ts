@@ -99,7 +99,7 @@ export const contentKarten: ContentKarte[] = [
     id: "gastro-mr-wen",
     kategorie: "Gastro",
     titel: "Mr. Wen Salzburg",
-    text: "Gratis Frühlingsrollen ab 10 € Bestellwert — nur bei Abholung im Laden, den Code einfach beim Bestellen nennen. In Maxglan, Mirabell, Kaigasse und Himmelreich.",
+    text: "Gratis Frühlingsrollen ab 10 € Bestellwert — Mr. Wen folgen, den Code beim Bestellen nennen, nur bei Abholung im Laden. In Maxglan, Mirabell, Kaigasse und Himmelreich.",
     bild: "/images/mr-wen-fruehlingsrollen.jpg",
     alt: "Frühlingsrolle mit Stäbchen über einer Schale süßsaurer Sauce, daneben weitere Rollen auf dunklem Teller",
     code: "SALZBURG SUCHT",

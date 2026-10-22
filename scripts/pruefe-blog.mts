@@ -208,6 +208,25 @@ ok(oktober.includes("37 Verstecke") && verstecke.length === 37, "Monatsuebersich
 for (const ort of ["Maxglan", "Mirabell", "Kaigasse", "Himmelreich"])
   ok(oktober.includes(ort), `Monatsuebersicht nennt Standort ${ort}`);
 
+/* --- Aktionsbeitraege vom 23.10. ----------------------------------------
+   Drei Beitraege, die denselben Code tragen wie die Mr.-Wen-Karte. Wenn der
+   Code je wechselt, faellt es hier auf und nicht erst an der Theke. */
+const soja = text("soja-salzburg-edamame");
+const koi = text("koi-salzburg-gratis-getraenk");
+const kennis = text("kennis-salzburg-smoothie");
+for (const [name, t] of [["Soja", soja], ["KOI", koi], ["Kennis", kennis]] as const)
+  ok(t.includes(wenKarte.code!), `${name}-Beitrag nennt denselben Code wie die Karte`);
+ok(soja.includes("Edamame") && soja.includes("50 €"), "Soja-Beitrag: Edamame und 50-Euro-Gutschein");
+ok(koi.includes("Rainerstraße") && partners.some((p) => p.name === "KOI Salzburg"),
+   "KOI-Beitrag: Partner existiert, Standort wie in den Partnerdaten");
+ok(koi.includes("nicht auf der Karte") && koi.includes("50 €"), "KOI-Beitrag: Getraenk ausser Karte, 50-Euro-Gutschein");
+/* Kennis verlost ZWEIMAL 25 EUR, nicht 50 — der haeufigste Fehler beim
+   Abschreiben von einem Beitrag in den naechsten. */
+ok(kennis.includes("je 25 €") && !kennis.includes("50 €"), "Kennis-Beitrag: zweimal 25 €, kein 50-Euro-Gutschein");
+ok(kennis.includes("mittleren Smoothie"), "Kennis-Beitrag: mittlerer Smoothie");
+ok(wen.includes("folgen") && wenKarte.text.includes("folgen"),
+   "Mr.-Wen-Beitrag und Karte nennen beide das Folgen als Bedingung");
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");
