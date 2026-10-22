@@ -26,14 +26,22 @@ const archivo = Archivo({
  * Zweite Familie, ausschliesslich fuer Ueberschriften.
  *
  * Der Wechsel der Schriftfamilie zwischen Ueberschrift und Fliesstext ist das,
- * was eine Seite auf den ersten Blick gestaltet aussehen laesst. Bewusst nur
- * zwei Schnitte: Jeder weitere waere Ladezeit fuer etwas, das nirgends
- * vorkommt — und der Traffic kommt ueber Mobilfunk.
+ * was eine Seite auf den ersten Blick gestaltet aussehen laesst.
+ *
+ * OHNE `weight`: Space Grotesk ist eine variable Schrift, eine Datei deckt
+ * den ganzen Bereich von 300 bis 700 ab. Die Angabe `weight: ["500", "700"]`
+ * forderte stattdessen zwei feste Schnitte an — und genau daran scheiterte
+ * der Build auf Vercel ab Next 16.4.2:
+ *
+ *   next/font/google queries have exactly one entry
+ *
+ * Lokal lief derselbe Build durch, der Fehler trat nur dort auf. Mit der
+ * variablen Datei gibt es die Schnitte 500 und 700 weiterhin, die Seite
+ * laedt sogar eine Datei weniger.
  */
 const displayGrotesk = Space_Grotesk({
   variable: "--font-display-grotesk",
   subsets: ["latin", "latin-ext"],
-  weight: ["500", "700"],
   display: "swap",
 });
 
