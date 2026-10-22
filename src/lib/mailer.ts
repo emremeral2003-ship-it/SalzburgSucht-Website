@@ -1,6 +1,6 @@
 import "server-only";
 
-import nodemailer from "nodemailer";
+import nodemailer, { type Transporter } from "nodemailer";
 import { Resend } from "resend";
 
 /**
@@ -72,7 +72,10 @@ export function mailAdressen() {
 
 /* Der Transporter wird einmal gebaut und wiederverwendet: Jede neue Instanz
    oeffnet eine eigene Verbindung zum Mailserver. */
-let smtp: nodemailer.Transporter | null = null;
+/* Seit nodemailer 10 kommen die Typen aus dem Paket selbst und nicht mehr
+   aus @types/nodemailer; der Namensraum `nodemailer.Transporter` gibt es
+   dort nicht mehr. Deshalb der benannte Typimport oben. */
+let smtp: Transporter | null = null;
 
 function smtpTransport() {
   if (smtp) return smtp;
