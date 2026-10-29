@@ -227,6 +227,26 @@ ok(kennis.includes("mittleren Smoothie"), "Kennis-Beitrag: mittlerer Smoothie");
 ok(wen.includes("folgen") && wenKarte.text.includes("folgen"),
    "Mr.-Wen-Beitrag und Karte nennen beide das Folgen als Bedingung");
 
+/* --- Uebersicht ueber die Code-Aktionen ---------------------------------
+   Der Sammelbeitrag wiederholt Konditionen, die anderswo stehen. Genau das
+   ist die Stelle, an der etwas still falsch wird, wenn sich eine Aktion
+   aendert — also wird jede Angabe gegen den Einzelbeitrag geprueft. */
+const uebersicht = text("code-salzburg-sucht-vorteile");
+ok(uebersicht.includes(wenKarte.code!), "Uebersicht nennt den Code wie auf der Karte");
+for (const name of ["Mr. Wen", "Soja", "Kennis", "KOI"])
+  ok(uebersicht.includes(name), `Uebersicht nennt ${name}`);
+ok(uebersicht.includes("Frühlingsrollen") && wen.includes("Frühlingsrollen"), "Uebersicht/Mr. Wen: Frühlingsrollen");
+ok(uebersicht.includes("10 €") && wen.includes("10 €"), "Uebersicht/Mr. Wen: Bestellwert 10 €");
+ok(uebersicht.includes("Abholung im Laden") && wen.includes("Abholung im Laden"), "Uebersicht/Mr. Wen: nur Abholung");
+ok(uebersicht.includes("Edamame") && soja.includes("Edamame"), "Uebersicht/Soja: Edamame");
+ok(uebersicht.includes("mittlerer Smoothie") && kennis.includes("mittleren Smoothie"), "Uebersicht/Kennis: mittlerer Smoothie");
+ok(uebersicht.includes("je 25 €") && kennis.includes("je 25 €"), "Uebersicht/Kennis: zweimal 25 €");
+ok(uebersicht.includes("Rainerstraße") && koi.includes("Rainerstraße"), "Uebersicht/KOI: Rainerstraße");
+ok(uebersicht.includes("auf der Karte gar nicht steht") && koi.includes("auf der Karte gar nicht zu finden ist"),
+   "Uebersicht/KOI: Getraenk steht auf keiner Karte");
+for (const s of ["mr-wen-salzburg", "soja-salzburg-edamame", "kennis-salzburg-smoothie", "koi-salzburg-gratis-getraenk"])
+  ok(!!getBlogPost(s), `Uebersicht: Einzelbeitrag ${s} ist veroeffentlicht`);
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");

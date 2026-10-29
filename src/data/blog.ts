@@ -92,6 +92,75 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    /* Uebersicht ueber alle laufenden Code-Aktionen — bewusst EIN Beitrag,
+       der alle vier buendelt, statt einer fuenften Einzelaktion. Wer nach
+       "Rabattcode Salzburg" sucht, landet hier und nicht auf einem von vier
+       halben Treffern.
+
+       Jede Kondition hier ist aus dem jeweiligen Einzelbeitrag uebernommen
+       und wird von scripts/pruefe-blog.mts dagegen geprueft: Wenn sich bei
+       Mr. Wen etwas aendert, faellt dieser Beitrag auf, statt still falsch
+       zu werden. */
+    slug: "code-salzburg-sucht-vorteile",
+    titel: "Das bekommt ihr mit dem Code SALZBURG SUCHT",
+    beschreibung:
+      "Mr. Wen, Soja, Kennis und KOI: Was euch der Code SALZBURG SUCHT in Salzburg bringt — Frühlingsrollen, Edamame, Smoothie und ein Getränk ohne Karte.",
+    kategorie: "Gastro",
+    publishedAt: "2026-10-30",
+    auszug:
+      "Vier Betriebe, zwei Wörter: Was ihr in Salzburg gerade gratis dazubekommt, wenn ihr an der Theke den Code nennt.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Es ist immer derselbe Satz: SALZBURG SUCHT. Vier Salzburger Betriebe geben darauf gerade etwas gratis zu eurer Bestellung dazu — bei jedem etwas anderes. Hier steht alles auf einer Seite, damit ihr nicht vier Beiträge durchgehen müsst.",
+        ],
+      },
+      {
+        titel: "Mr. Wen: Frühlingsrollen",
+        absaetze: [
+          "Gratis Frühlingsrollen ab einem Bestellwert von 10 €, nur bei Abholung im Laden. Zwei Dinge sind nötig: Mr. Wen auf Social Media folgen und den Code beim Bestellen nennen.",
+          "Mr. Wen gibt es viermal in der Stadt — in Maxglan, beim Mirabellplatz, in der Kaigasse und im Himmelreich. Eine Befristung gibt es derzeit nicht.",
+        ],
+      },
+      {
+        titel: "Soja: Edamame",
+        absaetze: [
+          "Gratis Edamame zu eurer Bestellung, wenn ihr den Code nennt. Kein Mindestumsatz, kein Screenshot.",
+          "Dazu verlosen wir gemeinsam mit Soja einen Gutschein über 50 €. Dabei seid ihr, wenn ihr Soja und Salzburgsucht auf Instagram und TikTok folgt.",
+        ],
+      },
+      {
+        titel: "Kennis: mittlerer Smoothie",
+        absaetze: [
+          "Ein mittlerer Smoothie gratis zu eurer Bestellung — auch hier genügt der Satz an der Theke.",
+          "Verlost werden bei Kennis zwei Gutscheine über je 25 €, nicht einer über fünfzig. Teilnahme: Kennis und Salzburgsucht folgen.",
+        ],
+      },
+      {
+        titel: "KOI: das Getränk ohne Karte",
+        absaetze: [
+          "Bei KOI in der Rainerstraße bekommt ihr mit dem Code ein Getränk gratis, das auf der Karte gar nicht steht. Was es ist, erfahrt ihr nur im Laden.",
+          "Auch hier verlosen wir einen Gutschein über 50 €, wenn ihr KOI Salzburg und Salzburgsucht auf Instagram und TikTok folgt.",
+        ],
+      },
+      {
+        titel: "Was ihr dafür tun müsst",
+        absaetze: [
+          "Den Code beim Bestellen nennen. Das ist alles — es gibt keine Karte zum Vorzeigen, kein Formular und keine Anmeldung. Bei Mr. Wen kommt das Folgen dazu, bei den Gewinnspielen das Folgen beider Konten.",
+          "Die Aktionen laufen bei den Betrieben selbst, die Verlosungen über unsere Kanäle. Dort steht auch, bis wann ihr jeweils mitmachen könnt und wer gewonnen hat.",
+        ],
+      },
+      {
+        titel: "Warum wir das so machen",
+        absaetze: [
+          "Ein Code, den jemand an der Theke nennt, ist ein Besuch, den man zählen kann. Für die Betriebe ist das der Unterschied zwischen Reichweite und Umsatz — und für euch der niederschwelligste Grund, ein Lokal zum ersten Mal auszuprobieren.",
+          "Was aktuell läuft, steht hier im Blog und auf der Startseite. Kommt etwas dazu oder fällt etwas weg, ändern wir diesen Beitrag.",
+        ],
+      },
+    ],
+  },
+  {
     /* Aktion und Gewinnspiel wortwoertlich von Emre (23.10.2026): Code
        SALZBURG SUCHT -> gratis Edamame zur Bestellung; verlost wird ein
        Gutschein ueber 50 EUR unter allen, die Soja UND Salzburgsucht auf
