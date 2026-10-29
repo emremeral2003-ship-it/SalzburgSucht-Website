@@ -23,7 +23,7 @@ import { verstecke, verstecktePunkte } from "@/data/karte/verstecke";
 import { demoJobs } from "@/data/jobs";
 import { services } from "@/data/services";
 import { contentKarten } from "@/data/discovery";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { stats } from "@/lib/site";
 
 let fehler = 0;
@@ -76,7 +76,11 @@ const echte = demoJobs.filter((j) => !j.demo && j.active);
 ok(echte.length === 3 && jobText.includes("drei Stellen"), `3 aktive echte Stellen (ist: ${echte.length})`);
 ok(echte.every((j) => j.applicationEmail === "office@salzburgsucht.at"), "beide Bewerbungen an office@salzburgsucht.at");
 ok(echte.every((j) => j.employmentType && j.location), "jede echte Stelle hat Anstellungsart und Ort");
-ok(echte.some((j) => j.company === "icmedia") && echte.some((j) => j.company === "BranIT"), "icmedia und BranIT genannt");
+ok(echte.some((j) => j.company === "icmedia") && echte.some((j) => j.company === "Naya"), "icmedia und Naya genannt");
+/* BranIT ist weiterhin Partner, hat aber seit 30.10. kein Inserat mehr —
+   kein Beitrag darf noch eine offene Stelle dort behaupten. */
+ok(!demoJobs.some((j) => j.company === "BranIT") && !blogPosts.some((p) => JSON.stringify(p).includes("BranIT")),
+   "keine BranIT-Stelle mehr, in keinem Beitrag");
 
 const geldText = text("geld-verstecken-in-salzburg");
 ok(verstecke.length === 37 && verstecktePunkte.length === 37, `37 Verstecke, alle verortet (${verstecktePunkte.length}/${verstecke.length})`);
@@ -121,9 +125,17 @@ ok(rueckblick.includes("700"), "Rueckblick nennt die Zahl");
 ok(rueckblick.includes("2. Oktober"), "Rueckblick nennt das Datum der Aktion");
 
 /* --- Karten in "Gerade in Salzburg" ------------------------------------- */
-const nova = contentKarten.find((d) => d.id === "event-novaluna-doener");
 ok(!contentKarten.some((d) => d.id === "event-naya-matcha"),
    "die abgelaufene Naya-Karte ist von der Startseite genommen");
+ok(!contentKarten.some((d) => d.id === "event-novaluna-doener"),
+   "die Novaluna-Karte ist von der Startseite genommen");
+/* Die Code-Karte nennt vier Betriebe — im Text und im Bild. Weicht sie vom
+   Uebersichtsbeitrag ab, ist eine der beiden Stellen veraltet. */
+const codeKarte = contentKarten.find((d) => d.id === "aktion-code-salzburg-sucht")!;
+ok(!!codeKarte && codeKarte.code === "SALZBURG SUCHT", "Code-Karte traegt den Code");
+for (const name of ["Mr. Wen", "Soja", "Kennis", "KOI"])
+  ok(codeKarte.text.includes(name) && codeKarte.alt.includes(name), `Code-Karte nennt ${name} in Text und Bildbeschreibung`);
+ok(existsSync(`public${codeKarte.bild}`), `Bild der Code-Karte liegt vor (${codeKarte.bild})`);
 /* Kein Fehler, aber ein Hinweis: Platzhalterbilder sollen nicht liegen
    bleiben. Sie sehen aus wie Design und sind in Wahrheit eine Luecke. */
 for (const k of contentKarten.filter((d) => d.bild.includes("/platzhalter/")))
@@ -146,7 +158,7 @@ ok(werbung.includes("37 Orte") && verstecke.length === 37, "Werbebeitrag: 37 Ort
 ok(werbung.includes("39 Betriebe") && partners.length === 39, "Werbebeitrag: 39 Partner");
 
 const anzeige = text("stellenanzeige-salzburg-schalten");
-for (const firma of ["icmedia", "BranIT", "Fifty 4 Burgers"])
+for (const firma of ["icmedia", "Naya", "Fifty 4 Burgers"])
   ok(anzeige.includes(firma) && echte.some((j) => j.company === firma), `Stellenbeitrag nennt echte Firma: ${firma}`);
 ok(anzeige.includes("Voll- oder Teilzeit") && echte.some((j) => j.employmentType === "Voll- oder Teilzeit"),
    "Stellenbeitrag: Anstellungsart stimmt mit dem Inserat ueberein");
@@ -190,13 +202,11 @@ ok(!/\d{1,2}(:|\.)\d{2}\s*Uhr/.test(doener), "keine erfundene Uhrzeit im Doener-
 ok(!blogPosts.some((p) => JSON.stringify(p).includes("17. Oktober")),
    "kein Beitrag nennt mehr den verworfenen Termin");
 
-/* Die Karte ist seit 19.10. ein Rueckblick auf die Eroeffnung. */
+/* Der Novaluna-Rueckblick steht seit 30.10. nicht mehr auf der Startseite,
+   der Beitrag selbst aber weiterhin im Blog. */
 const doenerRueckblick = text("800-doener-novaluna-eroeffnung");
-ok(!!nova && nova.text.includes("800") && doenerRueckblick.includes("800"),
-   "Rueckblick und Karte nennen dieselbe Zahl");
-ok(nova!.text.includes("18. Oktober") && nova!.text.includes("Rainerstraße 27"),
-   "Karte nennt Tag und Adresse");
-ok(!/^Nur am Sonntag/.test(nova!.text), "Karte kuendigt die Aktion nicht mehr als kuenftig an");
+ok(doenerRueckblick.includes("800") && doenerRueckblick.includes("18. Oktober"),
+   "Rueckblick nennt Zahl und Tag");
 ok(doenerRueckblick.includes("700"), "Rueckblick stellt den Bezug zur Naya-Aktion her");
 ok(/Planung und Ablauf lagen bei Salzburgsucht/.test(doenerRueckblick) &&
    /Videodreh/.test(doenerRueckblick) && /Sicherheitspersonal/.test(doenerRueckblick),

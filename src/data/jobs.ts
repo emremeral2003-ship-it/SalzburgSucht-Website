@@ -25,15 +25,12 @@ export const demoJobs: Job[] = [
    * ==========================================================================
    * ECHTE STELLEN — TEXTE SIND ENTWÜRFE.
    * ==========================================================================
-   * Beide Positionen existieren laut Emre (27.08.2026). Endgültiger
+   * Die Positionen existieren laut Emre. Endgültiger
    * Ausschreibungstext und Logos kommen noch von ihm — bis dahin stehen hier
    * sorgfältige Entwürfe ohne erfundene Detailzusagen.
    *
    * VOR LIVEGANG ZU KLÄREN:
-   *   - BranIT: Aufgaben stammen aus dem Beratungsteil von branit.at
-   *     (Roadmaps, Audits, Workshops, Migrationen, Modern Workplace) — die
-   *     konkrete Stelle ist daraus abgeleitet und von BranIT zu bestaetigen
-   *   - Anstellungsart und Standort beider Stellen sind angenommen
+   *   - Anstellungsart und Standort der Stellen sind angenommen
    *   - Logos liegen unter public/images/jobs/ und sind eingetragen
    * ==========================================================================
    */
@@ -120,39 +117,49 @@ export const demoJobs: Job[] = [
     demo: false,
   },
   {
-    id: "branit-it-consultant-1",
-    slug: "it-consultant-branit",
-    company: "BranIT",
-    title: "IT-Consultant (m/w/d)",
-    location: "Salzburg — Remote und vor Ort",
-    employmentType: "Vollzeit",
+    /* Naya, Teilzeit, seit 30.10.2026 — ersetzt die BranIT-Stelle, die auf
+       Emres Wunsch vom selben Tag raus ist.
+
+       NOCH ZU BESTAETIGEN: Der Arbeitsort steht hier als "Salzburg" und
+       nicht als Adresse. Die Partnerdaten fuehren Naya mit Marker in der
+       Hofstallgasse, das Kundenprofil nennt die Rainerstraße 24 — solange
+       das nicht geklaert ist, steht hier keine Strasse. Aufgaben und
+       Anforderungen sind ein Entwurf aus dem, was ein Barista-Dienst dort
+       heisst; Detailzusagen (Stundenanzahl, Bezahlung) macht die Anzeige
+       bewusst keine. */
+    id: "naya-barista-1",
+    slug: "barista-teilzeit-naya",
+    company: "Naya",
+    title: "Barista (m/w/d)",
+    location: "Salzburg",
+    employmentType: "Teilzeit",
     shortDescription:
-      "Kunden beraten und ihre IT planbar machen: Audits, Roadmaps, Migrationen und Workshops.",
+      "Kaffee und Matcha in Teilzeit — hinter der Theke bei Naya, mit Gästen statt im Akkord.",
     description:
-      "BranIT berät Unternehmen in ganz Österreich und macht ihre IT planbar — über Standards, Automatisierung und saubere Dokumentation statt gewachsener Einzellösungen. Du analysierst bestehende Umgebungen, entwickelst daraus Roadmaps und begleitest ihre Umsetzung: von der Migration in die Hybrid Cloud über den Modern Workplace mit Microsoft 365 bis zu Sicherheitsmaßnahmen. Du bist die Ansprechperson beim Kunden — remote und vor Ort.",
+      "Naya steht in Salzburg für Matcha und Kaffee, die man auch dann erkennt, wenn kein Logo auf dem Becher klebt. Als Barista stehst du an der Maschine und an der Theke: Du bereitest Getränke zu, nimmst Bestellungen auf und sorgst dafür, dass es im Laden rundläuft. Die Stelle ist in Teilzeit — die genaue Stundenanzahl und die Einteilung besprecht ihr direkt.",
     responsibilities: [
-      "Bestehende IT-Umgebungen analysieren und Audits durchführen",
-      "Roadmaps und Maßnahmenpläne entwickeln und mit dem Kunden abstimmen",
-      "Migrationen und Projekte fachlich begleiten (Hybrid Cloud, Microsoft 365)",
-      "Workshops halten und Ergebnisse nachvollziehbar dokumentieren",
+      "Kaffee- und Matcha-Getränke zubereiten",
+      "Bestellungen aufnehmen und Gäste betreuen",
+      "Theke, Maschine und Arbeitsplatz sauber halten",
+      "Waren annehmen und den Bestand im Blick behalten",
     ],
     requirements: [
-      "Fundierte IT-Erfahrung, etwa aus Administration, Projektarbeit oder Beratung",
-      "Kenntnisse in Microsoft 365, Azure, Netzwerk oder IT-Security",
-      "Sicheres Auftreten und die Fähigkeit, Technik verständlich zu erklären",
-      "Sehr gute Deutschkenntnisse und Führerschein B für Kundeneinsätze",
+      "Freude am Umgang mit Gästen",
+      "Verlässlichkeit und Pünktlichkeit",
+      "Erfahrung an der Kaffeemaschine ist willkommen, aber keine Bedingung — eingeschult wird vor Ort",
+      "Gute Deutschkenntnisse",
     ],
     benefits: [
-      "Abwechslung durch viele verschiedene Kundenumgebungen",
-      "Gestaltungsspielraum statt reiner Abarbeitung",
-      "Remote-Anteil und flexible Einteilung",
-      "Weiterbildung und Zertifizierungen",
+      "Teilzeit mit planbarer Einteilung",
+      "Einschulung an der Maschine",
+      "Kleines Team, kurze Wege",
+      "Ein Lokal, das in Salzburg bekannt ist",
     ],
-    logo: "/images/jobs/branit.png",
+    logo: null,
     applicationType: "email",
     applicationUrl: null,
     applicationEmail: "office@salzburgsucht.at",
-    publishedAt: "2026-08-28",
+    publishedAt: "2026-10-30",
     active: true,
     featured: true,
     demo: false,

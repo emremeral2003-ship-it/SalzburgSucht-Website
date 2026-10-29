@@ -108,19 +108,27 @@ export const contentKarten: ContentKarte[] = [
     demo: false,
   },
   {
-    /* Novaluna, neues tuerkisches Restaurant in der Rainerstraße 27.
-       Rueckblick seit 19.10.2026: Die Aktion war am 18. Oktober, die Karte
-       kuendigte sie bis dahin an. Zahl und Fotos von Emre, aufgenommen am
-       Eroeffnungstag. Die ganze Geschichte steht im Blog unter
-       /blog/800-doener-novaluna-eroeffnung.
+    /* Seit 30.10.2026 an der Stelle, an der bis dahin der Novaluna-Rueckblick
+       stand (Emres Wunsch vom selben Tag). Der Beitrag dazu bleibt im Blog
+       unter /blog/800-doener-novaluna-eroeffnung — er ist nur nicht mehr
+       hier vorne.
 
-       Cover auf 4:5 zugeschnitten wie alle Karten dieser Reihe. */
-    id: "event-novaluna-doener",
-    kategorie: "Event",
-    titel: "Über 800 Döner zur Eröffnung von Novaluna",
-    text: "Zwei Döner für zwei Euro zur Eröffnung am 18. Oktober — über 800 Stück gingen in der Rainerstraße 27 über die Theke.",
-    bild: "/images/novaluna-eroeffnung.jpg",
-    alt: "Eröffnung mit rotem Band vor dem Eingang von Novaluna",
+       KEIN FOTO, sondern eine gesetzte Grafik: Diese Karte zeigt keinen
+       Betrieb und kein Gericht, sondern den Code selbst. Ein Foto von einem
+       der vier Lokale waere hier irrefuehrend, weil die Aktion bei allen
+       vieren gilt. Erzeugt mit sharp aus einem SVG in den Markenfarben,
+       4:5 wie alle Karten dieser Reihe.
+
+       Die vier Namen stehen im Bild UND im Text — pruefe-blog.mts haelt sie
+       mit dem Uebersichtsbeitrag zusammen. Kommt ein Betrieb dazu, muss das
+       Bild neu erzeugt werden; sonst stimmt die Karte nicht mehr. */
+    id: "aktion-code-salzburg-sucht",
+    kategorie: "Aktion",
+    titel: "Gratis dazu mit dem Code",
+    text: "Frühlingsrollen bei Mr. Wen, Edamame bei Soja, ein mittlerer Smoothie bei Kennis und bei KOI ein Getränk, das nicht auf der Karte steht — den Code einfach beim Bestellen nennen.",
+    bild: "/images/code-salzburg-sucht.png",
+    alt: "Grafik in Hellblau mit dem Rabattcode SALZBURG SUCHT und den Namen Mr. Wen, Soja, Kennis und KOI",
+    code: "SALZBURG SUCHT",
     video: null,
     url: null,
     demo: false,

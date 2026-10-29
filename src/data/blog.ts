@@ -670,7 +670,7 @@ export const blogPosts: BlogPost[] = [
       {
         titel: "Was gerade bei uns steht",
         absaetze: [
-          "Drei Stellen, alle aus der Region: Foto- und Videograf bei icmedia, IT-Consultant bei BranIT, Mitarbeiter:in für Service und Küche bei Fifty 4 Burgers in der Linzer Gasse — dort in Voll- oder Teilzeit.",
+          "Drei Stellen, alle aus der Region: Foto- und Videograf bei icmedia, Barista in Teilzeit bei Naya, Mitarbeiter:in für Service und Küche bei Fifty 4 Burgers in der Linzer Gasse — dort in Voll- oder Teilzeit.",
           "Mehr sind es bewusst nicht. Eine Jobliste, die alles aufnimmt, ist schnell voll und damit nutzlos; wir zeigen Stellen von Betrieben, mit denen wir tatsächlich zu tun haben.",
         ],
       },
@@ -1069,7 +1069,7 @@ export const blogPosts: BlogPost[] = [
         titel: "Was gerade offen ist",
         absaetze: [
           "icmedia sucht einen Foto- und Videografen (m/w/d) in Vollzeit für Salzburg. Shootings bei Kunden vor Ort, Reels und TikToks drehen und schneiden, Bildbearbeitung und Farbkorrektur. Wer schon einmal versucht hat, ein Reel so zu bauen, dass es nicht nach Werbung aussieht, weiß, worum es bei der Stelle geht.",
-          "BranIT sucht einen IT-Consultant (m/w/d) in Vollzeit, remote und vor Ort. Bestehende IT-Umgebungen analysieren, daraus Roadmaps entwickeln, Migrationen begleiten — Microsoft 365, Azure, Hybrid Cloud. Gefragt ist jemand, der Technik so erklären kann, dass sie beim Kunden ankommt.",
+          "Naya sucht eine:n Barista (m/w/d) in Teilzeit. Kaffee und Matcha zubereiten, Bestellungen aufnehmen, die Theke im Griff haben. Erfahrung an der Maschine ist willkommen, aber keine Bedingung — eingeschult wird vor Ort.",
           "Fifty 4 Burgers sucht Mitarbeiter:innen für Service und Küche, in Voll- oder Teilzeit, im Lokal in der Linzer Gasse. Erfahrung in der Gastronomie ist willkommen, aber keine Bedingung — eingeschult wird vor Ort.",
           "Alle drei Ausschreibungen stehen vollständig im Job-Bereich: Aufgaben, Anforderungen und das, was der Betrieb dafür bietet.",
         ],
