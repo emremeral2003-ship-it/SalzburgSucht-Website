@@ -133,7 +133,7 @@ ok(!contentKarten.some((d) => d.id === "event-novaluna-doener"),
    Uebersichtsbeitrag ab, ist eine der beiden Stellen veraltet. */
 const codeKarte = contentKarten.find((d) => d.id === "aktion-code-salzburg-sucht")!;
 ok(!!codeKarte && codeKarte.code === "SALZBURG SUCHT", "Code-Karte traegt den Code");
-for (const name of ["Mr. Wen", "Soja", "Kennis", "KOI"])
+for (const name of ["Mr. Wen", "Soja", "Kennys", "KOI"])
   ok(codeKarte.text.includes(name) && codeKarte.alt.includes(name), `Code-Karte nennt ${name} in Text und Bildbeschreibung`);
 ok(existsSync(`public${codeKarte.bild}`), `Bild der Code-Karte liegt vor (${codeKarte.bild})`);
 /* Kein Fehler, aber ein Hinweis: Platzhalterbilder sollen nicht liegen
@@ -223,17 +223,17 @@ for (const ort of ["Maxglan", "Mirabell", "Kaigasse", "Himmelreich"])
    Code je wechselt, faellt es hier auf und nicht erst an der Theke. */
 const soja = text("soja-salzburg-edamame");
 const koi = text("koi-salzburg-gratis-getraenk");
-const kennis = text("kennis-salzburg-smoothie");
-for (const [name, t] of [["Soja", soja], ["KOI", koi], ["Kennis", kennis]] as const)
+const kennys = text("kennys-salzburg-smoothie");
+for (const [name, t] of [["Soja", soja], ["KOI", koi], ["Kennys", kennys]] as const)
   ok(t.includes(wenKarte.code!), `${name}-Beitrag nennt denselben Code wie die Karte`);
 ok(soja.includes("Edamame") && soja.includes("50 €"), "Soja-Beitrag: Edamame und 50-Euro-Gutschein");
 ok(koi.includes("Rainerstraße") && partners.some((p) => p.name === "KOI Salzburg"),
    "KOI-Beitrag: Partner existiert, Standort wie in den Partnerdaten");
 ok(koi.includes("nicht auf der Karte") && koi.includes("50 €"), "KOI-Beitrag: Getraenk ausser Karte, 50-Euro-Gutschein");
-/* Kennis verlost ZWEIMAL 25 EUR, nicht 50 — der haeufigste Fehler beim
+/* Kennys verlost ZWEIMAL 25 EUR, nicht 50 — der haeufigste Fehler beim
    Abschreiben von einem Beitrag in den naechsten. */
-ok(kennis.includes("je 25 €") && !kennis.includes("50 €"), "Kennis-Beitrag: zweimal 25 €, kein 50-Euro-Gutschein");
-ok(kennis.includes("mittleren Smoothie"), "Kennis-Beitrag: mittlerer Smoothie");
+ok(kennys.includes("je 25 €") && !kennys.includes("50 €"), "Kennys-Beitrag: zweimal 25 €, kein 50-Euro-Gutschein");
+ok(kennys.includes("mittleren Smoothie"), "Kennys-Beitrag: mittlerer Smoothie");
 ok(wen.includes("folgen") && wenKarte.text.includes("folgen"),
    "Mr.-Wen-Beitrag und Karte nennen beide das Folgen als Bedingung");
 
@@ -243,18 +243,18 @@ ok(wen.includes("folgen") && wenKarte.text.includes("folgen"),
    aendert — also wird jede Angabe gegen den Einzelbeitrag geprueft. */
 const uebersicht = text("code-salzburg-sucht-vorteile");
 ok(uebersicht.includes(wenKarte.code!), "Uebersicht nennt den Code wie auf der Karte");
-for (const name of ["Mr. Wen", "Soja", "Kennis", "KOI"])
+for (const name of ["Mr. Wen", "Soja", "Kennys", "KOI"])
   ok(uebersicht.includes(name), `Uebersicht nennt ${name}`);
 ok(uebersicht.includes("Frühlingsrollen") && wen.includes("Frühlingsrollen"), "Uebersicht/Mr. Wen: Frühlingsrollen");
 ok(uebersicht.includes("10 €") && wen.includes("10 €"), "Uebersicht/Mr. Wen: Bestellwert 10 €");
 ok(uebersicht.includes("Abholung im Laden") && wen.includes("Abholung im Laden"), "Uebersicht/Mr. Wen: nur Abholung");
 ok(uebersicht.includes("Edamame") && soja.includes("Edamame"), "Uebersicht/Soja: Edamame");
-ok(uebersicht.includes("mittlerer Smoothie") && kennis.includes("mittleren Smoothie"), "Uebersicht/Kennis: mittlerer Smoothie");
-ok(uebersicht.includes("je 25 €") && kennis.includes("je 25 €"), "Uebersicht/Kennis: zweimal 25 €");
+ok(uebersicht.includes("mittlerer Smoothie") && kennys.includes("mittleren Smoothie"), "Uebersicht/Kennys: mittlerer Smoothie");
+ok(uebersicht.includes("je 25 €") && kennys.includes("je 25 €"), "Uebersicht/Kennys: zweimal 25 €");
 ok(uebersicht.includes("Rainerstraße") && koi.includes("Rainerstraße"), "Uebersicht/KOI: Rainerstraße");
 ok(uebersicht.includes("auf der Karte gar nicht steht") && koi.includes("auf der Karte gar nicht zu finden ist"),
    "Uebersicht/KOI: Getraenk steht auf keiner Karte");
-for (const s of ["mr-wen-salzburg", "soja-salzburg-edamame", "kennis-salzburg-smoothie", "koi-salzburg-gratis-getraenk"])
+for (const s of ["mr-wen-salzburg", "soja-salzburg-edamame", "kennys-salzburg-smoothie", "koi-salzburg-gratis-getraenk"])
   ok(!!getBlogPost(s), `Uebersicht: Einzelbeitrag ${s} ist veroeffentlicht`);
 
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */

@@ -41,6 +41,15 @@ const nextConfig: NextConfig = {
         destination: "/blog/zwei-doener-zwei-euro-novaluna",
         permanent: true,
       },
+      {
+        /* 23.10. mit "Kennis" veroeffentlicht, am 03.11. auf die richtige
+           Schreibweise "Kennys" korrigiert. Die alte Adresse stand zehn Tage
+           in der Sitemap — ohne Weiterleitung waere jeder Link darauf
+           (und jeder Treffer bei Google) ins Leere gelaufen. */
+        source: "/blog/kennis-salzburg-smoothie",
+        destination: "/blog/kennys-salzburg-smoothie",
+        permanent: true,
+      },
     ];
   },
 };

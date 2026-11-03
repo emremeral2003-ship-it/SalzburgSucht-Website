@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     slug: "code-salzburg-sucht-vorteile",
     titel: "Das bekommt ihr mit dem Code SALZBURG SUCHT",
     beschreibung:
-      "Mr. Wen, Soja, Kennis und KOI: Was euch der Code SALZBURG SUCHT in Salzburg bringt — Frühlingsrollen, Edamame, Smoothie und ein Getränk ohne Karte.",
+      "Mr. Wen, Soja, Kennys und KOI: Was euch der Code SALZBURG SUCHT in Salzburg bringt — Frühlingsrollen, Edamame, Smoothie und ein Getränk ohne Karte.",
     kategorie: "Gastro",
     publishedAt: "2026-10-30",
     auszug:
@@ -131,10 +131,10 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        titel: "Kennis: mittlerer Smoothie",
+        titel: "Kennys: mittlerer Smoothie",
         absaetze: [
           "Ein mittlerer Smoothie gratis zu eurer Bestellung — auch hier genügt der Satz an der Theke.",
-          "Verlost werden bei Kennis zwei Gutscheine über je 25 €, nicht einer über fünfzig. Teilnahme: Kennis und Salzburgsucht folgen.",
+          "Verlost werden bei Kennys zwei Gutscheine über je 25 €, nicht einer über fünfzig. Teilnahme: Kennys und Salzburgsucht folgen.",
         ],
       },
       {
@@ -247,15 +247,15 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    /* Kennis: Aktion und Gewinnspiel von Emre (23.10.2026). Code
+    /* Kennys: Aktion und Gewinnspiel von Emre (23.10.2026). Code
        SALZBURG SUCHT -> ein mittlerer Smoothie gratis zur Bestellung;
        verlost werden ZWEI Gutscheine ueber je 25 EUR (nicht einer ueber 50)
-       unter allen, die Kennis und Salzburgsucht folgen. Eine Adresse liegt
+       unter allen, die Kennys und Salzburgsucht folgen. Eine Adresse liegt
        uns nicht vor, deshalb steht hier keine. */
-    slug: "kennis-salzburg-smoothie",
-    titel: "Kennis in Salzburg: gratis Smoothie mit dem Code",
+    slug: "kennys-salzburg-smoothie",
+    titel: "Kennys in Salzburg: gratis Smoothie mit dem Code",
     beschreibung:
-      "Mit dem Code SALZBURG SUCHT gibt es bei Kennis einen mittleren Smoothie gratis zur Bestellung. Dazu verlosen wir zweimal 25 €.",
+      "Mit dem Code SALZBURG SUCHT gibt es bei Kennys einen mittleren Smoothie gratis zur Bestellung. Dazu verlosen wir zweimal 25 €.",
     kategorie: "Gastro",
     publishedAt: "2026-10-23",
     auszug:
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
       {
         titel: null,
         absaetze: [
-          "Kennis ist der nächste Salzburger Betrieb, mit dem wir eine Aktion für die Community fahren. Und die ist, zugegeben, schwer auszuschlagen.",
+          "Kennys ist der nächste Salzburger Betrieb, mit dem wir eine Aktion für die Community fahren. Und die ist, zugegeben, schwer auszuschlagen.",
         ],
       },
       {
@@ -277,14 +277,14 @@ export const blogPosts: BlogPost[] = [
       {
         titel: "Zweimal 25 € zu gewinnen",
         absaetze: [
-          "Zusätzlich verlosen wir gemeinsam mit Kennis zwei Gutscheine über je 25 €. Zwei statt einem — damit die Chance doppelt so hoch ist.",
-          "Teilnehmen könnt ihr, indem ihr Kennis und Salzburgsucht folgt. Die Verlosung läuft über unsere Kanäle; dort steht auch, bis wann.",
+          "Zusätzlich verlosen wir gemeinsam mit Kennys zwei Gutscheine über je 25 €. Zwei statt einem — damit die Chance doppelt so hoch ist.",
+          "Teilnehmen könnt ihr, indem ihr Kennys und Salzburgsucht folgt. Die Verlosung läuft über unsere Kanäle; dort steht auch, bis wann.",
         ],
       },
       {
         titel: "Warum immer derselbe Code",
         absaetze: [
-          "SALZBURG SUCHT ist bei allen unseren Partnerbetrieben derselbe Satz — bei Kennis, bei Soja, bei KOI, bei Mr. Wen. Ihr müsst euch also nichts merken außer diesen zwei Wörtern, und die kennt ihr schon.",
+          "SALZBURG SUCHT ist bei allen unseren Partnerbetrieben derselbe Satz — bei Kennys, bei Soja, bei KOI, bei Mr. Wen. Ihr müsst euch also nichts merken außer diesen zwei Wörtern, und die kennt ihr schon.",
           "Was ihr dafür bekommt, ist je Betrieb verschieden. Was gerade läuft, steht hier im Blog und auf der Startseite.",
         ],
       },
