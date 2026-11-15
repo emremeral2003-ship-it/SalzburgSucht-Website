@@ -92,6 +92,110 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    /* Monatsuebersicht November, nach demselben Muster wie der Oktober:
+       nur, was feststeht. Die vier Code-Aktionen stehen ausfuehrlich in den
+       Einzelbeitraegen, hier nur so weit, dass man es an der Theke anwenden
+       kann. Konditionen und Zahlen prueft scripts/pruefe-blog.mts gegen die
+       Datendateien. */
+    slug: "salzburg-im-november-2026",
+    titel: "Was im November bei unseren Partnern läuft",
+    beschreibung:
+      "Vier Aktionen mit dem Code SALZBURG SUCHT, drei Verlosungen, drei offene Stellen und weiterhin Geld in der Stadt: der November bei Salzburgsucht.",
+    kategorie: "Community",
+    publishedAt: "2026-11-15",
+    auszug:
+      "Vier Betriebe geben gerade etwas gratis dazu, drei Gutscheine werden verlost — und im Job-Bereich stehen drei Stellen.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Der Oktober war bei uns voll: zwei Eröffnungsaktionen, über 800 Döner an einem Tag und über 700 Matcha an einem anderen. Der November ist ruhiger — dafür läuft jetzt dauerhaft etwas, das vorher nur an einzelnen Tagen ging.",
+        ],
+      },
+      {
+        titel: "Laufend: vier Aktionen mit einem Code",
+        absaetze: [
+          "Bei Mr. Wen gibt es ab 10 € Bestellwert gratis Frühlingsrollen — bei Abholung im Laden, und ihr müsst Mr. Wen folgen. Bei Soja kommen Edamame gratis zur Bestellung dazu, bei Kennys ein mittlerer Smoothie, und bei KOI in der Rainerstraße ein Getränk, das auf der Karte gar nicht steht.",
+          "Der Code ist überall derselbe: SALZBURG SUCHT, einfach beim Bestellen nennen. Was ihr dafür jeweils bekommt, steht ausführlich in unserem Beitrag zu allen Vorteilen.",
+        ],
+      },
+      {
+        titel: "Zu gewinnen: zweimal 50 €, zweimal 25 €",
+        absaetze: [
+          "Gemeinsam mit Soja und mit KOI verlosen wir je einen Gutschein über 50 €, bei Kennys sind es zwei über je 25 €. Teilnahme ist überall gleich: dem jeweiligen Betrieb und uns auf Instagram und TikTok folgen.",
+          "Gezogen und bekanntgegeben wird über unsere Kanäle. Dort steht auch, bis wann ihr jeweils mitmachen könnt.",
+        ],
+      },
+      {
+        titel: "Drei Stellen im Job-Bereich",
+        absaetze: [
+          "Offen sind gerade: Foto- und Videograf (m/w/d) in Vollzeit bei icmedia, Barista (m/w/d) in Teilzeit bei Naya und Mitarbeiter:in für Service und Küche bei Fifty 4 Burgers in der Linzer Gasse, dort in Voll- oder Teilzeit.",
+          "Bewerbungen laufen per E-Mail, ohne Konto und ohne Formular mit vierzehn Pflichtfeldern. Alle drei Ausschreibungen stehen vollständig im Job-Bereich.",
+        ],
+      },
+      {
+        titel: "Jederzeit: wir verstecken Geld",
+        absaetze: [
+          "Daran ändert sich nichts. Alle bisherigen 37 Verstecke stehen auf der Karte auf unserer Startseite, von der Altstadt bis nach Hallein — das aktuelle steht dort nie, sonst wäre es keines.",
+          "Angekündigt wird jedes Versteck auf Instagram. Wer es als Erster findet, behält es.",
+        ],
+      },
+      {
+        titel: "Wenn ihr zum Jahresende etwas plant",
+        absaetze: [
+          "Dezember ist der Monat, in dem in Salzburg am meisten gleichzeitig läuft — und in dem eine Ankündigung drei Tage vorher am wenigsten bringt. Betriebe, die eine Aktion, eine Eröffnung oder ein Gewinnspiel vorhaben, melden sich besser jetzt als Ende November.",
+        ],
+      },
+    ],
+  },
+  {
+    /* Unternehmensvorstellung Naya. Belegt sind: Partner (partners.ts), die
+       Aktion am 2. Oktober mit ueber 700 Matcha (eigener Beitrag) und die
+       offene Barista-Stelle (jobs.ts).
+
+       KEINE ADRESSE: Die Partnerdaten setzen den Marker in der
+       Hofstallgasse, das Kundenprofil nennt die Rainerstraße 24. Solange das
+       nicht geklaert ist, steht hier wie im Aktionsbeitrag keine Strasse —
+       pruefe-blog.mts haelt das fest. */
+    slug: "naya-salzburg-matcha",
+    titel: "Naya in Salzburg: Matcha, Kaffee — und ein Job hinter der Theke",
+    beschreibung:
+      "Über 700 Matcha an einem Tag: Warum Naya in Salzburg funktioniert — und wer gerade als Barista in Teilzeit gesucht wird.",
+    kategorie: "Gastro",
+    publishedAt: "2026-11-15",
+    auszug:
+      "Ein Betrieb, bei dem im Oktober die Schlange bis vor die Nachbargeschäfte stand. Was dahintersteckt — und was dort gerade frei ist.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Matcha ist in Salzburg in zwei Jahren von „kennt man aus Wien“ zu etwas geworden, das man an einem normalen Dienstagnachmittag bekommt. Naya gehört zu den Betrieben, die daran ihren Anteil haben — und zu denen, mit denen wir zusammenarbeiten.",
+        ],
+      },
+      {
+        titel: "Über 700 Matcha an einem Tag",
+        absaetze: [
+          "Am 2. Oktober gab es bei Naya zwei Matcha um zwei Euro. Was daraus wurde, haben wir in einem eigenen Beitrag festgehalten: über 700 Becher an einem Tag, und eine Schlange, die bis vor die Nachbargeschäfte reichte.",
+          "Solche Zahlen entstehen nicht durch den Preis allein. Zwei Euro bringen Leute einmal herein — wiederkommen tun sie wegen dem, was im Becher ist.",
+        ],
+      },
+      {
+        titel: "Gesucht: Barista in Teilzeit",
+        absaetze: [
+          "Seit Ende Oktober steht im Job-Bereich eine offene Stelle: Barista (m/w/d) in Teilzeit. Kaffee und Matcha zubereiten, Bestellungen aufnehmen, die Theke im Griff haben.",
+          "Erfahrung an der Maschine ist willkommen, aber keine Bedingung — eingeschult wird vor Ort. Die Bewerbung läuft per E-Mail, die vollständige Ausschreibung steht im Job-Bereich.",
+        ],
+      },
+      {
+        titel: "Warum wir solche Betriebe zeigen",
+        absaetze: [
+          "Weil sie das sind, was wir unter lokal verstehen: kein Konzept aus einer Zentrale, sondern Leute, die hinter der Theke stehen und am Ende des Tages selbst gezählt haben, wie viele Becher es geworden sind.",
+          "Für Betriebe wie diesen ist unsere Reichweite der Unterschied zwischen einem guten Produkt, das niemand kennt, und einer Schlange vor der Tür. Mehr als 20.000 Menschen folgen uns auf Instagram, die meisten davon aus Stadt und Land Salzburg.",
+        ],
+      },
+    ],
+  },
+  {
     /* Uebersicht ueber alle laufenden Code-Aktionen — bewusst EIN Beitrag,
        der alle vier buendelt, statt einer fuenften Einzelaktion. Wer nach
        "Rabattcode Salzburg" sucht, landet hier und nicht auf einem von vier

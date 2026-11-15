@@ -257,6 +257,31 @@ ok(uebersicht.includes("auf der Karte gar nicht steht") && koi.includes("auf der
 for (const s of ["mr-wen-salzburg", "soja-salzburg-edamame", "kennys-salzburg-smoothie", "koi-salzburg-gratis-getraenk"])
   ok(!!getBlogPost(s), `Uebersicht: Einzelbeitrag ${s} ist veroeffentlicht`);
 
+/* --- Novemberuebersicht und Naya-Portraet (15.11.) -----------------------
+   Die Monatsuebersicht wiederholt Konditionen, Stellen und Zahlen, die
+   anderswo stehen — also wird jede gegen ihre Quelle geprueft. */
+const november = text("salzburg-im-november-2026");
+ok(november.includes(wenKarte.code!), "Novemberuebersicht nennt den Code wie auf der Karte");
+for (const name of ["Mr. Wen", "Soja", "Kennys", "KOI"])
+  ok(november.includes(name), `Novemberuebersicht nennt ${name}`);
+ok(november.includes("37 Verstecke") && verstecke.length === 37, "Novemberuebersicht: 37 Verstecke");
+ok(november.includes("drei Stellen") && echte.length === 3, `Novemberuebersicht: drei offene Stellen (ist: ${echte.length})`);
+for (const j of echte)
+  ok(november.includes(j.company) && november.includes(j.employmentType),
+     `Novemberuebersicht: ${j.company} mit Anstellungsart ${j.employmentType}`);
+ok(november.includes("je 25 €") && kennys.includes("je 25 €"), "Novemberuebersicht: zweimal 25 € bei Kennys");
+
+const nayaPortraet = text("naya-salzburg-matcha");
+ok(partners.some((p) => p.name === "Naya"), "Naya-Portraet: Partner existiert");
+ok(!/Rainerstra\u00dfe 24|Hofstallgasse/.test(nayaPortraet), "Naya-Portraet: keine ungeklaerte Adresse");
+ok(nayaPortraet.includes("700") && nayaPortraet.includes("2. Oktober") && rueckblick.includes("700"),
+   "Naya-Portraet: Zahl und Datum wie im Aktionsrueckblick");
+const nayaStelle = echte.find((j) => j.company === "Naya")!;
+ok(!!nayaStelle && nayaPortraet.includes(nayaStelle.employmentType) && nayaPortraet.includes("Barista"),
+   "Naya-Portraet: offene Stelle stimmt mit dem Inserat ueberein");
+ok(nayaPortraet.includes(stats.instagramFollower.wert.replace("+", "")),
+   `Naya-Portraet nennt ${stats.instagramFollower.wert}`);
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");
