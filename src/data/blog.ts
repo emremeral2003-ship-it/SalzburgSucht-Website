@@ -92,6 +92,67 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    /* Adventskalender, angekuendigt von Emre am 24.11.2026.
+
+       WAS HIER BEWUSST NICHT STEHT: keine Preise (gilt auf der ganzen
+       Seite), keine Namen von Betrieben, die noch nicht zugesagt haben,
+       keine Reichweitenzahl ausser der einen belegten aus src/lib/site.ts,
+       und keine Anmeldefrist — die hat Emre nicht genannt. Die Zahl 24
+       ergibt sich aus dem Format und ist die einzige Zahl im Text, die
+       eine Zusage ist: mehr Plaetze als Tage gibt es nicht. */
+    slug: "adventskalender-salzburg-unternehmen",
+    titel: "24 Türchen, 24 Gewinnspiele: der Salzburgsucht-Adventskalender",
+    beschreibung:
+      "Im Dezember öffnet sich jeden Tag ein Türchen mit dem Gewinnspiel eines Salzburger Betriebs. Wie Unternehmen einen der 24 Plätze bekommen.",
+    kategorie: "Für Unternehmen",
+    publishedAt: "2026-11-24",
+    auszug:
+      "Einen Monat lang jeden Tag ein Salzburger Betrieb und ein Gewinn. Was dahintersteckt — und wie ihr einen der 24 Tage bekommt.",
+    abschnitte: [
+      {
+        titel: null,
+        absaetze: [
+          "Vom 1. bis zum 24. Dezember öffnen wir jeden Tag ein Türchen. Dahinter steht jeweils ein Salzburger Betrieb mit einem Gewinnspiel — ein Tag, ein Unternehmen, ein Gewinn.",
+          "Für die Community ist das ein Grund, einen Monat lang jeden Tag draufzuschauen. Für die Betriebe ist es ein Tag, an dem sie allein im Vordergrund stehen, statt in der Masse der Dezemberwerbung unterzugehen.",
+        ],
+      },
+      {
+        titel: "Wie es für euch als Betrieb läuft",
+        absaetze: [
+          "Ihr stellt den Gewinn — ein Produkt, einen Gutschein, eine Leistung aus eurem Haus. Alles andere liegt bei uns: Planung, Grafik, Dreh und Schnitt, die Ankündigung, das Türchen selbst und die Abwicklung der Verlosung samt Bekanntgabe.",
+          "Ihr bekommt dafür einen festen Tag im Kalender, an dem nur ihr vorkommt. Welcher Tag es wird, stimmen wir vorher ab — manche Betriebe wollen früh im Monat dran sein, andere lieber kurz vor Weihnachten.",
+        ],
+      },
+      {
+        titel: "Warum ein Gewinnspiel im Dezember funktioniert",
+        absaetze: [
+          "Weil im Dezember ohnehin jeder etwas sucht — und zwar etwas Konkretes, meistens für jemand anderen. Ein Gewinnspiel ist in diesem Monat kein Unterbrecher, sondern genau das, wonach die Leute scrollen.",
+          "Dazu kommt, dass unsere Community aus Stadt und Land Salzburg kommt. Mehr als 20.000 Menschen folgen uns auf Instagram. Wer bei uns gewinnt, kann den Gewinn auch abholen — das ist der Unterschied zu Reichweite, die über ganz Österreich verteilt ist.",
+        ],
+      },
+      {
+        titel: "Was wir dafür von euch brauchen",
+        absaetze: [
+          "Den Gewinn, eine Vorstellung davon, was ihr zeigen wollt, und einen Termin, an dem wir bei euch drehen können. Mehr nicht.",
+          "Wenn ihr Material habt, das schon gut ist, nehmen wir das. Wenn nicht, kommen wir vorbei — das ist für die meisten Betriebe ohnehin der einfachere Weg, weil ein Dezembertag im Lokal selten Zeit für ein eigenes Shooting lässt.",
+        ],
+      },
+      {
+        titel: "24 Tage sind 24 Plätze",
+        absaetze: [
+          "Mehr Plätze als Türchen gibt es nicht, und der Kalender startet am 1. Dezember. Wer dabei sein will, meldet sich also besser heute als nächste Woche — Grafik und Dreh brauchen Vorlauf, und je später ein Betrieb dazukommt, desto weiter hinten liegt der freie Tag.",
+          "Am schnellsten geht es über unser Kooperationsformular oder direkt per E-Mail an office@salzburgsucht.at. Sagt uns dabei gleich, was ihr als Gewinn vorhabt und ob ihr einen Wunschtag habt.",
+        ],
+      },
+      {
+        titel: "Und wenn es dieses Jahr nicht mehr ausgeht",
+        absaetze: [
+          "Dann sagen wir das. Es ist uns lieber, ein Betrieb hört ein ehrliches „voll“, als dass ein Türchen in zwei Tagen zusammengeschustert wird und am Ende aussieht wie das, was wir eigentlich vermeiden wollen.",
+        ],
+      },
+    ],
+  },
+  {
     /* Monatsuebersicht November, nach demselben Muster wie der Oktober:
        nur, was feststeht. Die vier Code-Aktionen stehen ausfuehrlich in den
        Einzelbeitraegen, hier nur so weit, dass man es an der Theke anwenden

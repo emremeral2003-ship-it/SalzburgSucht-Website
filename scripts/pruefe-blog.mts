@@ -282,6 +282,20 @@ ok(!!nayaStelle && nayaPortraet.includes(nayaStelle.employmentType) && nayaPortr
 ok(nayaPortraet.includes(stats.instagramFollower.wert.replace("+", "")),
    `Naya-Portraet nennt ${stats.instagramFollower.wert}`);
 
+/* --- Adventskalender (24.11.) -------------------------------------------
+   Ein Werbebeitrag fuer Betriebe ist die Stelle, an der am ehesten eine
+   Zusage hineinrutscht, die niemand gegeben hat. */
+const advent = text("adventskalender-salzburg-unternehmen");
+ok(advent.includes("1. Dezember") && advent.includes("24"), "Adventskalender: Zeitraum und Zahl der Tuerchen");
+ok(advent.includes("office@salzburgsucht.at"), "Adventskalender nennt die Kontaktadresse");
+ok(advent.includes(stats.instagramFollower.wert.replace("+", "")),
+   `Adventskalender nennt ${stats.instagramFollower.wert}`);
+/* Keine Preise, kein zweiter Reichweitenwert, keine Betriebe, die nicht
+   schon als Partner eingetragen sind. */
+ok(!/\d+\s*(€|EUR|Euro)/.test(advent), "Adventskalender nennt keinen Preis");
+ok(!/\b\d{3,}(\.\d{3})*\s*(Aufrufe|Views|Reichweite|Impressionen)/i.test(advent),
+   "Adventskalender nennt keine erfundene Reichweitenzahl");
+
 /* --- Der Datenschutz-Beitrag darf der Datenschutzerklaerung nicht widersprechen */
 const dsq = readFileSync("src/app/datenschutz/page.tsx", "utf8");
 ok(dsq.includes("Derzeit kein Analysedienst"), "Datenschutz sagt weiterhin: kein Analysedienst");

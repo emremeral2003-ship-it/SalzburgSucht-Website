@@ -12,13 +12,13 @@
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.112.3",
     "maplibre-gl": "^5.24.0",
-    "next": "16.4.2",
+    "next": "16.4.6",
     "nodemailer": "^10.2.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "resend": "^6.20.0",
     "server-only": "^0.0.1",
-    "zod": "^4.4.3"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@maplibre/maplibre-gl-style-spec": "^26.4.4",
@@ -28,7 +28,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.2",
+    "eslint-config-next": "16.4.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
